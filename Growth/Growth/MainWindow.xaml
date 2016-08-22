@@ -21,7 +21,7 @@
         VerticalAlignment="Stretch">
         <Grid
           Background="Black" Margin="0,0,0,0" Height="50" VerticalAlignment="Top">
-            <Label Height="50" Foreground="White" FontSize="30" VerticalAlignment="Center" Margin="30,0,0,0">Growth Admin Panel</Label>
+            <Label Foreground="White" FontSize="30" VerticalAlignment="Center" Margin="30,0,0,0">Growth Admin Panel</Label>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
             </StackPanel>
@@ -126,7 +126,7 @@
                 </MenuItem>
             </MenuItem>
             <Rectangle HorizontalAlignment="Stretch" Fill="White" Height="1"/>
-            <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" Padding="15 15 5 15">
+            <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" Padding="15 10 5 10">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="Camera" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
@@ -256,6 +256,10 @@
               VerticalAlignment="Stretch"
               Margin="190 52 0 0">
             <Rectangle HorizontalAlignment="Stretch" Fill="#EEEEEE" VerticalAlignment="Top" Height="40"/>
+        </Grid>
+        <Grid
+          Background="#3A3A3A" Margin="0,0,0,0" Height="50" VerticalAlignment="Bottom">
+            <Label Foreground="White" FontSize="14" VerticalAlignment="Center" Margin="20,0,0,0">© 2016. PT. Trikarya Teknologi Indonesia. All rights reserved.</Label>
         </Grid>
     </Grid>
 

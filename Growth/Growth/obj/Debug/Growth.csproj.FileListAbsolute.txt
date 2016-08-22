@@ -15,3 +15,20 @@ E:\Mustofa\Penugasan\Growth Dekstop\Growth\Growth\obj\Debug\Growth.pdb
 E:\Mustofa\Penugasan\Growth Dekstop\Growth\Growth\bin\Debug\FontAwesome.WPF.dll
 E:\Mustofa\Penugasan\Growth Dekstop\Growth\Growth\bin\Debug\FontAwesome.WPF.xml
 E:\Mustofa\Penugasan\Growth Dekstop\Growth\Growth\obj\Debug\Growth_Content.g.cs
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\Growth.exe.config
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth.exe
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth.pdb
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\Growth.exe
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\Growth.pdb
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\FontAwesome.WPF.dll
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\FontAwesome.WPF.xml
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth.csprojResolveAssemblyReference.cache
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\MainWindow.g.cs
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\App.g.cs
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth_Content.g.cs
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth_MarkupCompile.cache
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth_MarkupCompile.lref
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\MainWindow.baml
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth.g.resources
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth.Properties.Resources.resources
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth.csproj.GenerateResource.Cache
