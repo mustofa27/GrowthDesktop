@@ -20,22 +20,74 @@
         HorizontalAlignment="Stretch"
         VerticalAlignment="Stretch">
         <Grid
-          Background="Black" Margin="0,0,0,0" Height="50" VerticalAlignment="Top">
-            <Label Foreground="White" FontSize="30" VerticalAlignment="Center" Margin="30,0,0,0">Growth Admin Panel</Label>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+          Background="Black" Margin="0,0,0,0" Height="70" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid VerticalAlignment="Center" Margin="30,0,0,0">
+                    <TextBlock Foreground="White" FontSize="30" >Growth Admin Panel</TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
+                    </StackPanel>
+                </Grid>
+                <Menu HorizontalAlignment="Stretch"
+                    Background="#EEEEEE" Height="30" Padding="20 0 20 0">
+                    <Menu.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </Menu.ItemsPanel>
+                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome Icon="File" Height="12" Width="12" Margin="0 0 5 0" Foreground="Black"/>
+                                <ContentPresenter Content="File" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 5 0" Foreground="Black"/>
+                                <ContentPresenter Content="Edit" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome Icon="Th" Height="12" Width="12" Margin="0 0 5 0" Foreground="Black"/>
+                                <ContentPresenter Content="View" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome Icon="Gear" Height="12" Width="12" Margin="0 0 5 0" Foreground="Black"/>
+                                <ContentPresenter Content="Options" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome Icon="Info" Height="12" Width="12" Margin="0 0 5 0" Foreground="Black"/>
+                                <ContentPresenter Content="About" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                </Menu>
             </StackPanel>
         </Grid>
         <Menu HorizontalAlignment="Left"
               Background="#3A3A3A"
-              Margin="0,52,0,0" Width="190">
+              Margin="0,72,0,0" Width="190">
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel />
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
-            <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana"
-                      Padding="15 10 5 10">
+            <MenuItem x:Name="dashboard" Foreground="White" FontSize="14" FontFamily="Verdana"
+                      Padding="15 10 5 10" Click="dashboard_Click">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="Home" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
@@ -51,7 +103,7 @@
                         <ContentPresenter Content="Master Data" VerticalAlignment="Center"/>
                     </StackPanel>
                 </MenuItem.Header>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10">
+                <MenuItem x:Name="area" Background="#3A3A3A" Padding="5 10 5 10" Click="area_Click">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
@@ -252,11 +304,10 @@
             </MenuItem>
             <Rectangle HorizontalAlignment="Stretch" Fill="White" Height="1"/>
         </Menu>
-        <Grid HorizontalAlignment="Stretch"
-              VerticalAlignment="Stretch"
-              Margin="190 52 0 0">
-            <Rectangle HorizontalAlignment="Stretch" Fill="#EEEEEE" VerticalAlignment="Top" Height="40"/>
-        </Grid>
+        <Frame x:Name="mainFrame"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                        Source="/Pages/Dashboard.xaml" Margin="190 72 0 52">
+
+        </Frame>
         <Grid
           Background="#3A3A3A" Margin="0,0,0,0" Height="50" VerticalAlignment="Bottom">
             <Label Foreground="White" FontSize="14" VerticalAlignment="Center" Margin="20,0,0,0">© 2016. PT. Trikarya Teknologi Indonesia. All rights reserved.</Label>

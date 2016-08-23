@@ -24,5 +24,15 @@ namespace Growth
         {
             InitializeComponent();
         }
+
+        private void area_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new Uri("/Pages/Area/Index.xaml", UriKind.Relative));
+        }
+
+        private void dashboard_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new Uri("/Pages/Dashboard.xaml", UriKind.Relative));
+        }
     }
 }

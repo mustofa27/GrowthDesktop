@@ -32,3 +32,12 @@ E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\MainWindow.baml
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth.g.resources
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth.Properties.Resources.resources
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth.csproj.GenerateResource.Cache
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\System.Net.Http.Extensions.dll
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\System.Net.Http.Primitives.dll
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\System.Net.Http.Extensions.xml
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\System.Net.Http.Primitives.xml
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Growth.csproj.App.config
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Dashboard.g.cs
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Dashboard.baml
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Index.g.cs
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Index.baml
