@@ -36,6 +36,14 @@
                         <MenuItem Header="Area-City" Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center"/>
                     </Menu>
                 </Grid>
+                <Grid>
+                    <StackPanel Orientation="Vertical">
+                        <Button x:Name="testing"
+                                Width="100"
+                                HorizontalAlignment="Left" Click="testing_Click">Testing</Button>
+                        <TextBlock x:Name="test" FontSize="14" FontFamily="Verdana">Testing</TextBlock>
+                    </StackPanel>
+                </Grid>
             </StackPanel>
         </ScrollViewer>
     </Grid>
