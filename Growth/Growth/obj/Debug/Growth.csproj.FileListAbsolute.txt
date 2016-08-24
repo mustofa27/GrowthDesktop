@@ -41,9 +41,5 @@ E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Dashboard.g.cs
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Dashboard.baml
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Index.g.cs
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Index.baml
-E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\MySql.Data.dll
-E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\Flurl.dll
-E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\Flurl.pdb
-E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\Flurl.xml
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\Newtonsoft.Json.dll
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\Newtonsoft.Json.xml
