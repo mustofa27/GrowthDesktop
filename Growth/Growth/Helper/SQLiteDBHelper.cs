@@ -260,23 +260,53 @@ namespace Growth.Helper
         #region City
         public static void InsertCity(City city)
         {
-
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_CITY + "(" + KEY_KODE_KOTA + ", " + KEY_KODE_AREA + ", " + KEY_NAMA_KOTA + ") values (" + city.getKode() + ", '" + city.getKodeArea() + "', '" + city.getNama() + "')";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static void DeleteCity(int id)
         {
-
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_CITY + " WHERE " + KEY_KODE_KOTA + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static City ReadCity(int id)
         {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_CITY + " WHERE " + KEY_KODE_KOTA + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                City city = new City(int.Parse(reader[KEY_KODE_KOTA].ToString()), int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NAMA_AREA].ToString());
+                reader.Close();
+                return city;
+            }
+            reader.Close();
             return null;
         }
         public static List<City> ReadAllCity()
         {
-            return null;
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_CITY + " WHERE " + KEY_KODE_KOTA + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            List<City> cityList = new List<City>();
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                cityList.Add(new City(int.Parse(reader[KEY_KODE_KOTA].ToString()), int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NAMA_AREA].ToString()));
+            }
+            reader.Close();
+            return cityList;
         }
         public static void UpdateCity(City city)
         {
-
+            CreateOrReadDB();
+            string sql = "update " + TABLE_CITY + " set " + KEY_KODE_AREA + " = '" + city.getKodeArea() + "', " + KEY_NAMA_KOTA + " = '" + city.getNama() + "' where " + KEY_KODE_KOTA + " = " + city.getKode();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         #endregion
         #region Competitor
