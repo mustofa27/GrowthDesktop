@@ -261,7 +261,8 @@ namespace Growth.Helper
         public static void InsertCity(City city)
         {
             CreateOrReadDB();
-            string sql = "insert into " + TABLE_CITY + "(" + KEY_KODE_KOTA + ", " + KEY_KODE_AREA + ", " + KEY_NAMA_KOTA + ") values (" + city.getKode() + ", '" + city.getKodeArea() + "', '" + city.getNama() + "')";
+            string sql = "insert into " + TABLE_CITY + "(" + KEY_KODE_KOTA + ", " + KEY_KODE_AREA + ", " + KEY_NAMA_KOTA 
+                + ") values (" + city.getKode() + ", " + city.getKodeArea() + ", '" + city.getNama() + "')";
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             command.ExecuteNonQuery();
         }
@@ -304,7 +305,8 @@ namespace Growth.Helper
         public static void UpdateCity(City city)
         {
             CreateOrReadDB();
-            string sql = "update " + TABLE_CITY + " set " + KEY_KODE_AREA + " = '" + city.getKodeArea() + "', " + KEY_NAMA_KOTA + " = '" + city.getNama() + "' where " + KEY_KODE_KOTA + " = " + city.getKode();
+            string sql = "update " + TABLE_CITY + " set " + KEY_KODE_AREA + " = " + city.getKodeArea() 
+                + ", " + KEY_NAMA_KOTA + " = '" + city.getNama() + "' where " + KEY_KODE_KOTA + " = " + city.getKode();
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             command.ExecuteNonQuery();
         }
@@ -312,23 +314,62 @@ namespace Growth.Helper
         #region Competitor
         public static void InsertCompetitor(Competitor competitor)
         {
-
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_CITY + "(" + KEY_KODE_KOMPETITOR + ", " + KEY_KODE_KOTA + 
+                ", " + KEY_NAMA_COMPETITOR +", " + KEY_ALAMAT_COMPETITOR + ") values (" 
+                + competitor.getId() + ", " + competitor.getKd_kota() + ", '" + competitor.getNm_competitor() + "', '" 
+                + competitor.getAlamat() + "')";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static void DeleteCompetitor(int id)
         {
-
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_COMPETITOR + " WHERE " + KEY_KODE_KOMPETITOR + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static Competitor ReadCompetitor(int id)
         {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_COMPETITOR + " WHERE " + KEY_KODE_KOMPETITOR + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                Competitor competitor = new Competitor(int.Parse(reader[KEY_KODE_KOMPETITOR].ToString()),
+                    int.Parse(reader[KEY_KODE_KOTA].ToString()), reader[KEY_NAMA_COMPETITOR].ToString(),
+                    reader[KEY_ALAMAT_COMPETITOR].ToString());
+                reader.Close();
+                return competitor;
+            }
+            reader.Close();
             return null;
         }
         public static List<Competitor> ReadAllCompetitor()
         {
-            return null;
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_COMPETITOR + " WHERE " + KEY_KODE_KOMPETITOR + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<Competitor> competitorList = new List<Competitor>();
+            while (reader.Read())
+            {
+                competitorList.Add(new Competitor(int.Parse(reader[KEY_KODE_KOMPETITOR].ToString()),
+                    int.Parse(reader[KEY_KODE_KOTA].ToString()), reader[KEY_NAMA_COMPETITOR].ToString(),
+                    reader[KEY_ALAMAT_COMPETITOR].ToString()));
+            }
+            reader.Close();
+            return competitorList;
         }
         public static void UpdateCompetitor(Competitor competitor)
         {
-
+            CreateOrReadDB();
+            string sql = "update " + TABLE_COMPETITOR + " set " + KEY_KODE_KOTA + " = " + competitor.getKd_kota() 
+                + ", " + KEY_NAMA_COMPETITOR + " = '" + competitor.getNm_competitor() + "', " + KEY_ALAMAT_COMPETITOR 
+                + " = '" + competitor.getAlamat() + "' where " + KEY_KODE_KOMPETITOR + " = " + competitor.getId();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         #endregion
         #region Distributor
