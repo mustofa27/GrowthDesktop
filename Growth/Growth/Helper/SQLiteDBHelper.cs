@@ -281,7 +281,7 @@ namespace Growth.Helper
             SQLiteDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
-                City city = new City(int.Parse(reader[KEY_KODE_KOTA].ToString()), int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NAMA_AREA].ToString());
+                City city = new City(int.Parse(reader[KEY_KODE_KOTA].ToString()), int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NAMA_KOTA].ToString());
                 reader.Close();
                 return city;
             }
@@ -291,13 +291,13 @@ namespace Growth.Helper
         public static List<City> ReadAllCity()
         {
             CreateOrReadDB();
-            string sql = "select * from " + TABLE_CITY + " WHERE " + KEY_KODE_KOTA + "=" + id;
+            string sql = "select * from " + TABLE_CITY;
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             List<City> cityList = new List<City>();
             SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                cityList.Add(new City(int.Parse(reader[KEY_KODE_KOTA].ToString()), int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NAMA_AREA].ToString()));
+                cityList.Add(new City(int.Parse(reader[KEY_KODE_KOTA].ToString()), int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NAMA_KOTA].ToString()));
             }
             reader.Close();
             return cityList;
@@ -315,7 +315,7 @@ namespace Growth.Helper
         public static void InsertCompetitor(Competitor competitor)
         {
             CreateOrReadDB();
-            string sql = "insert into " + TABLE_CITY + "(" + KEY_KODE_KOMPETITOR + ", " + KEY_KODE_KOTA + 
+            string sql = "insert into " + TABLE_COMPETITOR + " (" + KEY_KODE_COMPETITOR + ", " + KEY_KODE_KOTA + 
                 ", " + KEY_NAMA_COMPETITOR +", " + KEY_ALAMAT_COMPETITOR + ") values (" 
                 + competitor.getId() + ", " + competitor.getKd_kota() + ", '" + competitor.getNm_competitor() + "', '" 
                 + competitor.getAlamat() + "')";
@@ -325,19 +325,19 @@ namespace Growth.Helper
         public static void DeleteCompetitor(int id)
         {
             CreateOrReadDB();
-            string sql = "DELETE FROM " + TABLE_COMPETITOR + " WHERE " + KEY_KODE_KOMPETITOR + "=" + id;
+            string sql = "DELETE FROM " + TABLE_COMPETITOR + " WHERE " + KEY_KODE_COMPETITOR + "=" + id;
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             command.ExecuteNonQuery();
         }
         public static Competitor ReadCompetitor(int id)
         {
             CreateOrReadDB();
-            string sql = "select * from " + TABLE_COMPETITOR + " WHERE " + KEY_KODE_KOMPETITOR + "=" + id;
+            string sql = "select * from " + TABLE_COMPETITOR + " WHERE " + KEY_KODE_COMPETITOR + "=" + id;
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             SQLiteDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
-                Competitor competitor = new Competitor(int.Parse(reader[KEY_KODE_KOMPETITOR].ToString()),
+                Competitor competitor = new Competitor(int.Parse(reader[KEY_KODE_COMPETITOR].ToString()),
                     int.Parse(reader[KEY_KODE_KOTA].ToString()), reader[KEY_NAMA_COMPETITOR].ToString(),
                     reader[KEY_ALAMAT_COMPETITOR].ToString());
                 reader.Close();
@@ -349,13 +349,13 @@ namespace Growth.Helper
         public static List<Competitor> ReadAllCompetitor()
         {
             CreateOrReadDB();
-            string sql = "select * from " + TABLE_COMPETITOR + " WHERE " + KEY_KODE_KOMPETITOR + "=" + id;
+            string sql = "select * from " + TABLE_COMPETITOR;
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             SQLiteDataReader reader = command.ExecuteReader();
             List<Competitor> competitorList = new List<Competitor>();
             while (reader.Read())
             {
-                competitorList.Add(new Competitor(int.Parse(reader[KEY_KODE_KOMPETITOR].ToString()),
+                competitorList.Add(new Competitor(int.Parse(reader[KEY_KODE_COMPETITOR].ToString()),
                     int.Parse(reader[KEY_KODE_KOTA].ToString()), reader[KEY_NAMA_COMPETITOR].ToString(),
                     reader[KEY_ALAMAT_COMPETITOR].ToString()));
             }
@@ -367,7 +367,7 @@ namespace Growth.Helper
             CreateOrReadDB();
             string sql = "update " + TABLE_COMPETITOR + " set " + KEY_KODE_KOTA + " = " + competitor.getKd_kota() 
                 + ", " + KEY_NAMA_COMPETITOR + " = '" + competitor.getNm_competitor() + "', " + KEY_ALAMAT_COMPETITOR 
-                + " = '" + competitor.getAlamat() + "' where " + KEY_KODE_KOMPETITOR + " = " + competitor.getId();
+                + " = '" + competitor.getAlamat() + "' where " + KEY_KODE_COMPETITOR + " = " + competitor.getId();
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             command.ExecuteNonQuery();
         }
