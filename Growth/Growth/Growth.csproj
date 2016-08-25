@@ -135,6 +135,19 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Master\Area.cs" />
+    <Compile Include="Master\City.cs" />
+    <Compile Include="Master\Competitor.cs" />
+    <Compile Include="Master\Distributor.cs" />
+    <Compile Include="Master\Logging.cs" />
+    <Compile Include="Master\Outlet.cs" />
+    <Compile Include="Master\PhotoActivity.cs" />
+    <Compile Include="Master\Product.cs" />
+    <Compile Include="Master\TakeOrder.cs" />
+    <Compile Include="Master\Tipe.cs" />
+    <Compile Include="Master\TipePhoto.cs" />
+    <Compile Include="Master\User.cs" />
+    <Compile Include="Master\VisitPlan.cs" />
     <Compile Include="Pages\Area\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
