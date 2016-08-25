@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Growth.Helper;
 
 namespace Growth
 {
@@ -27,6 +28,7 @@ namespace Growth
 
         private void area_Click(object sender, RoutedEventArgs e)
         {
+            SQLiteDBHelper.CreateOrReadDB();
             mainFrame.Navigate(new Uri("/Pages/Area/Index.xaml", UriKind.Relative));
         }
 

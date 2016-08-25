@@ -43,3 +43,11 @@ E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Index.g.cs
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Index.baml
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\Newtonsoft.Json.dll
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\Newtonsoft.Json.xml
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\EntityFramework.dll
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\EntityFramework.SqlServer.dll
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\System.Data.SQLite.dll
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\System.Data.SQLite.EF6.dll
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\System.Data.SQLite.Linq.dll
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\EntityFramework.xml
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\EntityFramework.SqlServer.xml
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\System.Data.SQLite.xml
