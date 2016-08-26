@@ -724,23 +724,53 @@ namespace Growth.Helper
         #region Tipe
         public static void InsertTipe(Tipe tipe)
         {
-
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_TIPE + " values (" + tipe.getId() + ", '" + tipe.getNm_tipe() + "')";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static void DeleteTipe(int id)
         {
-
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_TIPE + " WHERE " + KEY_KODE_TIPE + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static Tipe ReadTipe(int id)
         {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_TIPE + " WHERE " + KEY_KODE_TIPE + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                Tipe tipe = new Tipe(int.Parse(reader[KEY_KODE_TIPE].ToString()), reader[KEY_NAMA_TIPE].ToString());
+                reader.Close();
+                return tipe;
+            }
+            reader.Close();
             return null;
         }
-        public static List<Tipe> ReadTipe()
+        public static List<Tipe> ReadAllTipe()
         {
-            return null;
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_TIPE;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<Tipe> tipes = new List<Tipe>();
+            while (reader.Read())
+            {
+                tipes.Add(new Tipe(int.Parse(reader[KEY_KODE_TIPE].ToString()), reader[KEY_NAMA_TIPE].ToString()));
+            }
+            reader.Close();
+            return tipes;
         }
         public static void UpdateTipe(Tipe tipe)
         {
-
+            CreateOrReadDB();
+            string sql = "update " + TABLE_TIPE + " set " + KEY_NAMA_TIPE + " = '" + tipe.getNm_tipe() + "' where " + KEY_KODE_TIPE + " = " + tipe.getId();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         #endregion
         #region TipePhoto
