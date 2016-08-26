@@ -649,23 +649,54 @@ namespace Growth.Helper
         #region Product
         public static void InsertProduct(Product product)
         {
-
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_PRODUK + " values (" + product.getId() + ", '" + product.getKd_produk() + "', '" + product.getNm_produk() + "')";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static void DeleteProduct(int id)
         {
-
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_PRODUK + " WHERE " + KEY_ID_PRODUK + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static Product ReadProduct(int id)
         {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_PRODUK + " WHERE " + KEY_ID_PRODUK + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                Product product = new Product(int.Parse(reader[KEY_ID_PRODUK].ToString()), reader[KEY_KODE_PRODUK].ToString(), reader[KEY_NAMA_PRODUK].ToString());
+                reader.Close();
+                return product;
+            }
+            reader.Close();
             return null;
         }
-        public static List<Product> ReadProduct()
+        public static List<Product> ReadAllProduct()
         {
-            return null;
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_PRODUK;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<Product> products = new List<Product>();
+            while (reader.Read())
+            {
+                products.Add(new Product(int.Parse(reader[KEY_ID_PRODUK].ToString()), reader[KEY_KODE_PRODUK].ToString(), reader[KEY_NAMA_PRODUK].ToString()));
+            }
+            reader.Close();
+            return products;
         }
         public static void UpdateProduct(Product product)
         {
-
+            CreateOrReadDB();
+            string sql = "update " + TABLE_PRODUK + " set " + KEY_KODE_PRODUK + " = '" + product.getKd_produk()
+                + "', " + KEY_NAMA_PRODUK + " = '" + product.getNm_produk() + "' where " + KEY_ID_PRODUK + " = " + product.getId();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         #endregion
         #region TakeOrder

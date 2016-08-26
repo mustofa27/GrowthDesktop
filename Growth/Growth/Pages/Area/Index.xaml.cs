@@ -26,8 +26,8 @@ namespace Growth.Pages.Area
         public Index()
         {
             InitializeComponent();
-            //SQLiteDBHelper.InsertLogging(new Logging(1, "desc 1", "testing1"));
-            //SQLiteDBHelper.InsertLogging(new Logging(2, "desc 2", "testing1"));
+            //SQLiteDBHelper.InsertProduct(new Product(1, "desc 1", "testing1"));
+            //SQLiteDBHelper.InsertProduct(new Product(2, "desc 2", "testing1"));
             //SQLiteDBHelper.InsertPhotoActivity(new PhotoActivity(1, 1, 1, 1, 1, "outlet1", "sby", "A", "08977907097", "sukses", "0.912594"));
             //SQLiteDBHelper.InsertPhotoActivity(new PhotoActivity(2, 1, 1, 1, 1, "outlet2", "sby", "A", "08977907097", "sukses", "0.912594"));
         }
@@ -41,15 +41,15 @@ namespace Growth.Pages.Area
         {
             //ConnectionHelper.DownloadPageAsync("http://demo.growth.co.id/login/keira/asd",this);
             //ConnectionHelper.PostToPage("http://demo.growth.co.id/setIdGCM", this);
-            Master.PhotoActivity city = SQLiteDBHelper.ReadPhotoActivity(1);
-            city.setNama("edit baru");
-            SQLiteDBHelper.UpdatePhotoActivity(city);
-            test.Text = SQLiteDBHelper.ReadPhotoActivity(1).getNama();
-            //List<PhotoActivity> cities = SQLiteDBHelper.ReadAllPhotoActivity();
-            //foreach (var city in cities)
-            //{
-            //    test.Text += ' ' + city.getNama();
-            //}
+            //Master.Product city = SQLiteDBHelper.ReadProduct(1);
+            //city.setNm_produk("edit baru");
+            //SQLiteDBHelper.UpdateProduct(city);
+            //test.Text = SQLiteDBHelper.ReadProduct(1).getNm_produk();
+            List<Product> cities = SQLiteDBHelper.ReadAllProduct();
+            foreach (var city in cities)
+            {
+                test.Text += ' ' + city.getNm_produk();
+            }
             //Test foo = new Test(1, "desc 1", "testing1");
             //test.Text = "";
             //foreach (var prop in foo.GetType().GetProperties())
