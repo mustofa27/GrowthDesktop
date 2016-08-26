@@ -776,23 +776,53 @@ namespace Growth.Helper
         #region TipePhoto
         public static void InsertTipePhoto(TipePhoto tipePhoto)
         {
-
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_TIPE_PHOTO + " values (" + tipePhoto.getId() + ", '" + tipePhoto.getNama_tipe() + "')";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static void DeleteTipePhoto(int id)
         {
-
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_TIPE_PHOTO + " WHERE " + KEY_ID_TIPE + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static TipePhoto ReadTipePhoto(int id)
         {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_TIPE_PHOTO + " WHERE " + KEY_ID_TIPE + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                TipePhoto tipe = new TipePhoto(int.Parse(reader[KEY_ID_TIPE].ToString()), reader[KEY_NM_TIPE].ToString());
+                reader.Close();
+                return tipe;
+            }
+            reader.Close();
             return null;
         }
         public static List<TipePhoto> ReadTipePhoto()
         {
-            return null;
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_TIPE_PHOTO;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<TipePhoto> tipes = new List<TipePhoto>();
+            while(reader.Read())
+            {
+                tipes.Add(new TipePhoto(int.Parse(reader[KEY_ID_TIPE].ToString()), reader[KEY_NM_TIPE].ToString()));
+            }
+            reader.Close();
+            return tipes;
         }
         public static void UpdateTipePhoto(TipePhoto tipePhoto)
         {
-
+            CreateOrReadDB();
+            string sql = "update " + TABLE_TIPE_PHOTO + " set " + KEY_NM_TIPE + " = '" + tipePhoto.getNama_tipe() + "' where " + KEY_ID_TIPE + " = " + tipePhoto.getId();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         #endregion
         #region User
