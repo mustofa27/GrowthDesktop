@@ -577,23 +577,73 @@ namespace Growth.Helper
         #region PhotoActivity
         public static void InsertPhotoActivity(PhotoActivity photoActivity)
         {
-
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_PHOTO + " values ("
+                + photoActivity.getId() + ", " + photoActivity.getKd_user() + ", " + photoActivity.getKd_outlet()
+                + ", " + photoActivity.getKd_kompetitor() + ", " + photoActivity.getKd_tipe() + ", '"
+                + photoActivity.getNama() + "', '" + photoActivity.getTgl_take() + "', '" + photoActivity.getAlamat() 
+                + "', '" + photoActivity.getTgl_upload() + "', '" + photoActivity.getFoto() 
+                + "', '" + photoActivity.getKeterangan() + "')";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static void DeletePhotoActivity(int id)
         {
-
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_PHOTO + " WHERE " + KEY_KODE_PHOTO + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static PhotoActivity ReadPhotoActivity(int id)
         {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_PHOTO + " WHERE " + KEY_KODE_PHOTO + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                PhotoActivity photoActivity = new PhotoActivity(int.Parse(reader[KEY_KODE_PHOTO].ToString()),
+                    int.Parse(reader[KEY_KODE_USER].ToString()), int.Parse(reader[KEY_KODE_OUTLET].ToString()),
+                     int.Parse(reader[KEY_KODE_KOMPETITOR].ToString()), int.Parse(reader[KEY_JENIS_PHOTO].ToString()),
+                     reader[KEY_NAMA_PHOTO].ToString(), reader[KEY_DATE_TAKE_PHOTO].ToString(),
+                     reader[KEY_ALAMAT_PHOTO].ToString(), reader[KEY_DATE_UPLOAD_PHOTO].ToString(),
+                     reader[KEY_FOTO].ToString(), reader[KEY_KETERANGAN].ToString());
+                reader.Close();
+                return photoActivity;
+            }
+            reader.Close();
             return null;
         }
         public static List<PhotoActivity> ReadAllPhotoActivity()
         {
-            return null;
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_PHOTO;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<PhotoActivity> photoActivities = new List<PhotoActivity>();
+            while (reader.Read())
+            {
+                 photoActivities.Add(new PhotoActivity(int.Parse(reader[KEY_KODE_PHOTO].ToString()),
+                    int.Parse(reader[KEY_KODE_USER].ToString()), int.Parse(reader[KEY_KODE_OUTLET].ToString()),
+                     int.Parse(reader[KEY_KODE_KOMPETITOR].ToString()), int.Parse(reader[KEY_JENIS_PHOTO].ToString()),
+                     reader[KEY_NAMA_PHOTO].ToString(), reader[KEY_DATE_TAKE_PHOTO].ToString(),
+                     reader[KEY_ALAMAT_PHOTO].ToString(), reader[KEY_DATE_UPLOAD_PHOTO].ToString(),
+                     reader[KEY_FOTO].ToString(), reader[KEY_KETERANGAN].ToString()));
+            }
+            reader.Close();
+            return photoActivities;
         }
         public static void UpdatePhotoActivity(PhotoActivity photoActivity)
         {
-
+            CreateOrReadDB();
+            string sql = "update " + TABLE_PHOTO + " set " + KEY_KODE_USER + " = " + photoActivity.getKd_user() +
+                ", " + KEY_KODE_OUTLET + " = " + photoActivity.getKd_outlet() + ", " + KEY_KODE_KOMPETITOR + " = " + photoActivity.getKd_kompetitor() +
+                ", " + KEY_JENIS_PHOTO + " = " + photoActivity.getKd_tipe() + ", " + KEY_NAMA_PHOTO + " = '" + photoActivity.getNama() +
+                "', " + KEY_DATE_TAKE_PHOTO + " = '" + photoActivity.getTgl_take() + "', " + KEY_ALAMAT_PHOTO + " = '" + photoActivity.getAlamat() +
+                "', " + KEY_DATE_UPLOAD_PHOTO + " = '" + photoActivity.getTgl_upload() + "', " + KEY_FOTO + " = '" + photoActivity.getFoto() +
+                "', " + KEY_KETERANGAN + " = '" + photoActivity.getKeterangan() + "' where " + KEY_KODE_PHOTO + " = " + photoActivity.getId();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         #endregion
         #region Product

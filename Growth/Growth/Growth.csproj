@@ -144,6 +144,7 @@
     <Compile Include="Master\PhotoActivity.cs" />
     <Compile Include="Master\Product.cs" />
     <Compile Include="Master\TakeOrder.cs" />
+    <Compile Include="Master\Test.cs" />
     <Compile Include="Master\Tipe.cs" />
     <Compile Include="Master\TipePhoto.cs" />
     <Compile Include="Master\User.cs" />
