@@ -828,23 +828,80 @@ namespace Growth.Helper
         #region User
         public static void InsertUser(User user)
         {
-
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_USER + " values ("
+                + user.getKode() + ", " + user.getKodeRole() + ", " + user.getKd_kota()
+                + ", " + user.getKd_area() + ", '" + user.getNIK() + "', '"
+                + user.getNama() + "', '" + user.getAlamat() + "', '" + user.getTelepon() + "', '" + user.getPath_foto() +
+                "', '" + user.getUsername() + "', '" + user.getPassword() + "', '" + user.getEmail() +
+                "', " + user.getStatus() + ", " + user.getToleransi() + ", '" + user.getGcmId() + "')";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static void DeleteUser(int id)
         {
-
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_USER + " WHERE " + KEY_KODE_USER + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static User ReadUser(int id)
         {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_USER + " WHERE " + KEY_KODE_USER + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                User user = new User(int.Parse(reader[KEY_KODE_USER].ToString()),
+                    int.Parse(reader[KEY_KODE_ROLE].ToString()), int.Parse(reader[KEY_KODE_KOTA].ToString()),
+                     int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NIK].ToString(),
+                     reader[KEY_NAMA_USER].ToString(), reader[KEY_ALAMAT_USER].ToString(),
+                     reader[KEY_TELEPON].ToString(), reader[KEY_FOTO].ToString(),
+                     reader[KEY_USERNAME].ToString(), reader[KEY_PASSWORD].ToString(),
+                     reader[KEY_EMAIL].ToString(), int.Parse(reader[KEY_STATUS].ToString()),
+                     reader[KEY_GCMID].ToString(), int.Parse(reader[KEY_TOLERANSI].ToString()));
+                reader.Close();
+                return user;
+            }
+            reader.Close();
             return null;
         }
         public static List<User> ReadAllUser()
         {
-            return null;
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_USER;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<User> users = new List<User>();
+            while (reader.Read())
+            {
+                users.Add(new User(int.Parse(reader[KEY_KODE_USER].ToString()),
+                    int.Parse(reader[KEY_KODE_ROLE].ToString()), int.Parse(reader[KEY_KODE_KOTA].ToString()),
+                     int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NIK].ToString(),
+                     reader[KEY_NAMA_USER].ToString(), reader[KEY_ALAMAT_USER].ToString(),
+                     reader[KEY_TELEPON].ToString(), reader[KEY_FOTO].ToString(),
+                     reader[KEY_USERNAME].ToString(), reader[KEY_PASSWORD].ToString(),
+                     reader[KEY_EMAIL].ToString(), int.Parse(reader[KEY_STATUS].ToString()),
+                     reader[KEY_GCMID].ToString(), int.Parse(reader[KEY_TOLERANSI].ToString())));
+            }
+            reader.Close();
+            return users;
         }
         public static void UpdateUser(User user)
         {
-
+            CreateOrReadDB();
+            string sql = "update " + TABLE_USER + " set " + KEY_KODE_ROLE + " = " + user.getKodeRole() + 
+                ", " + KEY_KODE_KOTA + " = " + user.getKd_kota() +
+                ", " + KEY_KODE_AREA + " = " + user.getKd_area() + ", " + KEY_NIK + " = '" + user.getNIK() +
+                "', " + KEY_NAMA_USER + " = '" + user.getNama() + "', " + KEY_ALAMAT_USER + " = '" + user.getAlamat() +
+                "', " + KEY_TELEPON + " = '" + user.getTelepon() + "', " + KEY_FOTO + " = '" + user.getPath_foto() +
+                "', " + KEY_USERNAME + " = '" + user.getUsername() + "', " + KEY_PASSWORD + " = '" + user.getPassword() +
+                "', " + KEY_EMAIL + " = '" + user.getEmail() + "', " + KEY_STATUS + " = " + user.getStatus() +
+                ", " + KEY_TOLERANSI + " = " + user.getToleransi() + ", " + KEY_GCMID + " = '" + user.getGcmId() +
+                "' where " + KEY_KODE_USER + " = " + user.getKode();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         #endregion
         #region VisitPlan

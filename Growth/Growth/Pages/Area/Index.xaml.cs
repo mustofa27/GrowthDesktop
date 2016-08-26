@@ -32,6 +32,9 @@ namespace Growth.Pages.Area
             //SQLiteDBHelper.InsertTipe(new Tipe(2, "testing2"));
             //SQLiteDBHelper.InsertPhotoActivity(new PhotoActivity(1, 1, 1, 1, 1, "outlet1", "sby", "A", "08977907097", "sukses", "0.912594"));
             //SQLiteDBHelper.InsertPhotoActivity(new PhotoActivity(2, 1, 1, 1, 1, "outlet2", "sby", "A", "08977907097", "sukses", "0.912594"));
+            //SQLiteDBHelper.InsertUser(new User(1, 1, 1, 1, "nik", "ahmad", "Alamat", "08977907097", "foto", "username","pass","mail",1, "gcm", 1));
+            //SQLiteDBHelper.InsertUser(new User(2, 1, 1, 1, "nik", "mustofa", "Alamat", "08977907097", "foto", "username", "pass", "mail", 1, "gcm", 1));
+
         }
 
         public void Done(string res)
@@ -43,15 +46,15 @@ namespace Growth.Pages.Area
         {
             //ConnectionHelper.DownloadPageAsync("http://demo.growth.co.id/login/keira/asd",this);
             //ConnectionHelper.PostToPage("http://demo.growth.co.id/setIdGCM", this);
-            Master.Tipe city = SQLiteDBHelper.ReadTipe(1);
-            city.setNm_tipe("edit baru");
-            SQLiteDBHelper.UpdateTipe(city);
-            test.Text = SQLiteDBHelper.ReadProduct(1).getNm_produk();
-            //List<Tipe> cities = SQLiteDBHelper.ReadAllTipe();
-            //foreach (var city in cities)
-            //{
-            //    test.Text += ' ' + city.getNm_tipe();
-            //}
+            Master.User city = SQLiteDBHelper.ReadUser(1);
+            city.setNama("edit baru");
+            SQLiteDBHelper.UpdateUser(city);
+            test.Text = SQLiteDBHelper.ReadUser(1).getNama();
+            List<User> cities = SQLiteDBHelper.ReadAllUser();
+            foreach (var x in cities)
+            {
+                test.Text += ' ' + x.getNama();
+            }
             //Test foo = new Test(1, "desc 1", "testing1");
             //test.Text = "";
             //foreach (var prop in foo.GetType().GetProperties())

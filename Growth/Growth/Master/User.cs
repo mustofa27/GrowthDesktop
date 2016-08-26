@@ -24,7 +24,7 @@ namespace Growth.Master
         private string gcmId;
         private int toleransi;
         public User(int kode, int kodeRole, int kd_kota, int kd_area,string NIK, string nama, string alamat, string telepon, string path_foto,
-                    string username, string password, string email, int status, string gcmId)
+                    string username, string password, string email, int status, string gcmId, int toleransi)
         {
             setKode(kode);
             setKodeRole(kodeRole);
@@ -40,6 +40,7 @@ namespace Growth.Master
             setEmail(email);
             setStatus(status);
             setGcmId(gcmId);
+            setToleransi(toleransi);
         }
         public User(string username, string password)
         {
