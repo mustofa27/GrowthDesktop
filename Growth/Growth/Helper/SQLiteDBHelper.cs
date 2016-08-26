@@ -160,7 +160,7 @@ namespace Growth.Helper
                             + KEY_NAMA_AREA + " TEXT NOT NULL)");
                 sqlList.Add("CREATE TABLE IF NOT EXISTS " + TABLE_LOGGING +
                             "(" + KEY_KODE_LOGGING + " INTEGER PRIMARY KEY NOT NULL,"
-                            + KEY_DESCRIPTION + " INTEGER NOT NULL,"
+                            + KEY_DESCRIPTION + " TEXT NOT NULL,"
                             + KEY_LOG_TIME + " TEXT NOT NULL)");
                 sqlList.Add("CREATE TABLE IF NOT EXISTS " + TABLE_DISTRIBUTOR +
                             "(" + KEY_ID_DISTRIBUTOR + " INTEGER PRIMARY KEY NOT NULL,"
@@ -365,7 +365,7 @@ namespace Growth.Helper
         public static void UpdateCompetitor(Competitor competitor)
         {
             CreateOrReadDB();
-            string sql = "update " + TABLE_COMPETITOR + " set " + KEY_KODE_KOTA + " = " + competitor.getKd_kota() 
+            string sql = "update " + TABLE_COMPETITOR + "set " + KEY_KODE_KOTA + " = " + competitor.getKd_kota() 
                 + ", " + KEY_NAMA_COMPETITOR + " = '" + competitor.getNm_competitor() + "', " + KEY_ALAMAT_COMPETITOR 
                 + " = '" + competitor.getAlamat() + "' where " + KEY_KODE_COMPETITOR + " = " + competitor.getId();
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
@@ -375,45 +375,121 @@ namespace Growth.Helper
         #region Distributor
         public static void InsertDistributor(Distributor distributor)
         {
-
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_DISTRIBUTOR + " (" + KEY_ID_DISTRIBUTOR + ", " + KEY_KODE_DISTRIBUTOR +
+                ", " + KEY_KODE_TIPE + ", " + KEY_KODE_KOTA + ", " + KEY_NAMA_DISTRIBUTOR + ", " + KEY_ALAMAT_DISTRIBUTOR +
+                ", " + KEY_TELEPON_DISTRIBUTOR + ") values ("
+                + distributor.getId() + ", '" + distributor.getKd_dist() + "', " + distributor.getKd_tipe() 
+                + ", " + distributor.getKd_kota() + ", '" + distributor.getNm_dist() + "', '"
+                + distributor.getAlmt_dist() + "', '" + distributor.getTelp_dist() + "')";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static void DeleteDistributor(int id)
         {
-
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_DISTRIBUTOR + " WHERE " + KEY_ID_DISTRIBUTOR + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static Distributor ReadDistributor(int id)
         {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_DISTRIBUTOR + " WHERE " + KEY_ID_DISTRIBUTOR + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                Distributor distributor = new Distributor(int.Parse(reader[KEY_ID_DISTRIBUTOR].ToString()),
+                    reader[KEY_KODE_DISTRIBUTOR].ToString(), reader[KEY_KODE_TIPE].ToString()
+                    , int.Parse(reader[KEY_KODE_KOTA].ToString()),reader[KEY_NAMA_DISTRIBUTOR].ToString()
+                    , reader[KEY_ALAMAT_DISTRIBUTOR].ToString(), reader[KEY_TELEPON_DISTRIBUTOR].ToString());
+                reader.Close();
+                return distributor;
+            }
+            reader.Close();
             return null;
         }
         public static List<Distributor> ReadAllDistributor()
         {
-            return null;
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_DISTRIBUTOR;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<Distributor> distributors = new List<Distributor>();
+            if (reader.Read())
+            {
+                distributors.Add(new Distributor(int.Parse(reader[KEY_ID_DISTRIBUTOR].ToString()),
+                    reader[KEY_KODE_DISTRIBUTOR].ToString(), reader[KEY_KODE_TIPE].ToString()
+                    , int.Parse(reader[KEY_KODE_KOTA].ToString()), reader[KEY_NAMA_DISTRIBUTOR].ToString()
+                    , reader[KEY_ALAMAT_DISTRIBUTOR].ToString(), reader[KEY_TELEPON_DISTRIBUTOR].ToString()));
+            }
+            reader.Close();
+            return distributors;
         }
         public static void UpdateDistributor(Distributor distributor)
         {
-
+            CreateOrReadDB();
+            string sql = "update " + TABLE_DISTRIBUTOR + "set " + KEY_KODE_DISTRIBUTOR + " = '"+ distributor.getKd_dist() +
+                "', " + KEY_KODE_TIPE + " = '" + distributor.getKd_tipe() + "', " + KEY_KODE_KOTA + " = " + distributor.getKd_kota() +
+                ", " + KEY_NAMA_DISTRIBUTOR + " = '" + distributor.getNm_dist() + "', " + KEY_ALAMAT_DISTRIBUTOR + " = '"+ distributor.getAlmt_dist() +
+                "', " + KEY_TELEPON_DISTRIBUTOR + " = '"+ distributor.getTelp_dist() + "' where " + KEY_ID_DISTRIBUTOR + " = " + distributor.getId();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         #endregion
         #region Logging
         public static void InsertLogging(Logging logging)
         {
-
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_LOGGING + "(" + KEY_KODE_LOGGING + ", " + KEY_DESCRIPTION + ", " + KEY_LOG_TIME
+                + ") values (" + logging.getKd_logging() + ", '" + logging.getDescription() + "', '" + logging.getLog_time() + "')";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static void DeleteLogging(int id)
         {
-
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_LOGGING + " WHERE " + KEY_KODE_LOGGING + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static Logging ReadLogging(int id)
         {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_LOGGING + " WHERE " + KEY_KODE_LOGGING + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                Logging logging = new Logging(int.Parse(reader[KEY_KODE_LOGGING].ToString()), reader[KEY_DESCRIPTION].ToString(), reader[KEY_LOG_TIME].ToString());
+                reader.Close();
+                return logging;
+            }
+            reader.Close();
             return null;
         }
         public static List<Logging> ReadAllLogging()
         {
-            return null;
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_LOGGING;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<Logging> loggings = new List<Logging>();
+            while (reader.Read())
+            {
+                loggings.Add(new Logging(int.Parse(reader[KEY_KODE_LOGGING].ToString()), reader[KEY_DESCRIPTION].ToString(), reader[KEY_LOG_TIME].ToString()));
+            }
+            reader.Close();
+            return loggings;
         }
         public static void UpdateLogging(Logging logging)
         {
-
+            CreateOrReadDB();
+            string sql = "update " + TABLE_LOGGING + " set " + KEY_DESCRIPTION + " = '" + logging.getDescription()+ "', " + 
+                KEY_LOG_TIME + " = '" + logging.getLog_time() + "' where " + KEY_KODE_LOGGING + " = " + logging.getKd_logging();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         #endregion
         #region Outlet

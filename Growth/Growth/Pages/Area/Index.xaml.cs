@@ -26,8 +26,8 @@ namespace Growth.Pages.Area
         public Index()
         {
             InitializeComponent();
-            //SQLiteDBHelper.InsertCity(new City(1, 1, "testing1"));
-            //SQLiteDBHelper.InsertCity(new City(2, 2, "testing1"));
+            //SQLiteDBHelper.InsertLogging(new Logging(1, "desc 1", "testing1"));
+            //SQLiteDBHelper.InsertLogging(new Logging(2, "desc 2", "testing1"));
             //SQLiteDBHelper.InsertCompetitor(new Competitor(1, 1, "testing1", "testing1"));
             //SQLiteDBHelper.InsertCompetitor(new Competitor(2, 2, "testing1", "testing1"));
         }
@@ -41,15 +41,15 @@ namespace Growth.Pages.Area
         {
             //ConnectionHelper.DownloadPageAsync("http://demo.growth.co.id/login/keira/asd",this);
             //ConnectionHelper.PostToPage("http://demo.growth.co.id/setIdGCM", this);
-            Master.Competitor city = SQLiteDBHelper.ReadCompetitor(1);
-            city.setNm_competitor("edit baru");
-            SQLiteDBHelper.UpdateCompetitor(city);
-            test.Text = SQLiteDBHelper.ReadCompetitor(1).getNm_competitor();
-            //List<Competitor> cities = SQLiteDBHelper.ReadAllCompetitor();
-            //foreach (var city in cities)
-            //{
-            //    test.Text += ' ' + city.getNm_competitor();
-            //}
+            //Master.Logging city = SQLiteDBHelper.ReadLogging(1);
+            //city.setDescription("edit baru");
+            //SQLiteDBHelper.UpdateLogging(city);
+            //test.Text = SQLiteDBHelper.ReadLogging(1).getDescription();
+            List<Logging> cities = SQLiteDBHelper.ReadAllLogging();
+            foreach (var city in cities)
+            {
+                test.Text += ' ' + city.getDescription();
+            }
         }
     }
 }
