@@ -14,8 +14,8 @@ namespace Growth.Master
         private int kode_user;
         private int tipe;
         private int status_area;
-        private string nama, namaPIC, alamat, rank, telpon, reg_status, longitude, latitude, telpPIC, foto;
-        public Outlet(int kd, int kd_kota, int kd_user, int kode_distributor, string nama, string alamat, int tipe, string rank, string telpon, string reg_status, string latitude, string longitude, string namaPIC, string telpPIC)
+        private string nama, namaPIC, alamat, rank, telpon, reg_status, longitude, latitude, telpPIC/*, foto*/;
+        public Outlet(int kd, int kd_kota, int kd_user, int kode_distributor, string nama, string alamat, int tipe, string rank, string telpon, string reg_status, string latitude, string longitude, string namaPIC, string telpPIC, int status_area)
         {
             setKode(kd);
             setKode_kota(kd_kota);
@@ -31,6 +31,7 @@ namespace Growth.Master
             setLongitude(longitude);
             setNamaPIC(namaPIC);
             setTelpPIC(telpPIC);
+            setStatus_area(status_area);
         }
 
         public string getTelpPIC()

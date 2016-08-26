@@ -113,7 +113,7 @@ namespace Growth.Helper
                             + KEY_KODE_USER + " INTEGER NOT NULL,"
                             + KEY_NAMA_OUTLET + " TEXT NOT NULL,"
                             + KEY_ALAMAT_OUTLET + " TEXT NOT NULL,"
-                            + KEY_TIPE_OUTLET + " TEXT NOT NULL,"
+                            + KEY_TIPE_OUTLET + " INTEGER NOT NULL,"
                             + KEY_RANK_OUTLET + " TEXT NOT NULL,"
                             + KEY_TELP_OUTLET + " TEXT NOT NULL,"
                             + KEY_REGISTER_STATUS + " TEXT NOT NULL,"
@@ -495,23 +495,83 @@ namespace Growth.Helper
         #region Outlet
         public static void InsertOutlet(Outlet outlet)
         {
-
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_OUTLET + " (" + KEY_KODE_OUTLET + ", " + KEY_KODE_DISTRIBUTOR +
+                ", " + KEY_KODE_KOTA + ", " + KEY_KODE_USER + ", " + KEY_NAMA_OUTLET + ", " + KEY_ALAMAT_OUTLET +
+                ", " + KEY_TIPE_OUTLET + ", " + KEY_RANK_OUTLET + ", " + KEY_TELP_OUTLET + ", " + KEY_REGISTER_STATUS +
+                ", " + KEY_LATITUDE + ", " + KEY_LONGITUDE + ", " + KEY_NMPIC + ", " + KEY_TLPPIC +
+                ", " + KEY_STATUS_AREA + ") values ("
+                + outlet.getKode() + ", " + outlet.getKode_distributor() + ", " + outlet.getKode_kota()
+                + ", " + outlet.getKode_user() + ", '" + outlet.getNama() + "', '"
+                + outlet.getAlamat() + "', " + outlet.getTipe() + ", '" + outlet.getRank() + "', '" + outlet.getTelpon() +
+                "', '" + outlet.getReg_status() + "', '" + outlet.getLatitude() + "', '" + outlet.getLongitude() +
+                "', '" + outlet.getNamaPIC() + "', '" + outlet.getTelpPIC() + "', " + outlet.getStatus_area() + ")";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static void DeleteOutlet(int id)
         {
-
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_OUTLET + " WHERE " + KEY_KODE_OUTLET + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static Outlet ReadOutlet(int id)
         {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_OUTLET + " WHERE " + KEY_KODE_OUTLET + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                Outlet outlet = new Outlet(int.Parse(reader[KEY_KODE_OUTLET].ToString()),
+                    int.Parse(reader[KEY_KODE_DISTRIBUTOR].ToString()), int.Parse(reader[KEY_KODE_KOTA].ToString()),
+                     int.Parse(reader[KEY_KODE_USER].ToString()), reader[KEY_NAMA_OUTLET].ToString(),
+                     reader[KEY_ALAMAT_OUTLET].ToString(), int.Parse(reader[KEY_TIPE_OUTLET].ToString()),
+                     reader[KEY_RANK_OUTLET].ToString(), reader[KEY_TELP_OUTLET].ToString(),
+                     reader[KEY_REGISTER_STATUS].ToString(), reader[KEY_LATITUDE].ToString(),
+                     reader[KEY_LONGITUDE].ToString(), reader[KEY_NMPIC].ToString(),
+                     reader[KEY_TLPPIC].ToString(), int.Parse(reader[KEY_STATUS_AREA].ToString()));
+                reader.Close();
+                return outlet;
+            }
+            reader.Close();
             return null;
         }
         public static List<Outlet> ReadAllOutlet()
         {
-            return null;
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_OUTLET;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<Outlet> outlets = new List<Outlet>();
+            while (reader.Read())
+            {
+                 outlets.Add(new Outlet(int.Parse(reader[KEY_KODE_OUTLET].ToString()),
+                    int.Parse(reader[KEY_KODE_DISTRIBUTOR].ToString()), int.Parse(reader[KEY_KODE_KOTA].ToString()),
+                     int.Parse(reader[KEY_KODE_USER].ToString()), reader[KEY_NAMA_OUTLET].ToString(),
+                     reader[KEY_ALAMAT_OUTLET].ToString(), int.Parse(reader[KEY_TIPE_OUTLET].ToString()),
+                     reader[KEY_RANK_OUTLET].ToString(), reader[KEY_TELP_OUTLET].ToString(),
+                     reader[KEY_REGISTER_STATUS].ToString(), reader[KEY_LATITUDE].ToString(),
+                     reader[KEY_LONGITUDE].ToString(), reader[KEY_NMPIC].ToString(),
+                     reader[KEY_TLPPIC].ToString(), int.Parse(reader[KEY_STATUS_AREA].ToString())));
+            }
+            reader.Close();
+            return outlets;
         }
         public static void UpdateOutlet(Outlet outlet)
         {
-
+            CreateOrReadDB();
+            string sql = "update " + TABLE_OUTLET + " set " + KEY_KODE_DISTRIBUTOR + " = " + outlet.getKode_distributor() +
+                ", " + KEY_KODE_KOTA + " = " + outlet.getKode_kota() + ", " + KEY_KODE_USER + " = " + outlet.getKode_user() +
+                ", " + KEY_NAMA_OUTLET + " = '" + outlet.getNama() + "', " + KEY_ALAMAT_OUTLET + " = '" + outlet.getAlamat() +
+                "', " + KEY_TIPE_OUTLET + " = " + outlet.getTipe() + ", " + KEY_RANK_OUTLET + " = '" + outlet.getRank() +
+                "', " + KEY_TELP_OUTLET + " = '" + outlet.getTelpon() + "', " + KEY_REGISTER_STATUS + " = '" + outlet.getReg_status() +
+                "', " + KEY_LATITUDE + " = '" + outlet.getLatitude() + "', " + KEY_LONGITUDE + " = '" + outlet.getLongitude() +
+                "', " + KEY_NMPIC + " = '" + outlet.getNamaPIC() + "', " + KEY_TLPPIC + " = '" + outlet.getTelpPIC() +
+                "', " + KEY_STATUS_AREA + " = " + outlet.getStatus_area() + " where " + KEY_KODE_OUTLET + " = " + outlet.getKode();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         #endregion
         #region PhotoActivity
