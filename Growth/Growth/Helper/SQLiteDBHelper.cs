@@ -365,7 +365,7 @@ namespace Growth.Helper
         public static void UpdateCompetitor(Competitor competitor)
         {
             CreateOrReadDB();
-            string sql = "update " + TABLE_COMPETITOR + "set " + KEY_KODE_KOTA + " = " + competitor.getKd_kota() 
+            string sql = "update " + TABLE_COMPETITOR + " set " + KEY_KODE_KOTA + " = " + competitor.getKd_kota() 
                 + ", " + KEY_NAMA_COMPETITOR + " = '" + competitor.getNm_competitor() + "', " + KEY_ALAMAT_COMPETITOR 
                 + " = '" + competitor.getAlamat() + "' where " + KEY_KODE_COMPETITOR + " = " + competitor.getId();
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
@@ -379,8 +379,8 @@ namespace Growth.Helper
             string sql = "insert into " + TABLE_DISTRIBUTOR + " (" + KEY_ID_DISTRIBUTOR + ", " + KEY_KODE_DISTRIBUTOR +
                 ", " + KEY_KODE_TIPE + ", " + KEY_KODE_KOTA + ", " + KEY_NAMA_DISTRIBUTOR + ", " + KEY_ALAMAT_DISTRIBUTOR +
                 ", " + KEY_TELEPON_DISTRIBUTOR + ") values ("
-                + distributor.getId() + ", '" + distributor.getKd_dist() + "', " + distributor.getKd_tipe() 
-                + ", " + distributor.getKd_kota() + ", '" + distributor.getNm_dist() + "', '"
+                + distributor.getId() + ", '" + distributor.getKd_dist() + "', '" + distributor.getKd_tipe() 
+                + "', " + distributor.getKd_kota() + ", '" + distributor.getNm_dist() + "', '"
                 + distributor.getAlmt_dist() + "', '" + distributor.getTelp_dist() + "')";
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             command.ExecuteNonQuery();
@@ -417,7 +417,7 @@ namespace Growth.Helper
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             SQLiteDataReader reader = command.ExecuteReader();
             List<Distributor> distributors = new List<Distributor>();
-            if (reader.Read())
+            while (reader.Read())
             {
                 distributors.Add(new Distributor(int.Parse(reader[KEY_ID_DISTRIBUTOR].ToString()),
                     reader[KEY_KODE_DISTRIBUTOR].ToString(), reader[KEY_KODE_TIPE].ToString()
@@ -430,7 +430,7 @@ namespace Growth.Helper
         public static void UpdateDistributor(Distributor distributor)
         {
             CreateOrReadDB();
-            string sql = "update " + TABLE_DISTRIBUTOR + "set " + KEY_KODE_DISTRIBUTOR + " = '"+ distributor.getKd_dist() +
+            string sql = "update " + TABLE_DISTRIBUTOR + " set " + KEY_KODE_DISTRIBUTOR + " = '"+ distributor.getKd_dist() +
                 "', " + KEY_KODE_TIPE + " = '" + distributor.getKd_tipe() + "', " + KEY_KODE_KOTA + " = " + distributor.getKd_kota() +
                 ", " + KEY_NAMA_DISTRIBUTOR + " = '" + distributor.getNm_dist() + "', " + KEY_ALAMAT_DISTRIBUTOR + " = '"+ distributor.getAlmt_dist() +
                 "', " + KEY_TELEPON_DISTRIBUTOR + " = '"+ distributor.getTelp_dist() + "' where " + KEY_ID_DISTRIBUTOR + " = " + distributor.getId();

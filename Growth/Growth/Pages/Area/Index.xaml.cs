@@ -28,8 +28,8 @@ namespace Growth.Pages.Area
             InitializeComponent();
             //SQLiteDBHelper.InsertLogging(new Logging(1, "desc 1", "testing1"));
             //SQLiteDBHelper.InsertLogging(new Logging(2, "desc 2", "testing1"));
-            //SQLiteDBHelper.InsertCompetitor(new Competitor(1, 1, "testing1", "testing1"));
-            //SQLiteDBHelper.InsertCompetitor(new Competitor(2, 2, "testing1", "testing1"));
+            //SQLiteDBHelper.InsertDistributor(new Distributor(1, "dist", "Distributor", 1, "testing1", "testing1", "089098098709"));
+            //SQLiteDBHelper.InsertDistributor(new Distributor(2, "dist", "Distributor", 1, "testing2", "testing1", "089098098709"));
         }
 
         public void Done(string res)
@@ -41,15 +41,15 @@ namespace Growth.Pages.Area
         {
             //ConnectionHelper.DownloadPageAsync("http://demo.growth.co.id/login/keira/asd",this);
             //ConnectionHelper.PostToPage("http://demo.growth.co.id/setIdGCM", this);
-            //Master.Logging city = SQLiteDBHelper.ReadLogging(1);
-            //city.setDescription("edit baru");
-            //SQLiteDBHelper.UpdateLogging(city);
-            //test.Text = SQLiteDBHelper.ReadLogging(1).getDescription();
-            List<Logging> cities = SQLiteDBHelper.ReadAllLogging();
-            foreach (var city in cities)
-            {
-                test.Text += ' ' + city.getDescription();
-            }
+            Master.Distributor city = SQLiteDBHelper.ReadDistributor(1);
+            city.setNm_dist("edit baru");
+            SQLiteDBHelper.UpdateDistributor(city);
+            test.Text = SQLiteDBHelper.ReadDistributor(1).getNm_dist();
+            //List<Distributor> cities = SQLiteDBHelper.ReadAllDistributor();
+            //foreach (var city in cities)
+            //{
+            //    test.Text += ' ' + city.getNm_dist();
+            //}
         }
     }
 }
