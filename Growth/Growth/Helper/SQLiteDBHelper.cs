@@ -40,6 +40,7 @@ namespace Growth.Helper
                 KEY_TLPPIC = "latitude",
                 KEY_REGISTER_STATUS = "reg_status",
                 KEY_STATUS_AREA = "status_area",
+                KEY_KODE_POS = "kode_pos",
                 TABLE_PHOTO = "photo",
                 KEY_KODE_PHOTO = "kd_photo",
                 KEY_KODE_KOMPETITOR = "kd_kompetitor",
@@ -71,6 +72,13 @@ namespace Growth.Helper
                 KEY_DATE_VISITING = "date_visiting",
                 KEY_SKIP_ORDER_REASON = "skip_order_reason",
                 KEY_SKIP_REASON = "skip_reason",
+                TABLE_TAKE_ORDER = "TakeOrder",
+                KEY_KODE_TAKE_ORDER = "kd_take_order",
+                KEY_KD_TO = "kd_to",
+                KEY_QUANTITY = "qty",
+                KEY_SATUAN = "satuan",
+                KEY_DATE_ORDER = "date_order",
+                KEY_STATUS_ORDER = "status_order",
                 TABLE_DISTRIBUTOR = "Distributor",
                 KEY_ID_DISTRIBUTOR = "id",
                 KEY_KODE_DISTRIBUTOR = "kd_dist",
@@ -92,7 +100,7 @@ namespace Growth.Helper
                 KEY_KODE_PRODUK = "kd_produk",
                 KEY_NAMA_PRODUK = "nm_produk",
                 TABLE_KONFIGURASI = "Konfigurasi",
-                KEY_STATUS_APP = "status_app";
+                KEY_TOLERANSI_MAX = "toleransi_max";
         #endregion
         static void CreateOrReadDB()
         {
@@ -117,9 +125,12 @@ namespace Growth.Helper
                             + KEY_TIPE_OUTLET + " INTEGER NOT NULL,"
                             + KEY_RANK_OUTLET + " TEXT NOT NULL,"
                             + KEY_TELP_OUTLET + " TEXT NOT NULL,"
+                            + KEY_KODE_POS + "TEXT NOT NULL,"
                             + KEY_REGISTER_STATUS + " TEXT NOT NULL,"
                             + KEY_LATITUDE + " TEXT NOT NULL,"
                             + KEY_LONGITUDE + " TEXT NOT NULL,"
+                            + KEY_TOLERANSI + "INTEGER NOT NULL,"
+                            + KEY_FOTO + "TEXT NOT NULL,"
                             + KEY_NMPIC + " TEXT NOT NULL,"
                             + KEY_TLPPIC + " TEXT NOT NULL,"
                             + KEY_STATUS_AREA + " INTEGER NOT NULL)");
@@ -198,8 +209,17 @@ namespace Growth.Helper
                             + KEY_DATE_VISITING + " TEXT NOT NULL,"
                             + KEY_SKIP_ORDER_REASON + " TEXT NOT NULL,"
                             + KEY_SKIP_REASON + " TEXT NOT NULL)");
+                sqlList.Add("CREATE TABLE IF NOT EXISTS " + TABLE_TAKE_ORDER +
+                            "(" + KEY_KODE_TAKE_ORDER + " INTEGER PRIMARY KEY NOT NULL,"
+                            + KEY_KD_TO + " TEXT NOT NULL,"
+                            + KEY_KODE_VISITPLAN + " INTEGER NOT NULL,"
+                            + KEY_KODE_PRODUK + " INTEGER NOT NULL,"
+                            + KEY_QUANTITY + " INTEGER NOT NULL,"
+                            + KEY_SATUAN + " TEXT NOT NULL,"
+                            + KEY_DATE_ORDER + " TEXT NOT NULL,"
+                            + KEY_STATUS_ORDER + " INTEGER NOT NULL)");
                 sqlList.Add("CREATE TABLE IF NOT EXISTS " + TABLE_KONFIGURASI +
-                            "(" + KEY_STATUS_APP + " INTEGER DEFAULT 0)");
+                            "(" + KEY_TOLERANSI_MAX + " INTEGER DEFAULT 0)");
                 foreach (var sql in sqlList)
                 {
                     SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
@@ -502,16 +522,12 @@ namespace Growth.Helper
         public static void InsertOutlet(Outlet outlet)
         {
             CreateOrReadDB();
-            string sql = "insert into " + TABLE_OUTLET + " (" + KEY_KODE_OUTLET + ", " + KEY_KODE_DISTRIBUTOR +
-                ", " + KEY_KODE_KOTA + ", " + KEY_KODE_USER + ", " + KEY_NAMA_OUTLET + ", " + KEY_ALAMAT_OUTLET +
-                ", " + KEY_TIPE_OUTLET + ", " + KEY_RANK_OUTLET + ", " + KEY_TELP_OUTLET + ", " + KEY_REGISTER_STATUS +
-                ", " + KEY_LATITUDE + ", " + KEY_LONGITUDE + ", " + KEY_NMPIC + ", " + KEY_TLPPIC +
-                ", " + KEY_STATUS_AREA + ") values ("
+            string sql = "insert into " + TABLE_OUTLET + " values ("
                 + outlet.getKode() + ", " + outlet.getKode_distributor() + ", " + outlet.getKode_kota()
                 + ", " + outlet.getKode_user() + ", '" + outlet.getNama() + "', '"
-                + outlet.getAlamat() + "', " + outlet.getTipe() + ", '" + outlet.getRank() + "', '" + outlet.getTelpon() +
-                "', '" + outlet.getReg_status() + "', '" + outlet.getLatitude() + "', '" + outlet.getLongitude() +
-                "', '" + outlet.getNamaPIC() + "', '" + outlet.getTelpPIC() + "', " + outlet.getStatus_area() + ")";
+                + outlet.getAlamat() + "', " + outlet.getTipe() + ", '" + outlet.getRank() + "', '" + outlet.getTelpon() + "', '" + outlet.getKodepos() +
+                "', '" + outlet.getReg_status() + "', '" + outlet.getLatitude() + "', '" + outlet.getLongitude() + "', " + outlet.getToleransi() + ", '" + outlet.getFoto()
+                + "', '" + outlet.getNamaPIC() + "', '" + outlet.getTelpPIC() + "', " + outlet.getStatus_area() + ")";
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             command.ExecuteNonQuery();
         }
@@ -535,9 +551,9 @@ namespace Growth.Helper
                      int.Parse(reader[KEY_KODE_USER].ToString()), reader[KEY_NAMA_OUTLET].ToString(),
                      reader[KEY_ALAMAT_OUTLET].ToString(), int.Parse(reader[KEY_TIPE_OUTLET].ToString()),
                      reader[KEY_RANK_OUTLET].ToString(), reader[KEY_TELP_OUTLET].ToString(),
-                     reader[KEY_REGISTER_STATUS].ToString(), reader[KEY_LATITUDE].ToString(),
-                     reader[KEY_LONGITUDE].ToString(), reader[KEY_NMPIC].ToString(),
-                     reader[KEY_TLPPIC].ToString(), int.Parse(reader[KEY_STATUS_AREA].ToString()));
+                     reader[KEY_REGISTER_STATUS].ToString(), reader[KEY_KODE_POS].ToString(), reader[KEY_LATITUDE].ToString(),
+                     reader[KEY_LONGITUDE].ToString(), int.Parse(reader[KEY_TOLERANSI].ToString()), reader[KEY_FOTO].ToString(),
+                     reader[KEY_NMPIC].ToString(), reader[KEY_TLPPIC].ToString(), int.Parse(reader[KEY_STATUS_AREA].ToString()));
                 reader.Close();
                 return outlet;
             }
@@ -558,9 +574,9 @@ namespace Growth.Helper
                      int.Parse(reader[KEY_KODE_USER].ToString()), reader[KEY_NAMA_OUTLET].ToString(),
                      reader[KEY_ALAMAT_OUTLET].ToString(), int.Parse(reader[KEY_TIPE_OUTLET].ToString()),
                      reader[KEY_RANK_OUTLET].ToString(), reader[KEY_TELP_OUTLET].ToString(),
-                     reader[KEY_REGISTER_STATUS].ToString(), reader[KEY_LATITUDE].ToString(),
-                     reader[KEY_LONGITUDE].ToString(), reader[KEY_NMPIC].ToString(),
-                     reader[KEY_TLPPIC].ToString(), int.Parse(reader[KEY_STATUS_AREA].ToString())));
+                     reader[KEY_REGISTER_STATUS].ToString(), reader[KEY_KODE_POS].ToString(), reader[KEY_LATITUDE].ToString(),
+                     reader[KEY_LONGITUDE].ToString(), int.Parse(reader[KEY_TOLERANSI].ToString()), reader[KEY_FOTO].ToString(),
+                     reader[KEY_NMPIC].ToString(), reader[KEY_TLPPIC].ToString(), int.Parse(reader[KEY_STATUS_AREA].ToString())));
             }
             reader.Close();
             return outlets;
@@ -573,8 +589,9 @@ namespace Growth.Helper
                 ", " + KEY_NAMA_OUTLET + " = '" + outlet.getNama() + "', " + KEY_ALAMAT_OUTLET + " = '" + outlet.getAlamat() +
                 "', " + KEY_TIPE_OUTLET + " = " + outlet.getTipe() + ", " + KEY_RANK_OUTLET + " = '" + outlet.getRank() +
                 "', " + KEY_TELP_OUTLET + " = '" + outlet.getTelpon() + "', " + KEY_REGISTER_STATUS + " = '" + outlet.getReg_status() +
-                "', " + KEY_LATITUDE + " = '" + outlet.getLatitude() + "', " + KEY_LONGITUDE + " = '" + outlet.getLongitude() +
-                "', " + KEY_NMPIC + " = '" + outlet.getNamaPIC() + "', " + KEY_TLPPIC + " = '" + outlet.getTelpPIC() +
+                "', " + KEY_KODE_POS + " = '" + outlet.getKodepos() + "', " + KEY_LATITUDE + " = '" + outlet.getLatitude() + 
+                "', " + KEY_LONGITUDE + " = '" + outlet.getLongitude() + "', " + KEY_TOLERANSI + " = " + outlet.getToleransi() +
+                ", " + KEY_FOTO + " = '" + outlet.getFoto() + "', " + KEY_NMPIC + " = '" + outlet.getNamaPIC() + "', " + KEY_TLPPIC + " = '" + outlet.getTelpPIC() +
                 "', " + KEY_STATUS_AREA + " = " + outlet.getStatus_area() + " where " + KEY_KODE_OUTLET + " = " + outlet.getKode();
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             command.ExecuteNonQuery();
@@ -708,23 +725,66 @@ namespace Growth.Helper
         #region TakeOrder
         public static void InsertTakeOrder(TakeOrder takeOrder)
         {
-
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_TAKE_ORDER + " values ("
+                + takeOrder.getId() + ", '" + takeOrder.getKd_to() + "', " + takeOrder.getKd_visit()
+                + ", " + takeOrder.getKd_produk() + ", " + takeOrder.getQty() + ", '"
+                + takeOrder.getSatuan() + "', '" + takeOrder.getDate_order() + "', " + takeOrder.getStatus() + ")";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static void DeleteTakeOrder(int id)
         {
-
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_TAKE_ORDER + " WHERE " + KEY_KODE_TAKE_ORDER + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static TakeOrder ReadTakeOrder(int id)
         {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_TAKE_ORDER + " WHERE " + KEY_KODE_TAKE_ORDER + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                TakeOrder takeOrder = new TakeOrder(int.Parse(reader[KEY_KODE_TAKE_ORDER].ToString()),
+                    reader[KEY_KD_TO].ToString(), int.Parse(reader[KEY_KODE_VISITPLAN].ToString()),
+                    int.Parse(reader[KEY_KODE_PRODUK].ToString()),int.Parse(reader[KEY_QUANTITY].ToString()),
+                    reader[KEY_SATUAN].ToString(), reader[KEY_DATE_ORDER].ToString(), int.Parse(reader[KEY_STATUS_ORDER].ToString()));
+                reader.Close();
+                return takeOrder;
+            }
+            reader.Close();
             return null;
         }
-        public static List<TakeOrder> ReadTakeOrder()
+        public static List<TakeOrder> ReadAllTakeOrder()
         {
-            return null;
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_TAKE_ORDER;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<TakeOrder> takeOrders = new List<TakeOrder>();
+            while (reader.Read())
+            {
+                takeOrders.Add(new TakeOrder(int.Parse(reader[KEY_KODE_TAKE_ORDER].ToString()),
+                    reader[KEY_KD_TO].ToString(), int.Parse(reader[KEY_KODE_VISITPLAN].ToString()),
+                    int.Parse(reader[KEY_KODE_PRODUK].ToString()), int.Parse(reader[KEY_QUANTITY].ToString()),
+                    reader[KEY_SATUAN].ToString(), reader[KEY_DATE_ORDER].ToString(), int.Parse(reader[KEY_STATUS_ORDER].ToString())));
+            }
+            reader.Close();
+            return takeOrders;
         }
         public static void UpdateTakeOrder(TakeOrder takeOrder)
         {
-
+            CreateOrReadDB();
+            string sql = "update " + TABLE_TAKE_ORDER + " set " + KEY_KD_TO + " = '" + takeOrder.getKd_to() +
+                "', " + KEY_KODE_VISITPLAN + " = " + takeOrder.getKd_visit() + ", " + KEY_KODE_PRODUK + " = " + takeOrder.getKd_produk() +
+                ", " + KEY_QUANTITY + " = " + takeOrder.getQty() + ", " + KEY_SATUAN + " = '" + takeOrder.getSatuan() +
+                "', " + KEY_DATE_ORDER + " = '" + takeOrder.getDate_order() + "', " + KEY_STATUS_ORDER + " = " + takeOrder.getStatus() +
+                " where " + KEY_KODE_TAKE_ORDER + " = " + takeOrder.getId();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         #endregion
         #region Tipe
@@ -974,6 +1034,37 @@ namespace Growth.Helper
                 "', " + KEY_APPROVE_VISIT + " = " + visitPlan.getApprove_visit() + ", " + KEY_STATUS_VISIT + " = " + visitPlan.getStatus_visit() +
                 ", " + KEY_DATE_VISITING + " = '" + visitPlan.getDate_visiting() + "', " + KEY_SKIP_ORDER_REASON + " = '" + visitPlan.getSkip_order_reason() +
                 "', " + KEY_SKIP_REASON + " = '" + visitPlan.getSkip_reason() + "' where " + KEY_KODE_VISITPLAN + " = " + visitPlan.getKd_visit();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
+        }
+        #endregion
+        #region Konfigurasi
+        public static void InsertKonfigurasi(int toleransi_max)
+        {
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_KONFIGURASI + " values (" + toleransi_max + ")";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
+        }
+        public static int ReadKonfigurasi()
+        {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_KONFIGURASI;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                int toleransi = int.Parse(reader[KEY_TOLERANSI_MAX].ToString());
+                reader.Close();
+                return toleransi;
+            }
+            reader.Close();
+            return 0;
+        }
+        public static void UpdateKonfigurasi(int toleransi_max)
+        {
+            CreateOrReadDB();
+            string sql = "update " + TABLE_KONFIGURASI + " set " + KEY_TOLERANSI_MAX + " = " + toleransi_max;
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             command.ExecuteNonQuery();
         }

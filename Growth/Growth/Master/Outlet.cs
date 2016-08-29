@@ -13,9 +13,9 @@ namespace Growth.Master
         private int kode_distributor;
         private int kode_user;
         private int tipe;
-        private int status_area;
-        private string nama, namaPIC, alamat, rank, telpon, reg_status, longitude, latitude, telpPIC/*, foto*/;
-        public Outlet(int kd, int kd_kota, int kd_user, int kode_distributor, string nama, string alamat, int tipe, string rank, string telpon, string reg_status, string latitude, string longitude, string namaPIC, string telpPIC, int status_area)
+        private int status_area,toleransi;
+        private string nama, namaPIC, alamat, rank, telpon, reg_status,kodepos, longitude, latitude, telpPIC, foto;
+        public Outlet(int kd, int kd_kota, int kd_user, int kode_distributor, string nama, string alamat, int tipe, string rank, string telpon, string reg_status, string kodepos, string latitude, string longitude, int toleransi, string foto, string namaPIC, string telpPIC, int status_area)
         {
             setKode(kd);
             setKode_kota(kd_kota);
@@ -32,6 +32,9 @@ namespace Growth.Master
             setNamaPIC(namaPIC);
             setTelpPIC(telpPIC);
             setStatus_area(status_area);
+            setFoto(foto);
+            setKodepos(kodepos);
+            setToleransi(toleransi);
         }
 
         public string getTelpPIC()
@@ -42,6 +45,26 @@ namespace Growth.Master
         public void setTelpPIC(string telpPIC)
         {
             this.telpPIC = telpPIC;
+        }
+
+        public string getKodepos()
+        {
+            return kodepos;
+        }
+
+        public void setKodepos(string kodepos)
+        {
+            this.kodepos = kodepos;
+        }
+
+        public string getFoto()
+        {
+            return foto;
+        }
+
+        public void setFoto(string foto)
+        {
+            this.foto = foto;
         }
 
         public string getNamaPIC()
@@ -63,6 +86,17 @@ namespace Growth.Master
         {
             this.status_area = status_area;
         }
+
+        public int getToleransi()
+        {
+            return toleransi;
+        }
+
+        public void setToleransi(int toleransi)
+        {
+            this.toleransi = toleransi;
+        }
+
         public int getKode()
         {
             return kode;

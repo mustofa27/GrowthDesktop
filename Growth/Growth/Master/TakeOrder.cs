@@ -9,10 +9,11 @@ namespace Growth.Master
     class TakeOrder
     {
         private int id, kd_visit, kd_produk, qty, status;
-        private string date_order, satuan;
-        public TakeOrder(int id, int kd_visit, int kd_produk, int qty, int status, string date_order, string satuan)
+        private string date_order, satuan, kd_to;
+        public TakeOrder(int id, string kd_to, int kd_visit, int kd_produk, int qty, string satuan, string date_order, int status)
         {
             setId(id);
+            setKd_to(kd_to);
             setKd_visit(kd_visit);
             setKd_produk(kd_produk);
             setQty(qty);
@@ -49,6 +50,11 @@ namespace Growth.Master
         public void setDate_order(string date_order)
         {
             this.date_order = date_order;
+        }
+
+        public void setKd_to(string kd_to)
+        {
+            this.kd_to = kd_to;
         }
 
         public void setSatuan(string satuan)
@@ -89,6 +95,11 @@ namespace Growth.Master
         public string getSatuan()
         {
             return satuan;
+        }
+
+        public string getKd_to()
+        {
+            return kd_to;
         }
     }
 }
