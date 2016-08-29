@@ -194,7 +194,7 @@ namespace Growth.Helper
                             + KEY_STATUS_VISIT + " INTEGER NOT NULL,"
                             + KEY_DATE_VISITING + " TEXT NOT NULL,"
                             + KEY_SKIP_ORDER_REASON + " TEXT NOT NULL,"
-                            + KEY_SKIP_REASON + " REAL NOT NULL)");
+                            + KEY_SKIP_REASON + " TEXT NOT NULL)");
                 sqlList.Add("CREATE TABLE IF NOT EXISTS " + TABLE_KONFIGURASI +
                             "(" + KEY_STATUS_APP + " INTEGER DEFAULT 0)");
                 foreach (var sql in sqlList)
@@ -907,23 +907,69 @@ namespace Growth.Helper
         #region VisitPlan
         public static void InsertVisitPlan(VisitPlan visitPlan)
         {
-
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_VISITPLAN + " values ("
+                + visitPlan.getKd_visit() + ", " + visitPlan.getKd_outlet() + ", '" + visitPlan.getDate_visit()
+                + "', '" + visitPlan.getDate_created() + "', " + visitPlan.getApprove_visit() + ", "
+                + visitPlan.getStatus_visit() + ", '" + visitPlan.getDate_visiting() + "', '" + visitPlan.getSkip_order_reason() 
+                + "', '" + visitPlan.getSkip_reason() + "')";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static void DeleteVisitPlan(int id)
         {
-
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_VISITPLAN + " WHERE " + KEY_KODE_VISITPLAN + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         public static VisitPlan ReadVisitPlan(int id)
         {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_VISITPLAN + " WHERE " + KEY_KODE_VISITPLAN + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                VisitPlan visitPlan = new VisitPlan(int.Parse(reader[KEY_KODE_VISITPLAN].ToString()),
+                    int.Parse(reader[KEY_KODE_OUTLET].ToString()), reader[KEY_DATE_VISIT].ToString(),
+                     reader[KEY_DATE_CREATE_VISIT].ToString(), int.Parse(reader[KEY_APPROVE_VISIT].ToString()),
+                     int.Parse(reader[KEY_STATUS_VISIT].ToString()), reader[KEY_DATE_VISITING].ToString(), 
+                     reader[KEY_SKIP_ORDER_REASON].ToString(),reader[KEY_SKIP_REASON].ToString());
+                reader.Close();
+                return visitPlan;
+            }
+            reader.Close();
             return null;
         }
-        public static List<VisitPlan> ReadVisitPlan()
+        public static List<VisitPlan> ReadAllVisitPlan()
         {
-            return null;
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_VISITPLAN;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<VisitPlan> visitPlans = new List<VisitPlan>();
+            while (reader.Read())
+            {
+                visitPlans.Add(new VisitPlan(int.Parse(reader[KEY_KODE_VISITPLAN].ToString()),
+                    int.Parse(reader[KEY_KODE_OUTLET].ToString()), reader[KEY_DATE_VISIT].ToString(),
+                     reader[KEY_DATE_CREATE_VISIT].ToString(), int.Parse(reader[KEY_APPROVE_VISIT].ToString()),
+                     int.Parse(reader[KEY_STATUS_VISIT].ToString()), reader[KEY_DATE_VISITING].ToString(),
+                     reader[KEY_SKIP_ORDER_REASON].ToString(), reader[KEY_SKIP_REASON].ToString()));
+            }
+            reader.Close();
+            return visitPlans;
         }
         public static void UpdateVisitPlan(VisitPlan visitPlan)
         {
-
+            CreateOrReadDB();
+            string sql = "update " + TABLE_VISITPLAN + " set " + KEY_KODE_OUTLET + " = " + visitPlan.getKd_outlet() +
+                ", " + KEY_DATE_VISIT + " = '" + visitPlan.getDate_visit() + "', " + KEY_DATE_CREATE_VISIT + " = '" + visitPlan.getDate_created() +
+                "', " + KEY_APPROVE_VISIT + " = " + visitPlan.getApprove_visit() + ", " + KEY_STATUS_VISIT + " = " + visitPlan.getStatus_visit() +
+                ", " + KEY_DATE_VISITING + " = '" + visitPlan.getDate_visiting() + "', " + KEY_SKIP_ORDER_REASON + " = '" + visitPlan.getSkip_order_reason() +
+                "', " + KEY_SKIP_REASON + " = '" + visitPlan.getSkip_reason() + "' where " + KEY_KODE_VISITPLAN + " = " + visitPlan.getKd_visit();
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
         }
         #endregion
         #endregion

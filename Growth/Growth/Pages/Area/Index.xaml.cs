@@ -32,8 +32,8 @@ namespace Growth.Pages.Area
             //SQLiteDBHelper.InsertTipe(new Tipe(2, "testing2"));
             //SQLiteDBHelper.InsertPhotoActivity(new PhotoActivity(1, 1, 1, 1, 1, "outlet1", "sby", "A", "08977907097", "sukses", "0.912594"));
             //SQLiteDBHelper.InsertPhotoActivity(new PhotoActivity(2, 1, 1, 1, 1, "outlet2", "sby", "A", "08977907097", "sukses", "0.912594"));
-            //SQLiteDBHelper.InsertUser(new User(1, 1, 1, 1, "nik", "ahmad", "Alamat", "08977907097", "foto", "username","pass","mail",1, "gcm", 1));
-            //SQLiteDBHelper.InsertUser(new User(2, 1, 1, 1, "nik", "mustofa", "Alamat", "08977907097", "foto", "username", "pass", "mail", 1, "gcm", 1));
+            SQLiteDBHelper.InsertVisitPlan(new VisitPlan(1, 1, "nik", "ahmad",1,1, "Alamat", "08977907097", "foto"));
+            SQLiteDBHelper.InsertVisitPlan(new VisitPlan(2, 1, "nik", "mustofa", 1, 1, "Alamat", "08977907097", "foto"));
 
         }
 
@@ -46,14 +46,14 @@ namespace Growth.Pages.Area
         {
             //ConnectionHelper.DownloadPageAsync("http://demo.growth.co.id/login/keira/asd",this);
             //ConnectionHelper.PostToPage("http://demo.growth.co.id/setIdGCM", this);
-            Master.User city = SQLiteDBHelper.ReadUser(1);
-            city.setNama("edit baru");
-            SQLiteDBHelper.UpdateUser(city);
-            test.Text = SQLiteDBHelper.ReadUser(1).getNama();
-            List<User> cities = SQLiteDBHelper.ReadAllUser();
+            Master.VisitPlan city = SQLiteDBHelper.ReadVisitPlan(1);
+            city.setDate_created("ahmad ganteng");
+            SQLiteDBHelper.UpdateVisitPlan(city);
+            test.Text = SQLiteDBHelper.ReadVisitPlan(1).getDate_created();
+            List<VisitPlan> cities = SQLiteDBHelper.ReadAllVisitPlan();
             foreach (var x in cities)
             {
-                test.Text += ' ' + x.getNama();
+                test.Text += ' ' + x.getDate_created();
             }
             //Test foo = new Test(1, "desc 1", "testing1");
             //test.Text = "";
