@@ -32,8 +32,8 @@ namespace Growth.Pages.Area
             //SQLiteDBHelper.InsertTipe(new Tipe(2, "testing2"));
             //SQLiteDBHelper.InsertPhotoActivity(new PhotoActivity(1, 1, 1, 1, 1, "outlet1", "sby", "A", "08977907097", "sukses", "0.912594"));
             //SQLiteDBHelper.InsertPhotoActivity(new PhotoActivity(2, 1, 1, 1, 1, "outlet2", "sby", "A", "08977907097", "sukses", "0.912594"));
-            SQLiteDBHelper.InsertVisitPlan(new VisitPlan(1, 1, "nik", "ahmad",1,1, "Alamat", "08977907097", "foto"));
-            SQLiteDBHelper.InsertVisitPlan(new VisitPlan(2, 1, "nik", "mustofa", 1, 1, "Alamat", "08977907097", "foto"));
+            //SQLiteDBHelper.InsertVisitPlan(new VisitPlan(1, 1, "nik", "ahmad",1,1, "Alamat", "08977907097", "foto"));
+            //SQLiteDBHelper.InsertVisitPlan(new VisitPlan(2, 1, "nik", "mustofa", 1, 1, "Alamat", "08977907097", "foto"));
 
         }
 
@@ -46,21 +46,23 @@ namespace Growth.Pages.Area
         {
             //ConnectionHelper.DownloadPageAsync("http://demo.growth.co.id/login/keira/asd",this);
             //ConnectionHelper.PostToPage("http://demo.growth.co.id/setIdGCM", this);
-            Master.VisitPlan city = SQLiteDBHelper.ReadVisitPlan(1);
-            city.setDate_created("ahmad ganteng");
-            SQLiteDBHelper.UpdateVisitPlan(city);
-            test.Text = SQLiteDBHelper.ReadVisitPlan(1).getDate_created();
-            List<VisitPlan> cities = SQLiteDBHelper.ReadAllVisitPlan();
-            foreach (var x in cities)
-            {
-                test.Text += ' ' + x.getDate_created();
-            }
+            //Master.VisitPlan city = SQLiteDBHelper.ReadVisitPlan(1);
+            //city.setDate_created("ahmad ganteng");
+            //SQLiteDBHelper.UpdateVisitPlan(city);
+            //test.Text = SQLiteDBHelper.ReadVisitPlan(1).getDate_created();
+            //List<VisitPlan> cities = SQLiteDBHelper.ReadAllVisitPlan();
+            //foreach (var x in cities)
+            //{
+            //    test.Text += ' ' + x.getDate_created();
+            //}
             //Test foo = new Test(1, "desc 1", "testing1");
             //test.Text = "";
             //foreach (var prop in foo.GetType().GetProperties())
             //{
             //    test.Text += prop.Name.ToString() + " " + prop.PropertyType.ToString() + "  " + prop.GetValue(foo, null).ToString() + "\n";
             //}
+            ConnectionHandler con = new ConnectionHandler(this);
+            con.getAllData();
         }
     }
 }
