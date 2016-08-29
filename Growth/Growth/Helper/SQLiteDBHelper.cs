@@ -26,6 +26,7 @@ namespace Growth.Helper
                 KEY_KODE_LOGGING = "kd_logging",
                 KEY_DESCRIPTION = "description",
                 KEY_LOG_TIME = "log_time",
+                KEY_DETAIL_AKSES = "detail_akses",
                 TABLE_OUTLET = "outlet",
                 KEY_KODE_OUTLET = "kd_outlet",
                 KEY_NAMA_OUTLET = "nm_outlet",
@@ -160,8 +161,10 @@ namespace Growth.Helper
                             + KEY_NAMA_AREA + " TEXT NOT NULL)");
                 sqlList.Add("CREATE TABLE IF NOT EXISTS " + TABLE_LOGGING +
                             "(" + KEY_KODE_LOGGING + " INTEGER PRIMARY KEY NOT NULL,"
+                            + KEY_KODE_USER + " INTEGER PRIMARY KEY NOT NULL,"
                             + KEY_DESCRIPTION + " TEXT NOT NULL,"
-                            + KEY_LOG_TIME + " TEXT NOT NULL)");
+                            + KEY_LOG_TIME + " TEXT NOT NULL,"
+                            + KEY_DETAIL_AKSES + " TEXT NOT NULL)");
                 sqlList.Add("CREATE TABLE IF NOT EXISTS " + TABLE_DISTRIBUTOR +
                             "(" + KEY_ID_DISTRIBUTOR + " INTEGER PRIMARY KEY NOT NULL,"
                             + KEY_KODE_DISTRIBUTOR + " TEXT NOT NULL,"
@@ -442,8 +445,8 @@ namespace Growth.Helper
         public static void InsertLogging(Logging logging)
         {
             CreateOrReadDB();
-            string sql = "insert into " + TABLE_LOGGING + "(" + KEY_KODE_LOGGING + ", " + KEY_DESCRIPTION + ", " + KEY_LOG_TIME
-                + ") values (" + logging.getKd_logging() + ", '" + logging.getDescription() + "', '" + logging.getLog_time() + "')";
+            string sql = "insert into " + TABLE_LOGGING + " values (" + logging.getKd_logging() + ", " + logging.getKd_user() +
+                ", '" + logging.getDescription() + "', '" + logging.getLog_time() + "', '" + logging.getDetail_akses() + "')";
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             command.ExecuteNonQuery();
         }
@@ -462,7 +465,8 @@ namespace Growth.Helper
             SQLiteDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
-                Logging logging = new Logging(int.Parse(reader[KEY_KODE_LOGGING].ToString()), reader[KEY_DESCRIPTION].ToString(), reader[KEY_LOG_TIME].ToString());
+                Logging logging = new Logging(int.Parse(reader[KEY_KODE_LOGGING].ToString()), int.Parse(reader[KEY_KODE_USER].ToString()),
+                    reader[KEY_DESCRIPTION].ToString(), reader[KEY_LOG_TIME].ToString(), reader[KEY_DETAIL_AKSES].ToString());
                 reader.Close();
                 return logging;
             }
@@ -478,7 +482,8 @@ namespace Growth.Helper
             List<Logging> loggings = new List<Logging>();
             while (reader.Read())
             {
-                loggings.Add(new Logging(int.Parse(reader[KEY_KODE_LOGGING].ToString()), reader[KEY_DESCRIPTION].ToString(), reader[KEY_LOG_TIME].ToString()));
+                loggings.Add(new Logging(int.Parse(reader[KEY_KODE_LOGGING].ToString()), int.Parse(reader[KEY_KODE_USER].ToString()),
+                    reader[KEY_DESCRIPTION].ToString(), reader[KEY_LOG_TIME].ToString(), reader[KEY_DETAIL_AKSES].ToString()));
             }
             reader.Close();
             return loggings;
@@ -486,8 +491,9 @@ namespace Growth.Helper
         public static void UpdateLogging(Logging logging)
         {
             CreateOrReadDB();
-            string sql = "update " + TABLE_LOGGING + " set " + KEY_DESCRIPTION + " = '" + logging.getDescription()+ "', " + 
-                KEY_LOG_TIME + " = '" + logging.getLog_time() + "' where " + KEY_KODE_LOGGING + " = " + logging.getKd_logging();
+            string sql = "update " + TABLE_LOGGING + " set " + KEY_KODE_USER + " = " + logging.getKd_user() + ", " + 
+                KEY_DESCRIPTION + " = '" + logging.getDescription()+ "', " + KEY_LOG_TIME + " = '" + logging.getLog_time() + "', " +
+                KEY_DETAIL_AKSES + " = '" + logging.getDetail_akses() + "' where " + KEY_KODE_LOGGING + " = " + logging.getKd_logging();
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             command.ExecuteNonQuery();
         }
