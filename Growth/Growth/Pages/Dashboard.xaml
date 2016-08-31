@@ -28,13 +28,13 @@
                         </StackPanel>
                     </Grid>
                     <Grid>
-                        <ListView Margin="15" ItemsSource="{Binding ViewList.View}">
+                        <ListView x:Name="listSales" Margin="15">
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn Header="#" Width="50" DisplayMemberBinding="{Binding Name}"/>
-                                    <GridViewColumn Header="Nama Sales Force" Width="300" DisplayMemberBinding="{Binding Name}" />
+                                    <GridViewColumn Header="#" Width="50"/>
+                                    <GridViewColumn Header="Nama Sales Force" Width="300" DisplayMemberBinding="{Binding Name}"/>
                                     <GridViewColumn Header="Area" Width="250" DisplayMemberBinding="{Binding Area}" />
-                                    <GridViewColumn Header="Total Visit" Width="250" DisplayMemberBinding="{Binding Total}" />
+                                    <GridViewColumn Header="Total Visit" Width="250" DisplayMemberBinding="{Binding TotalVisit}" />
                                     <GridViewColumn Header="Effective Call" Width="250" DisplayMemberBinding="{Binding EffectiveCall}" />
                                 </GridView>
                             </ListView.View>
@@ -51,7 +51,7 @@
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                 <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14"
-                                           Margin="0 0 5 0">Finised Visit Plan This Month</TextBlock>
+                                           Margin="0 0 5 0">Finished Visit Plan This Month</TextBlock>
                                 <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14">( Bulan )</TextBlock>
                             </StackPanel>
                         </StackPanel>

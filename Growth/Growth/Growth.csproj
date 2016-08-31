@@ -120,6 +120,7 @@
     </Compile>
     <Compile Include="Helper\ConnectionHandler.cs" />
     <Compile Include="Helper\ConnectionHelper.cs" />
+    <Compile Include="Helper\IndexConverter.cs" />
     <Compile Include="Helper\SQLiteDBHelper.cs" />
     <Compile Include="Interfaces\Callback.cs" />
     <Compile Include="MainWindow.xaml.cs">
