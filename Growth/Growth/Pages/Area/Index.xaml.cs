@@ -14,6 +14,10 @@ namespace Growth.Pages.Area
         public Index()
         {
             InitializeComponent();
+            //SQLiteDBHelper.InsertArea(new Master.Area(1, "EJ1", "Jawa Timur"));
+            //SQLiteDBHelper.InsertArea(new Master.Area(2, "EJ2", "Jawa Timur"));
+            //SQLiteDBHelper.InsertArea(new Master.Area(3, "WJ1", "Jawa Barat"));
+            //SQLiteDBHelper.InsertArea(new Master.Area(4, "MJ", "Jawa Tengah"));
             //SQLiteDBHelper.InsertProduct(new Product(1, "desc 1", "testing1"));
             //SQLiteDBHelper.InsertProduct(new Product(2, "desc 2", "testing1"));
             //SQLiteDBHelper.InsertTipe(new Tipe(1, "testing1"));

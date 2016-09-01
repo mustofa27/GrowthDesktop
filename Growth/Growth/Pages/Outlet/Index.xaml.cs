@@ -14,22 +14,17 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Growth.Helper;
 
-namespace Growth.Pages.Area
+namespace Growth.Pages.Outlet
 {
     /// <summary>
-    /// Interaction logic for Area.xaml
+    /// Interaction logic for Index.xaml
     /// </summary>
-    public partial class Area : Page
+    public partial class Index : Page
     {
-        public Area()
+        public Index()
         {
             InitializeComponent();
             listArea.ItemsSource = SQLiteDBHelper.ReadAllArea();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Uri("/Pages/Area/Form.xaml", UriKind.Relative));
         }
     }
 }

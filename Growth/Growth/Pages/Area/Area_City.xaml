@@ -4,12 +4,38 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Growth.Pages.Area"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
       mc:Ignorable="d" 
       d:DesignHeight="484" d:DesignWidth="1136"
       Title="Area_City">
 
-    <Grid>
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
         <StackPanel Orientation="Vertical">
+            <ListView x:Name="listArea" Margin="0 0 0 0" TextElement.FontSize="13" Foreground="Black">
+                <ListView.View>
+                    <GridView>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style>
+                                <Setter Property="TextElement.FontSize" Value="15" />
+                                <Setter Property="TextElement.FontWeight" Value="Bold"/>
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
+                        <GridViewColumn Header="Kode Area" Width="274" DisplayMemberBinding="{Binding Kode_area}" />
+                        <GridViewColumn Header="Nama Area" Width="274" DisplayMemberBinding="{Binding Nama_area}" />
+                        <GridViewColumn Header="Nama Kota" Width="274" DisplayMemberBinding="{Binding Nama_kota}" />
+                        <GridViewColumn Header="Action" Width="274">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
+                                        <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </StackPanel>
     </Grid>
 </Page>

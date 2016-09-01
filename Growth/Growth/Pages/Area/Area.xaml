@@ -2,7 +2,8 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
       xmlns:local="clr-namespace:Growth.Pages.Area"
       mc:Ignorable="d" 
       d:DesignHeight="484" d:DesignWidth="1136"
@@ -10,13 +11,28 @@
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
         <StackPanel Orientation="Vertical">
-            <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5">Tambah Area</Button>
-            <ListView x:Name="listSales" Margin="0 15 0 0">
+            <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" Click="Button_Click">Tambah Area</Button>
+            <ListView x:Name="listArea" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Kode Area" Width="366" DisplayMemberBinding="{Binding Date_visiting}" />
-                        <GridViewColumn Header="Nama Area" Width="365" DisplayMemberBinding="{Binding Date_created}" />
-                        <GridViewColumn Header="Action" Width="365"/>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style>
+                                <Setter Property="TextElement.FontSize" Value="15" />
+                                <Setter Property="TextElement.FontWeight" Value="Bold"/>
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
+                        <GridViewColumn Header="Kode Area" Width="366" DisplayMemberBinding="{Binding Kode}" />
+                        <GridViewColumn Header="Nama Area" Width="365" DisplayMemberBinding="{Binding Nama}" />
+                        <GridViewColumn Header="Action" Width="365">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
+                                        <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>

@@ -35,5 +35,10 @@ namespace Growth
         {
             mainFrame.Navigate(new Uri("/Pages/Dashboard.xaml", UriKind.Relative));
         }
+
+        private void outlet_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new Uri("/Pages/Outlet/Index.xaml", UriKind.Relative));
+        }
     }
 }

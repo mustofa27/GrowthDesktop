@@ -55,3 +55,7 @@ E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Area.g.cs
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Area_City.g.cs
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Area.baml
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Area_City.baml
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Form.g.cs
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Form.baml
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\Index.g.cs
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\Index.baml

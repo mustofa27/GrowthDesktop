@@ -28,9 +28,15 @@
                         </StackPanel>
                     </Grid>
                     <Grid>
-                        <ListView x:Name="listSales" Margin="15">
+                        <ListView x:Name="listSales" Margin="15" TextElement.FontSize="13" Foreground="Black">
                             <ListView.View>
                                 <GridView>
+                                    <GridView.ColumnHeaderContainerStyle>
+                                        <Style>
+                                            <Setter Property="TextElement.FontSize" Value="15" />
+                                            <Setter Property="TextElement.FontWeight" Value="Bold"/>
+                                        </Style>
+                                    </GridView.ColumnHeaderContainerStyle>
                                     <GridViewColumn Header="#" Width="50" DisplayMemberBinding="{Binding Kd_visit}"/>
                                     <GridViewColumn Header="Nama Sales Force" Width="300" DisplayMemberBinding="{Binding Date_created}"/>
                                     <GridViewColumn Header="Area" Width="250" DisplayMemberBinding="{Binding Date_visiting}" />

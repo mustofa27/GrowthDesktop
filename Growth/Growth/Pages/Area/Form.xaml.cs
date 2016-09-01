@@ -12,24 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Growth.Helper;
 
 namespace Growth.Pages.Area
 {
     /// <summary>
-    /// Interaction logic for Area.xaml
+    /// Interaction logic for Form.xaml
     /// </summary>
-    public partial class Area : Page
+    public partial class Form : Page
     {
-        public Area()
+        public Form()
         {
             InitializeComponent();
-            listArea.ItemsSource = SQLiteDBHelper.ReadAllArea();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Uri("/Pages/Area/Form.xaml", UriKind.Relative));
         }
     }
 }

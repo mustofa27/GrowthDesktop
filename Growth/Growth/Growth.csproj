@@ -134,11 +134,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Area\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Area\Index.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Outlet\Index.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,11 +171,17 @@
     <Compile Include="Pages\Area\Area_City.xaml.cs">
       <DependentUpon>Area_City.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Area\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Area\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Outlet\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -215,7 +229,6 @@
     <Folder Include="Pages\Configuration\" />
     <Folder Include="Pages\Distributor\" />
     <Folder Include="Pages\ExportImport\" />
-    <Folder Include="Pages\Outlet\" />
     <Folder Include="Pages\PhotoActivity\" />
     <Folder Include="Pages\Produk\" />
     <Folder Include="Pages\Report\" />
