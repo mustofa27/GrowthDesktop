@@ -9,7 +9,8 @@ namespace Growth.Master
     class Competitor
     {
         private int id, kd_kota;
-
+        public int Id { get { return id; } set { id = value; } }
+        public int Kd_kota { get { return kd_kota; } set { kd_kota = value; } }
         public string getNm_competitor()
         {
             return nm_competitor;

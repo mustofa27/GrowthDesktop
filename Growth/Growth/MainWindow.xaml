@@ -305,7 +305,7 @@
             <Rectangle HorizontalAlignment="Stretch" Fill="White" Height="1"/>
         </Menu>
         <Frame x:Name="mainFrame"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
-                        Source="/Pages/Dashboard.xaml" Margin="190 72 0 52">
+                        Source="/Pages/Dashboard.xaml" Margin="190 72 0 52" NavigationUIVisibility="Hidden">
 
         </Frame>
         <Grid

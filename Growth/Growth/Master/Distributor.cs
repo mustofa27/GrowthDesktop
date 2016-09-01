@@ -10,6 +10,98 @@ namespace Growth.Master
     {
         private int id, kd_kota;
         private string kd_dist, kd_tipe, nm_dist, almt_dist, telp_dist;
+
+        public int Kd_kota
+        {
+            get
+            {
+                return kd_kota;
+            }
+
+            set
+            {
+                kd_kota = value;
+            }
+        }
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string Kd_dist
+        {
+            get
+            {
+                return kd_dist;
+            }
+
+            set
+            {
+                kd_dist = value;
+            }
+        }
+
+        public string Kd_tipe
+        {
+            get
+            {
+                return kd_tipe;
+            }
+
+            set
+            {
+                kd_tipe = value;
+            }
+        }
+
+        public string Nm_dist
+        {
+            get
+            {
+                return nm_dist;
+            }
+
+            set
+            {
+                nm_dist = value;
+            }
+        }
+
+        public string Almt_dist
+        {
+            get
+            {
+                return almt_dist;
+            }
+
+            set
+            {
+                almt_dist = value;
+            }
+        }
+
+        public string Telp_dist
+        {
+            get
+            {
+                return telp_dist;
+            }
+
+            set
+            {
+                telp_dist = value;
+            }
+        }
+
         public Distributor(int id, string kd_dist, string kd_tipe, int kd_kota, string nm_dist, string almt_dist, string telp_dist)
         {
             setId(id);

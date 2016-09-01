@@ -11,6 +11,32 @@ namespace Growth.Master
         private int id;
         private string nama_tipe;
 
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string Nama_tipe
+        {
+            get
+            {
+                return nama_tipe;
+            }
+
+            set
+            {
+                nama_tipe = value;
+            }
+        }
+
         public TipePhoto(int id, string nama_tipe)
         {
             this.id = id;

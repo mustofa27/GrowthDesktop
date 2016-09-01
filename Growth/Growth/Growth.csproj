@@ -120,13 +120,20 @@
     </Compile>
     <Compile Include="Helper\ConnectionHandler.cs" />
     <Compile Include="Helper\ConnectionHelper.cs" />
-    <Compile Include="Helper\IndexConverter.cs" />
     <Compile Include="Helper\SQLiteDBHelper.cs" />
     <Compile Include="Interfaces\Callback.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Area\Area.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Area\Area_City.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Area\Index.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,6 +157,12 @@
     <Compile Include="Master\TipePhoto.cs" />
     <Compile Include="Master\User.cs" />
     <Compile Include="Master\VisitPlan.cs" />
+    <Compile Include="Pages\Area\Area.xaml.cs">
+      <DependentUpon>Area.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Area\Area_City.xaml.cs">
+      <DependentUpon>Area_City.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Area\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
     </Compile>

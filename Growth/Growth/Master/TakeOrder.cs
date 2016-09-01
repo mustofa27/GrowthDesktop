@@ -10,6 +10,111 @@ namespace Growth.Master
     {
         private int id, kd_visit, kd_produk, qty, status;
         private string date_order, satuan, kd_to;
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public int Kd_visit
+        {
+            get
+            {
+                return kd_visit;
+            }
+
+            set
+            {
+                kd_visit = value;
+            }
+        }
+
+        public int Kd_produk
+        {
+            get
+            {
+                return kd_produk;
+            }
+
+            set
+            {
+                kd_produk = value;
+            }
+        }
+
+        public int Qty
+        {
+            get
+            {
+                return qty;
+            }
+
+            set
+            {
+                qty = value;
+            }
+        }
+
+        public int Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
+
+        public string Date_order
+        {
+            get
+            {
+                return date_order;
+            }
+
+            set
+            {
+                date_order = value;
+            }
+        }
+
+        public string Satuan
+        {
+            get
+            {
+                return satuan;
+            }
+
+            set
+            {
+                satuan = value;
+            }
+        }
+
+        public string Kd_to
+        {
+            get
+            {
+                return kd_to;
+            }
+
+            set
+            {
+                kd_to = value;
+            }
+        }
+
         public TakeOrder(int id, string kd_to, int kd_visit, int kd_produk, int qty, string satuan, string date_order, int status)
         {
             setId(id);

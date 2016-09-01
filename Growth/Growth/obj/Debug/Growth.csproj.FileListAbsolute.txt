@@ -51,3 +51,7 @@ E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\System.Data.SQLite.Li
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\EntityFramework.xml
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\EntityFramework.SqlServer.xml
 E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\bin\Debug\System.Data.SQLite.xml
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Area.g.cs
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Area_City.g.cs
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Area.baml
+E:\Mustofa\Penugasan\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Area_City.baml

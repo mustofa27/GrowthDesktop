@@ -11,6 +11,71 @@ namespace Growth.Master
         private int kd_logging, kd_user;
         private string description, log_time, detail_akses;
 
+        public int Kd_logging
+        {
+            get
+            {
+                return kd_logging;
+            }
+
+            set
+            {
+                kd_logging = value;
+            }
+        }
+
+        public int Kd_user
+        {
+            get
+            {
+                return kd_user;
+            }
+
+            set
+            {
+                kd_user = value;
+            }
+        }
+
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+
+            set
+            {
+                description = value;
+            }
+        }
+
+        public string Log_time
+        {
+            get
+            {
+                return log_time;
+            }
+
+            set
+            {
+                log_time = value;
+            }
+        }
+
+        public string Detail_akses
+        {
+            get
+            {
+                return detail_akses;
+            }
+
+            set
+            {
+                detail_akses = value;
+            }
+        }
+
         public Logging(int kd_logging, int kd_user, string description, string log_time, string detail_akses)
         {
             this.kd_logging = kd_logging;

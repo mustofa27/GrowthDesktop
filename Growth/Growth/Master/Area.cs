@@ -16,7 +16,9 @@ namespace Growth.Master
             setNama(nama);
             setid(id);
         }
-
+        public int Id { set { id = value; } get { return id; } }
+        public string Nama { set { nama = value; } get { return nama; } }
+        public string Kode { set { kode = value; } get { return kode; } }
         public void setid(int id)
         {
             this.id = id;

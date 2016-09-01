@@ -23,6 +23,202 @@ namespace Growth.Master
         private string email;
         private string gcmId;
         private int toleransi;
+
+        public int Kode
+        {
+            get
+            {
+                return kode;
+            }
+
+            set
+            {
+                kode = value;
+            }
+        }
+
+        public int Kd_kota
+        {
+            get
+            {
+                return kd_kota;
+            }
+
+            set
+            {
+                kd_kota = value;
+            }
+        }
+
+        public int Kd_area
+        {
+            get
+            {
+                return kd_area;
+            }
+
+            set
+            {
+                kd_area = value;
+            }
+        }
+
+        public int KodeRole
+        {
+            get
+            {
+                return kodeRole;
+            }
+
+            set
+            {
+                kodeRole = value;
+            }
+        }
+
+        public int Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
+
+        public string NIK1
+        {
+            get
+            {
+                return NIK;
+            }
+
+            set
+            {
+                NIK = value;
+            }
+        }
+
+        public string Nama
+        {
+            get
+            {
+                return nama;
+            }
+
+            set
+            {
+                nama = value;
+            }
+        }
+
+        public string Alamat
+        {
+            get
+            {
+                return alamat;
+            }
+
+            set
+            {
+                alamat = value;
+            }
+        }
+
+        public string Telepon
+        {
+            get
+            {
+                return telepon;
+            }
+
+            set
+            {
+                telepon = value;
+            }
+        }
+
+        public string Path_foto
+        {
+            get
+            {
+                return path_foto;
+            }
+
+            set
+            {
+                path_foto = value;
+            }
+        }
+
+        public string Username
+        {
+            get
+            {
+                return username;
+            }
+
+            set
+            {
+                username = value;
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+
+            set
+            {
+                password = value;
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+
+            set
+            {
+                email = value;
+            }
+        }
+
+        public string GcmId
+        {
+            get
+            {
+                return gcmId;
+            }
+
+            set
+            {
+                gcmId = value;
+            }
+        }
+
+        public int Toleransi
+        {
+            get
+            {
+                return toleransi;
+            }
+
+            set
+            {
+                toleransi = value;
+            }
+        }
+
         public User(int kode, int kodeRole, int kd_kota, int kd_area,string NIK, string nama, string alamat, string telepon, string path_foto,
                     string username, string password, string email, int status, string gcmId, int toleransi)
         {

@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using Growth.Helper;
 using Growth.Interfaces;
+using System;
 
 namespace Growth.Pages.Area
 {
@@ -26,7 +27,7 @@ namespace Growth.Pages.Area
 
         public void Done(string res)
         {
-            test.Text = res;
+            
         }
 
         private void testing_Click(object sender, RoutedEventArgs e)
@@ -50,6 +51,16 @@ namespace Growth.Pages.Area
             //}
             ConnectionHandler con = new ConnectionHandler(this);
             con.getAllData();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            frameUtama.Navigate(new Uri("/Pages/Area/Area.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            frameUtama.Navigate(new Uri("/Pages/Area/Area_City.xaml", UriKind.Relative));
         }
     }
 }

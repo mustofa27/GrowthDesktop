@@ -10,6 +10,124 @@ namespace Growth.Master
     {
         int kd_visit, approve_visit, status_visit, kd_outlet;
         string skip_reason, skip_order_reason, date_visit, date_visiting, date_created;
+
+        public int Kd_visit
+        {
+            get
+            {
+                return kd_visit;
+            }
+
+            set
+            {
+                kd_visit = value;
+            }
+        }
+
+        public int Approve_visit
+        {
+            get
+            {
+                return approve_visit;
+            }
+
+            set
+            {
+                approve_visit = value;
+            }
+        }
+
+        public int Status_visit
+        {
+            get
+            {
+                return status_visit;
+            }
+
+            set
+            {
+                status_visit = value;
+            }
+        }
+
+        public int Kd_outlet
+        {
+            get
+            {
+                return kd_outlet;
+            }
+
+            set
+            {
+                kd_outlet = value;
+            }
+        }
+
+        public string Skip_reason
+        {
+            get
+            {
+                return skip_reason;
+            }
+
+            set
+            {
+                skip_reason = value;
+            }
+        }
+
+        public string Skip_order_reason
+        {
+            get
+            {
+                return skip_order_reason;
+            }
+
+            set
+            {
+                skip_order_reason = value;
+            }
+        }
+
+        public string Date_visit
+        {
+            get
+            {
+                return date_visit;
+            }
+
+            set
+            {
+                date_visit = value;
+            }
+        }
+
+        public string Date_visiting
+        {
+            get
+            {
+                return date_visiting;
+            }
+
+            set
+            {
+                date_visiting = value;
+            }
+        }
+
+        public string Date_created
+        {
+            get
+            {
+                return date_created;
+            }
+
+            set
+            {
+                date_created = value;
+            }
+        }
+
         public VisitPlan(int kd_visit, int kd_outlet, string date_visit)
         {
             setKd_visit(kd_visit);

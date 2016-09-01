@@ -15,6 +15,241 @@ namespace Growth.Master
         private int tipe;
         private int status_area,toleransi;
         private string nama, namaPIC, alamat, rank, telpon, reg_status,kodepos, longitude, latitude, telpPIC, foto;
+
+        public int Kode
+        {
+            get
+            {
+                return kode;
+            }
+
+            set
+            {
+                kode = value;
+            }
+        }
+
+        public int Kode_kota
+        {
+            get
+            {
+                return kode_kota;
+            }
+
+            set
+            {
+                kode_kota = value;
+            }
+        }
+
+        public int Kode_distributor
+        {
+            get
+            {
+                return kode_distributor;
+            }
+
+            set
+            {
+                kode_distributor = value;
+            }
+        }
+
+        public int Kode_user
+        {
+            get
+            {
+                return kode_user;
+            }
+
+            set
+            {
+                kode_user = value;
+            }
+        }
+
+        public int Tipe
+        {
+            get
+            {
+                return tipe;
+            }
+
+            set
+            {
+                tipe = value;
+            }
+        }
+
+        public int Status_area
+        {
+            get
+            {
+                return status_area;
+            }
+
+            set
+            {
+                status_area = value;
+            }
+        }
+
+        public int Toleransi
+        {
+            get
+            {
+                return toleransi;
+            }
+
+            set
+            {
+                toleransi = value;
+            }
+        }
+
+        public string Nama
+        {
+            get
+            {
+                return nama;
+            }
+
+            set
+            {
+                nama = value;
+            }
+        }
+
+        public string NamaPIC
+        {
+            get
+            {
+                return namaPIC;
+            }
+
+            set
+            {
+                namaPIC = value;
+            }
+        }
+
+        public string Alamat
+        {
+            get
+            {
+                return alamat;
+            }
+
+            set
+            {
+                alamat = value;
+            }
+        }
+
+        public string Rank
+        {
+            get
+            {
+                return rank;
+            }
+
+            set
+            {
+                rank = value;
+            }
+        }
+
+        public string Telpon
+        {
+            get
+            {
+                return telpon;
+            }
+
+            set
+            {
+                telpon = value;
+            }
+        }
+
+        public string Reg_status
+        {
+            get
+            {
+                return reg_status;
+            }
+
+            set
+            {
+                reg_status = value;
+            }
+        }
+
+        public string Kodepos
+        {
+            get
+            {
+                return kodepos;
+            }
+
+            set
+            {
+                kodepos = value;
+            }
+        }
+
+        public string Longitude
+        {
+            get
+            {
+                return longitude;
+            }
+
+            set
+            {
+                longitude = value;
+            }
+        }
+
+        public string Latitude
+        {
+            get
+            {
+                return latitude;
+            }
+
+            set
+            {
+                latitude = value;
+            }
+        }
+
+        public string TelpPIC
+        {
+            get
+            {
+                return telpPIC;
+            }
+
+            set
+            {
+                telpPIC = value;
+            }
+        }
+
+        public string Foto
+        {
+            get
+            {
+                return foto;
+            }
+
+            set
+            {
+                foto = value;
+            }
+        }
+
         public Outlet(int kd, int kd_kota, int kd_user, int kode_distributor, string nama, string alamat, int tipe, string rank, string telpon, string reg_status, string kodepos, string latitude, string longitude, int toleransi, string foto, string namaPIC, string telpPIC, int status_area)
         {
             setKode(kd);

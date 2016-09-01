@@ -1,0 +1,25 @@
+﻿<Page x:Class="Growth.Pages.Area.Area"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Growth.Pages.Area"
+      mc:Ignorable="d" 
+      d:DesignHeight="484" d:DesignWidth="1136"
+      Title="Area">
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
+        <StackPanel Orientation="Vertical">
+            <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5">Tambah Area</Button>
+            <ListView x:Name="listSales" Margin="0 15 0 0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Kode Area" Width="366" DisplayMemberBinding="{Binding Date_visiting}" />
+                        <GridViewColumn Header="Nama Area" Width="365" DisplayMemberBinding="{Binding Date_created}" />
+                        <GridViewColumn Header="Action" Width="365"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Page>

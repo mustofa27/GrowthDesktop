@@ -10,6 +10,46 @@ namespace Growth.Master
     {
         private int id;
         private string kd_produk, nm_produk;
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string Kd_produk
+        {
+            get
+            {
+                return kd_produk;
+            }
+
+            set
+            {
+                kd_produk = value;
+            }
+        }
+
+        public string Nm_produk
+        {
+            get
+            {
+                return nm_produk;
+            }
+
+            set
+            {
+                nm_produk = value;
+            }
+        }
+
         public Product(int id, string kd_produk, string nm_produk)
         {
             setId(id);

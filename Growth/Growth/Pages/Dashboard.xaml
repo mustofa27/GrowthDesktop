@@ -31,11 +31,11 @@
                         <ListView x:Name="listSales" Margin="15">
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn Header="#" Width="50"/>
-                                    <GridViewColumn Header="Nama Sales Force" Width="300" DisplayMemberBinding="{Binding Name}"/>
-                                    <GridViewColumn Header="Area" Width="250" DisplayMemberBinding="{Binding Area}" />
-                                    <GridViewColumn Header="Total Visit" Width="250" DisplayMemberBinding="{Binding TotalVisit}" />
-                                    <GridViewColumn Header="Effective Call" Width="250" DisplayMemberBinding="{Binding EffectiveCall}" />
+                                    <GridViewColumn Header="#" Width="50" DisplayMemberBinding="{Binding Kd_visit}"/>
+                                    <GridViewColumn Header="Nama Sales Force" Width="300" DisplayMemberBinding="{Binding Date_created}"/>
+                                    <GridViewColumn Header="Area" Width="250" DisplayMemberBinding="{Binding Date_visiting}" />
+                                    <GridViewColumn Header="Total Visit" Width="250" DisplayMemberBinding="{Binding Date_created}" />
+                                    <GridViewColumn Header="Effective Call" Width="250" DisplayMemberBinding="{Binding Date_visiting}" />
                                 </GridView>
                             </ListView.View>
                         </ListView>

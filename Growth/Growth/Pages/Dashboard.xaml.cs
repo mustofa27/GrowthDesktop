@@ -40,10 +40,10 @@ namespace Growth.Pages
         public Dashboard()
         {
             InitializeComponent();
-            List<Sales> sales = new List<Sales>();
-            sales.Add(new Sales("ahmad", "sumenep", 10, 5));
-            sales.Add(new Sales("mustofa", "sumenep", 7, 3));
-            listSales.ItemsSource = sales;
+            //List<Sales> sales = new List<Sales>();
+            //sales.Add(new Sales("ahmad", "sumenep", 10, 5));
+            //sales.Add(new Sales("mustofa", "sumenep", 7, 3));
+            listSales.ItemsSource = SQLiteDBHelper.ReadAllVisitPlan();
         }
     }
 }

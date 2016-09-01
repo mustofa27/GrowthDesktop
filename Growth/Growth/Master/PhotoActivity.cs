@@ -10,6 +10,150 @@ namespace Growth.Master
     {
         private int id, kd_user, kd_outlet, kd_kompetitor, kd_tipe;
         private string nama, tgl_take, tgl_upload, alamat, keterangan, foto;
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public int Kd_user
+        {
+            get
+            {
+                return kd_user;
+            }
+
+            set
+            {
+                kd_user = value;
+            }
+        }
+
+        public int Kd_outlet
+        {
+            get
+            {
+                return kd_outlet;
+            }
+
+            set
+            {
+                kd_outlet = value;
+            }
+        }
+
+        public int Kd_kompetitor
+        {
+            get
+            {
+                return kd_kompetitor;
+            }
+
+            set
+            {
+                kd_kompetitor = value;
+            }
+        }
+
+        public int Kd_tipe
+        {
+            get
+            {
+                return kd_tipe;
+            }
+
+            set
+            {
+                kd_tipe = value;
+            }
+        }
+
+        public string Nama
+        {
+            get
+            {
+                return nama;
+            }
+
+            set
+            {
+                nama = value;
+            }
+        }
+
+        public string Tgl_take
+        {
+            get
+            {
+                return tgl_take;
+            }
+
+            set
+            {
+                tgl_take = value;
+            }
+        }
+
+        public string Tgl_upload
+        {
+            get
+            {
+                return tgl_upload;
+            }
+
+            set
+            {
+                tgl_upload = value;
+            }
+        }
+
+        public string Alamat
+        {
+            get
+            {
+                return alamat;
+            }
+
+            set
+            {
+                alamat = value;
+            }
+        }
+
+        public string Keterangan
+        {
+            get
+            {
+                return keterangan;
+            }
+
+            set
+            {
+                keterangan = value;
+            }
+        }
+
+        public string Foto
+        {
+            get
+            {
+                return foto;
+            }
+
+            set
+            {
+                foto = value;
+            }
+        }
+
         public PhotoActivity(int id, int kd_user, int kd_outlet, int kd_kompetitor, int kd_tipe, string nama, string tgl_take, string alamat, string keterangan, string tgl_upload, string foto)
         {
             setId(id);
