@@ -19,58 +19,7 @@
         </Grid>
         <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                    VerticalScrollBarVisibility="Hidden" Margin="20 60 20 20">
-            <StackPanel Orientation="Vertical">
-                <Grid Background="#EEEEEE" Height="40" Margin="0 0 0 0" VerticalAlignment="Top">
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 0 0 0">
-                        <fa:ImageAwesome Icon="User" Foreground="#3A3A3A" Height="14" Width="14"/>
-                        <TextBlock FontFamily="Verdana" FontSize="14" Margin="20 0 0 0">Outlet List</TextBlock>
-                    </StackPanel>
-                </Grid>
-                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
-                    <StackPanel Orientation="Vertical">
-                        <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5">Tambah Outlet</Button>
-                        <ListView x:Name="listArea" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black">
-                            <ListView.View>
-                                <GridView>
-                                    <GridView.ColumnHeaderContainerStyle>
-                                        <Style>
-                                            <Setter Property="TextElement.FontSize" Value="15" />
-                                            <Setter Property="TextElement.FontWeight" Value="Bold"/>
-                                        </Style>
-                                    </GridView.ColumnHeaderContainerStyle>
-                                    <GridViewColumn Header="View" Width="70">
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <StackPanel Orientation="Horizontal">
-                                                    <fa:ImageAwesome Icon="Search" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
-                                                </StackPanel>
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
-                                    <GridViewColumn Header="Nama Outlet" Width="139" DisplayMemberBinding="{Binding Nama}" />
-                                    <GridViewColumn Header="Alamat" Width="139" DisplayMemberBinding="{Binding Kode}" />
-                                    <GridViewColumn Header="Kode Pos" Width="100" DisplayMemberBinding="{Binding Nama}" />
-                                    <GridViewColumn Header="Kota" Width="118" DisplayMemberBinding="{Binding Kode}" />
-                                    <GridViewColumn Header="Area" Width="70" DisplayMemberBinding="{Binding Nama}" />
-                                    <GridViewColumn Header="Tipe" Width="100" DisplayMemberBinding="{Binding Kode}" />
-                                    <GridViewColumn Header="Nama PIC" Width="139" DisplayMemberBinding="{Binding Kode}" />
-                                    <GridViewColumn Header="Tlp PIC" Width="139" DisplayMemberBinding="{Binding Nama}" />
-                                    <GridViewColumn Header="Action" Width="79">
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <StackPanel Orientation="Horizontal">
-                                                    <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
-                                                    <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
-                                                </StackPanel>
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
-                    </StackPanel>
-                </Grid>
-            </StackPanel>
+            <Frame x:Name="frameOutlet"></Frame>
         </ScrollViewer>
     </Grid>
 </Page>

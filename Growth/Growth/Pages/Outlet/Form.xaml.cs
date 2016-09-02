@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace Growth.Pages.Outlet
 {
     /// <summary>
-    /// Interaction logic for Index.xaml
+    /// Interaction logic for Form.xaml
     /// </summary>
-    public partial class Index : Page
+    public partial class Form : Page
     {
-        public Index()
+        public Form()
         {
             InitializeComponent();
-            frameOutlet.Navigate(new Uri("/Pages/Outlet/List.xaml", UriKind.Relative));
         }
     }
 }

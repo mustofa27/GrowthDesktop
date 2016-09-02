@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Growth.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,14 +17,19 @@ using System.Windows.Shapes;
 namespace Growth.Pages.Outlet
 {
     /// <summary>
-    /// Interaction logic for Index.xaml
+    /// Interaction logic for List.xaml
     /// </summary>
-    public partial class Index : Page
+    public partial class List : Page
     {
-        public Index()
+        public List()
         {
             InitializeComponent();
-            frameOutlet.Navigate(new Uri("/Pages/Outlet/List.xaml", UriKind.Relative));
+            listOutlet.ItemsSource = SQLiteDBHelper.ReadAllArea();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/Pages/Outlet/Form.xaml", UriKind.Relative));
         }
     }
 }
