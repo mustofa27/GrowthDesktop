@@ -16,14 +16,18 @@ using System.Windows.Shapes;
 namespace Growth.Pages.Distributor
 {
     /// <summary>
-    /// Interaction logic for Index.xaml
+    /// Interaction logic for Form.xaml
     /// </summary>
-    public partial class Index : Page
+    public partial class Form : Page
     {
-        public Index()
+        public Form()
         {
             InitializeComponent();
-            frameDistributor.Navigate(new Uri("/Pages/Distributor/List.xaml", UriKind.Relative));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/Pages/Distributor/List.xaml", UriKind.Relative));
         }
     }
 }

@@ -146,7 +146,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Distributor\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Distributor\Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Distributor\List.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,8 +212,14 @@
     <Compile Include="Pages\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Distributor\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Distributor\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Distributor\List.xaml.cs">
+      <DependentUpon>List.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Outlet\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
