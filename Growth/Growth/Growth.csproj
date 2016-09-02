@@ -154,7 +154,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Produk\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Produk\Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Produk\List.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -194,8 +202,14 @@
     <Compile Include="Pages\Outlet\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Produk\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Produk\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Produk\List.xaml.cs">
+      <DependentUpon>List.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

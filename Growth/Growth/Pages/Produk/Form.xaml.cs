@@ -1,5 +1,4 @@
-﻿using Growth.Helper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,14 +16,18 @@ using System.Windows.Shapes;
 namespace Growth.Pages.Produk
 {
     /// <summary>
-    /// Interaction logic for Index.xaml
+    /// Interaction logic for Form.xaml
     /// </summary>
-    public partial class Index : Page
+    public partial class Form : Page
     {
-        public Index()
+        public Form()
         {
             InitializeComponent();
-            frameProduk.Navigate(new Uri("/Pages/Produk/List.xaml", UriKind.Relative));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/Pages/Produk/List.xaml", UriKind.Relative));
         }
     }
 }

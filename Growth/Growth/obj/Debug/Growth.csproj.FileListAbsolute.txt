@@ -107,3 +107,7 @@ F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\P
 F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Distributor\Index.baml
 F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Produk\Index.g.cs
 F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Produk\Index.baml
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Produk\Form.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Produk\List.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Produk\Form.baml
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Produk\List.baml

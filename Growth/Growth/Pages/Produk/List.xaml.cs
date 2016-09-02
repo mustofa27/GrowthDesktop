@@ -17,14 +17,19 @@ using System.Windows.Shapes;
 namespace Growth.Pages.Produk
 {
     /// <summary>
-    /// Interaction logic for Index.xaml
+    /// Interaction logic for List.xaml
     /// </summary>
-    public partial class Index : Page
+    public partial class List : Page
     {
-        public Index()
+        public List()
         {
             InitializeComponent();
-            frameProduk.Navigate(new Uri("/Pages/Produk/List.xaml", UriKind.Relative));
+            listProduk.ItemsSource = SQLiteDBHelper.ReadAllArea();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/Pages/Produk/Form.xaml", UriKind.Relative));
         }
     }
 }
