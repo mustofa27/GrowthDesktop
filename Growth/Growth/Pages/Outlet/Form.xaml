@@ -9,12 +9,48 @@
       Title="Form">
 
     <Grid>
-        <StackPanel Orientation="Vertical">
-            <TextBlock FontFamily="Verdana" FontSize="15">Kode Produk</TextBlock>
-            <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-            <TextBlock FontFamily="Verdana" FontSize="15">Nama Produk</TextBlock>
-            <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-            <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" FontSize="15">Simpan</Button>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Margin="10">
+                <TextBlock FontFamily="Verdana" FontSize="15">Outlet Distributor</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Outlet Area</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Kota</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Registered Sales Force</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Nama Outlet</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Kode Outlet</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="10">
+                <TextBlock FontFamily="Verdana" FontSize="15">Alamat</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Kode Pos</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Tipe Outlet</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Nama PIC</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Telepon PIC</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="10">
+                <TextBlock FontFamily="Verdana" FontSize="15">Rank Outlet</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Register Status</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Status Area</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Longitude</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Latitude</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <TextBlock FontFamily="Verdana" FontSize="15">Upload Foto</TextBlock>
+                <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" FontSize="15">Simpan</Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>
