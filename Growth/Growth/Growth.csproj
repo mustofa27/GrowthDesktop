@@ -154,6 +154,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Produk\Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Master\Area.cs" />
@@ -188,6 +192,9 @@
       <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Outlet\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Produk\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -236,7 +243,6 @@
     <Folder Include="Pages\Configuration\" />
     <Folder Include="Pages\ExportImport\" />
     <Folder Include="Pages\PhotoActivity\" />
-    <Folder Include="Pages\Produk\" />
     <Folder Include="Pages\Report\" />
     <Folder Include="Pages\VisitPlan\" />
   </ItemGroup>
