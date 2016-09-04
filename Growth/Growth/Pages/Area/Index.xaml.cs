@@ -9,7 +9,7 @@ namespace Growth.Pages.Area
     /// <summary>
     /// Interaction logic for Index.xaml
     /// </summary>
-    public partial class Index : Page,Callback
+    public partial class Index : Page
     {
         public Index()
         {
@@ -29,11 +29,7 @@ namespace Growth.Pages.Area
 
         }
 
-        public void Done(string res)
-        {
-            
-        }
-
+        
         private void testing_Click(object sender, RoutedEventArgs e)
         {
             //ConnectionHelper.DownloadPageAsync("http://demo.growth.co.id/login/keira/asd",this);
@@ -53,8 +49,6 @@ namespace Growth.Pages.Area
             //{
             //    test.Text += prop.Name.ToString() + " " + prop.PropertyType.ToString() + "  " + prop.GetValue(foo, null).ToString() + "\n";
             //}
-            ConnectionHandler con = new ConnectionHandler(this);
-            con.getAllData();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

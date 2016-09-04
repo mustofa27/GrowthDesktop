@@ -98,6 +98,10 @@ namespace Growth.Helper
                 TABLE_KONFIGURASI = "Konfigurasi",
                 KEY_TOLERANSI_MAX = "toleransi_max";
         #endregion
+        public static bool checkDB()
+        {
+            return File.Exists(DB_NAME);
+        }
         static void CreateOrReadDB()
         {
             if (File.Exists(DB_NAME))

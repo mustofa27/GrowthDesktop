@@ -53,7 +53,7 @@ class WSDesktop extends Controller
         $tipePhoto = TipePhoto::all();
         $user = User::all();
         $visitplan = VisitPlan::all();
-        $dataUser = array("area"=>$area,"competitor"=>$competitor,"distributor"=>$distributor,"konfigurasi"=>$konfigurasi,"kota"=>$kota,"logging"=>$logging,"outlet"=>$outlet,"photo"=>$photo,"produk"=>$produk,"takeorder"=>$takeorder,"tipe"=>$tipe,"tipe_photo"=>$tipePhoto,"user"=>$user,"visitplan"=>$visitplan);
+        $dataUser = array("Area"=>$area,"Competitor"=>$competitor,"Distributor"=>$distributor,"Konfigurasi"=>$konfigurasi,"Kota"=>$kota,"Logging"=>$logging,"Outlet"=>$outlet,"PhotoActivity"=>$photo,"Produk"=>$produk,"TakeOrder"=>$takeorder,"Tipe"=>$tipe,"TipePhoto"=>$tipePhoto,"User"=>$user,"VisitPlan"=>$visitplan);
         return Response::json($dataUser,200);
     }
     public function insertOutlet()

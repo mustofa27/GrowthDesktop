@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Growth.Master;
 using Growth.Helper;
 using System.Collections.ObjectModel;
+using Growth.Interfaces;
 
 namespace Growth.Pages
 {
@@ -40,10 +41,14 @@ namespace Growth.Pages
         public Dashboard()
         {
             InitializeComponent();
-            //List<Sales> sales = new List<Sales>();
-            //sales.Add(new Sales("ahmad", "sumenep", 10, 5));
-            //sales.Add(new Sales("mustofa", "sumenep", 7, 3));
+            //ConnectionHandler con = new ConnectionHandler(this);
+            //con.getAllData();
             listSales.ItemsSource = SQLiteDBHelper.ReadAllVisitPlan();
+        }
+
+        public void Done(string res)
+        {
+            throw new NotImplementedException();
         }
     }
 }
