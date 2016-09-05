@@ -87,8 +87,23 @@ namespace Growth
 
         public void Done(string res)
         {
+            int i = 0;
             DataUser dataUser = JsonConvert.DeserializeObject<DataUser>(res);
-            
+            InsertToDB("area", dataUser.Area);
+            InsertToDB("competitor", dataUser.Competitor);
+            InsertToDB("distributor", dataUser.Distributor);
+            InsertToDB("konfigurasi", dataUser.Konfigurasi);
+            InsertToDB("kota", dataUser.Kota);
+            InsertToDB("logging", dataUser.Logging);
+            InsertToDB("outlet", dataUser.Outlet);
+            InsertToDB("photoact", dataUser.PhotoActivity);
+            InsertToDB("produk", dataUser.Produk);
+            InsertToDB("takeorder", dataUser.TakeOrder);
+            InsertToDB("tipe", dataUser.Tipe);
+            InsertToDB("tipephoto", dataUser.TipePhoto);
+            InsertToDB("user", dataUser.User);
+            InsertToDB("visitplan", dataUser.VisitPlan);
+
         }
         private class DataUser
         {
@@ -109,19 +124,6 @@ namespace Growth
         }
         private void InsertToDB(string tipe,string json)
         {
-            List<Area> areas = null;
-            List<Competitor> competitors = null;
-            List<Distributor> distributors = null;
-            List<City> cities = null;
-            List<Logging> loggings = null;
-            List<Outlet> outlets = null;
-            List<PhotoActivity> photoacts = null;
-            List<Product> products = null;
-            List<TakeOrder> takeorders = null;
-            List<Tipe> tipes = null;
-            List<TipePhoto> tipephotos = null;
-            List<User> users = null;
-            List<VisitPlan> visitplans = null;
             JsonTextReader reader = new JsonTextReader(new StringReader(json));
             reader.SupportMultipleContent = true;
             while (true)
@@ -135,111 +137,46 @@ namespace Growth
                 switch (tipe)
                 {
                     case "area":
-                        if(areas == null)
-                            areas = new List<Area>();
-                        else
-                        {
-                            areas.Add(serializer.Deserialize<Area>(reader));
-                        }
+                        SQLiteDBHelper.InsertArea(serializer.Deserialize<Area>(reader));
                         break;
                     case "competitor":
-                        if (competitors == null)
-                            competitors = new List<Competitor>();
-                        else
-                        {
-                            competitors.Add(serializer.Deserialize<Competitor>(reader));
-                        }
+                        SQLiteDBHelper.InsertCompetitor(serializer.Deserialize<Competitor>(reader));
                         break;
                     case "distributor":
-                        if (distributors == null)
-                            distributors = new List<Distributor>();
-                        else
-                        {
-                            distributors.Add(serializer.Deserialize<Distributor>(reader));
-                        }
+                        SQLiteDBHelper.InsertDistributor(serializer.Deserialize<Distributor>(reader));
                         break;
                     case "konfigurasi":
-                        
+                        SQLiteDBHelper.InsertKonfigurasi(int.Parse(reader.Value.ToString()));
                         break;
                     case "kota":
-                        if (cities == null)
-                            cities = new List<City>();
-                        else
-                        {
-                            cities.Add(serializer.Deserialize<City>(reader));
-                        }
+                        SQLiteDBHelper.InsertCity(serializer.Deserialize<City>(reader));
                         break;
                     case "logging":
-                        if (loggings == null)
-                            loggings = new List<Logging>();
-                        else
-                        {
-                            loggings.Add(serializer.Deserialize<Logging>(reader));
-                        }
+                        SQLiteDBHelper.InsertLogging(serializer.Deserialize<Logging>(reader));
                         break;
                     case "outlet":
-                        if (outlets == null)
-                            outlets = new List<Outlet>();
-                        else
-                        {
-                            outlets.Add(serializer.Deserialize<Outlet>(reader));
-                        }
+                        SQLiteDBHelper.InsertOutlet(serializer.Deserialize<Outlet>(reader));
                         break;
                     case "photoact":
-                        if (photoacts == null)
-                            photoacts = new List<PhotoActivity>();
-                        else
-                        {
-                            photoacts.Add(serializer.Deserialize<PhotoActivity>(reader));
-                        }
+                        SQLiteDBHelper.InsertPhotoActivity(serializer.Deserialize<PhotoActivity>(reader));
                         break;
                     case "produk":
-                        if (products == null)
-                            products = new List<Product>();
-                        else
-                        {
-                            products.Add(serializer.Deserialize<Product>(reader));
-                        }
+                        SQLiteDBHelper.InsertProduct(serializer.Deserialize<Product>(reader));
                         break;
                     case "takeorder":
-                        if (takeorders == null)
-                            takeorders = new List<TakeOrder>();
-                        else
-                        {
-                            takeorders.Add(serializer.Deserialize<TakeOrder>(reader));
-                        }
+                        SQLiteDBHelper.InsertTakeOrder(serializer.Deserialize<TakeOrder>(reader));
                         break;
                     case "tipe":
-                        if (tipes == null)
-                            tipes = new List<Tipe>();
-                        else
-                        {
-                            tipes.Add(serializer.Deserialize<Tipe>(reader));
-                        }
+                        SQLiteDBHelper.InsertTipe(serializer.Deserialize<Tipe>(reader));
                         break;
                     case "tipephoto":
-                        if ( tipephotos == null)
-                            tipephotos = new List<TipePhoto>();
-                        else
-                        {
-                            tipephotos.Add(serializer.Deserialize<TipePhoto>(reader));
-                        }
+                        SQLiteDBHelper.InsertTipePhoto(serializer.Deserialize<TipePhoto>(reader));
                         break;
                     case "user":
-                        if (users == null)
-                            users = new List<User>();
-                        else
-                        {
-                            users.Add(serializer.Deserialize<User>(reader));
-                        }
+                        SQLiteDBHelper.InsertUser(serializer.Deserialize<User>(reader));
                         break;
                     default:
-                        if (visitplans == null)
-                            visitplans = new List<VisitPlan>();
-                        else
-                        {
-                            visitplans.Add(serializer.Deserialize<VisitPlan>(reader));
-                        }
+                        SQLiteDBHelper.InsertVisitPlan(serializer.Deserialize<VisitPlan>(reader));
                         break;
                 }
             }
