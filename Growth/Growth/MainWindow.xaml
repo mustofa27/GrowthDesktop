@@ -312,7 +312,7 @@
           Background="#3A3A3A" Margin="0,0,0,0" Height="50" VerticalAlignment="Bottom">
             <Label Foreground="White" FontSize="14" VerticalAlignment="Center" Margin="20,0,0,0">© 2016. PT. Trikarya Teknologi Indonesia. All rights reserved.</Label>
         </Grid>
-        <Grid x:Name="loading" Background="White" Opacity="0.7" Visibility="Collapsed">
+        <Grid x:Name="loading" Background="White" Opacity="0.85" Visibility="Collapsed">
             <TextBlock FontFamily="Verdana" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Please Wait</TextBlock>
         </Grid>
     </Grid>
