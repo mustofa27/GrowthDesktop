@@ -32,12 +32,13 @@ namespace Growth
             //{
             //    Application.Current.Shutdown();
             //}
+            InitializeComponent();
             if (!SQLiteDBHelper.checkDB())
             {
                 ConnectionHandler con = new ConnectionHandler(this);
                 con.getAllData();
+                loading.Visibility = Visibility.Visible;
             }
-            InitializeComponent();
         }
 
         private void area_Click(object sender, RoutedEventArgs e)
@@ -102,7 +103,7 @@ namespace Growth
             InsertToDB(dataUser.tipe_photo);
             InsertToDB(dataUser.user);
             InsertToDB(dataUser.visitplan);
-
+            loading.Visibility = Visibility.Collapsed;
         }
         private class DataUser
         {
