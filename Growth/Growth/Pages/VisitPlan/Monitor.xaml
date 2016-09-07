@@ -14,19 +14,52 @@
         <Grid HorizontalAlignment="Stretch" Background="#EEEEEE" VerticalAlignment="Top" Height="40">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20 0 0 0">
                 <fa:ImageAwesome Icon="LocationArrow" Foreground="#3A3A3A" Height="14" Width="14"/>
-                <TextBlock Padding="5 0 0 0" FontFamily="Verdana" FontSize="14">Area</TextBlock>
+                <TextBlock Padding="5 0 0 0" FontFamily="Verdana" FontSize="14">Visit Plan</TextBlock>
             </StackPanel>
         </Grid>
-        <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                   VerticalScrollBarVisibility="Hidden" Margin="20 60 20 20">
-            <Grid>
+        <ScrollViewer Margin="20 60 20 20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Hidden">
+            <StackPanel Orientation="Vertical">
                 <Grid Background="#EEEEEE" Height="40" Margin="0 0 0 0" VerticalAlignment="Top">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 0 0 0">
-                        <fa:ImageAwesome Icon="Th" Foreground="#3A3A3A" Height="14" Width="14"/>
-                        <TextBlock FontFamily="Verdana" FontSize="14" Margin="20 0 0 0">Area List</TextBlock>
+                        <fa:ImageAwesome Icon="CheckSquareOutline" Foreground="#3A3A3A" Height="14" Width="14"/>
+                        <TextBlock FontFamily="Verdana" FontSize="14" Margin="20 0 0 0">Visiting Monitor</TextBlock>
                     </StackPanel>
                 </Grid>
-            </Grid>
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
+                    <StackPanel Orientation="Vertical">
+                        <ListView x:Name="listVisit" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black">
+                            <ListView.View>
+                                <GridView>
+                                    <GridView.ColumnHeaderContainerStyle>
+                                        <Style>
+                                            <Setter Property="TextElement.FontSize" Value="15" />
+                                            <Setter Property="TextElement.FontWeight" Value="Bold"/>
+                                        </Style>
+                                    </GridView.ColumnHeaderContainerStyle>
+                                    <GridViewColumn Header="Sales Force" Width="120" DisplayMemberBinding="{Binding nm_sales}" />
+                                    <GridViewColumn Header="Nama Outlet" Width="140" DisplayMemberBinding="{Binding nm_outlet}" />
+                                    <GridViewColumn Header="Alamat Outlet" Width="130" DisplayMemberBinding="{Binding alamat_outlet}" />
+                                    <GridViewColumn Header="Distributor" Width="110" DisplayMemberBinding="{Binding nm_dist}" />
+                                    <GridViewColumn Header="Kota Outlet" Width="100" DisplayMemberBinding="{Binding kota}" />
+                                    <GridViewColumn Header="Date Create Visit Plan" Width="167" DisplayMemberBinding="{Binding date_created}" />
+                                    <GridViewColumn Header="Date Visit Plan" Width="128" DisplayMemberBinding="{Binding date_visit}" />
+                                    <GridViewColumn Header="Status Approval" Width="120" DisplayMemberBinding="{Binding status_approval}" />
+                                    <GridViewColumn Header="Action" Width="78">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
+                                                    <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
         </ScrollViewer>
     </Grid>
 </Page>

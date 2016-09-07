@@ -579,7 +579,8 @@ namespace Growth.Helper
                      reader[KEY_REGISTER_STATUS].ToString(), reader[KEY_KODE_POS].ToString(), reader[KEY_LATITUDE].ToString(),
                      reader[KEY_LONGITUDE].ToString(), int.Parse(reader[KEY_TOLERANSI].ToString()), reader[KEY_FOTO].ToString(),
                      reader[KEY_NMPIC].ToString(), reader[KEY_TLPPIC].ToString(), int.Parse(reader[KEY_STATUS_AREA].ToString()));
-                City kota = ReadCity(outlet.kd_kota);
+                User user = ReadUser(outlet.getKode_user());
+                City kota = ReadCity(user.kd_kota);
                 outlet.area = ReadArea(kota.getKodeArea()).getNama();
                 outlet.kota = kota.getNama();
                 outlet.nm_tipe = ReadTipe(outlet.kd_tipe).nm_tipe;

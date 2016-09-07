@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Growth.Helper;
 
 namespace Growth.Pages.VisitPlan
 {
@@ -23,6 +24,14 @@ namespace Growth.Pages.VisitPlan
         public Form()
         {
             InitializeComponent();
+            selectOutlet.ItemsSource = SQLiteDBHelper.ReadAllOutlet();
+            selectOutlet.SelectedIndex = 0;
+        }
+
+        private void selectOutlet_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Growth.Master.Outlet outlet = SQLiteDBHelper.ReadOutlet(int.Parse(selectOutlet.SelectedValue.ToString()));
+            sales.Text = SQLiteDBHelper.ReadUser(outlet.getKode_user()).getNama();
         }
     }
 }

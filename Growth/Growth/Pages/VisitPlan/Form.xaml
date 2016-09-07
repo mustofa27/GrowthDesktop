@@ -21,9 +21,14 @@
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontFamily="Verdana" FontSize="15">Nama Outlet</TextBlock>
-                    <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                    <ComboBox x:Name="selectOutlet" Margin="0 5 0 10"
+                        DisplayMemberPath="nm_outlet"
+                        SelectedValuePath="kd_outlet"
+                        HorizontalAlignment="Left"
+                        Width="350"
+                        Height="30" SelectionChanged="selectOutlet_SelectionChanged"/>
                     <TextBlock FontFamily="Verdana" FontSize="15">Nama Sales Force</TextBlock>
-                    <TextBlock Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBlock>
+                    <TextBlock x:Name="sales" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBlock>
                     <TextBlock FontFamily="Verdana" FontSize="15">Tanggal Visit</TextBlock>
                     <TextBox Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
                     <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" FontSize="15">Simpan</Button>
