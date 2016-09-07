@@ -8,10 +8,15 @@ namespace Growth.Master
 {
     class VisitPlan
     {
-        int kd_visit, approve_visit, status_visit, kd_outlet;
-        string skip_reason, skip_order_reason, date_visit, date_visiting, date_created;
-
-        public int Kd_visit
+        int kd_visit, Approve_visit, Status_visit, Kd_outlet;
+        string Skip_reason, Skip_order_reason, Date_visit, Date_visiting, Date_created;
+        public string nm_sales { set; get; }
+        public string nm_outlet { set; get; }
+        public string alamat_outlet { set; get; }
+        public string nm_dist { set; get; }
+        public string kota { set; get; }
+        public string status_approval { set; get; }
+        public int id
         {
             get
             {
@@ -24,121 +29,121 @@ namespace Growth.Master
             }
         }
 
-        public int Approve_visit
+        public int approve_visit
         {
             get
             {
-                return approve_visit;
+                return Approve_visit;
             }
 
             set
             {
-                approve_visit = value;
+                Approve_visit = value;
             }
         }
 
-        public int Status_visit
+        public int status_visit
         {
             get
             {
-                return status_visit;
+                return Status_visit;
             }
 
             set
             {
-                status_visit = value;
+                Status_visit = value;
             }
         }
 
-        public int Kd_outlet
+        public int kd_outlet
         {
             get
             {
-                return kd_outlet;
+                return Kd_outlet;
             }
 
             set
             {
-                kd_outlet = value;
+                Kd_outlet = value;
             }
         }
 
-        public string Skip_reason
+        public string skip_reason
         {
             get
             {
-                return skip_reason;
+                return Skip_reason;
             }
 
             set
             {
-                skip_reason = value;
+                Skip_reason = value;
             }
         }
 
-        public string Skip_order_reason
+        public string skip_order_reason
         {
             get
             {
-                return skip_order_reason;
+                return Skip_order_reason;
             }
 
             set
             {
-                skip_order_reason = value;
+                Skip_order_reason = value;
             }
         }
 
-        public string Date_visit
+        public string date_visit
         {
             get
             {
-                return date_visit;
+                return Date_visit;
             }
 
             set
             {
-                date_visit = value;
+                Date_visit = value;
             }
         }
 
-        public string Date_visiting
+        public string date_visiting
         {
             get
             {
-                return date_visiting;
+                return Date_visiting;
             }
 
             set
             {
-                date_visiting = value;
+                Date_visiting = value;
             }
         }
 
-        public string Date_created
+        public string date_created
         {
             get
             {
-                return date_created;
+                return Date_created;
             }
 
             set
             {
-                date_created = value;
+                Date_created = value;
             }
         }
 
-        public VisitPlan(int kd_visit, int kd_outlet, string date_visit)
-        {
-            setKd_visit(kd_visit);
-            setKd_outlet(kd_outlet);
-            setDate_visit(date_visit);
-            setApprove_visit(2);
-            setStatus_visit(0);
-            DateTime calendar = DateTime.Now;
-            setDate_created(calendar.Year + "-" + calendar.Month + "-" + calendar.Day +
-            " " + calendar.Hour + ":" + calendar.Minute + ":" + calendar.Second);
-        }
+        //public VisitPlan(int kd_visit, int kd_outlet, string date_visit)
+        //{
+        //    setKd_visit(kd_visit);
+        //    setKd_outlet(kd_outlet);
+        //    setDate_visit(date_visit);
+        //    setApprove_visit(2);
+        //    setStatus_visit(0);
+        //    DateTime calendar = DateTime.Now;
+        //    setDate_created(calendar.Year + "-" + calendar.Month + "-" + calendar.Day +
+        //    " " + calendar.Hour + ":" + calendar.Minute + ":" + calendar.Second);
+        //}
         public VisitPlan(int kd_visit, int kd_outlet, string date_visit, string date_created, int approve_visit, int status_visit, string date_visiting, string skip_order_reason, string skip_reason)
         {
             setKd_visit(kd_visit);
@@ -150,6 +155,18 @@ namespace Growth.Master
             setDate_visiting(date_visiting);
             setSkip_order_reason(skip_order_reason);
             setSkip_reason(skip_reason);
+            switch (approve_visit)
+            {
+                case 1:
+                    status_approval = "Approved";
+                    break;
+                case 2:
+                    status_approval = "Pending";
+                    break;
+                default:
+                    status_approval = "Rejected";
+                    break;
+            }
         }
 
         public int getKd_visit()

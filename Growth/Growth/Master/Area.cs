@@ -8,7 +8,7 @@ namespace Growth.Master
 {
     class Area
     {
-        private int id;
+        private int id_area;
         private string nama,kode;
         public Area(int id, string kode, string nama)
         {
@@ -16,17 +16,17 @@ namespace Growth.Master
             setNama(nama);
             setid(id);
         }
-        public int Id { set { id = value; } get { return id; } }
-        public string Nama { set { nama = value; } get { return nama; } }
-        public string Kode { set { kode = value; } get { return kode; } }
+        public int id { set { id_area = value; } get { return id_area; } }
+        public string nm_area { set { nama = value; } get { return nama; } }
+        public string kd_area { set { kode = value; } get { return kode; } }
         public void setid(int id)
         {
-            this.id = id;
+            this.id_area = id;
         }
 
         public int getid()
         {
-            return id;
+            return id_area;
         }
 
         public void setNama(string nama)

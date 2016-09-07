@@ -24,7 +24,7 @@ namespace Growth.Pages.Outlet
         public List()
         {
             InitializeComponent();
-            listOutlet.ItemsSource = SQLiteDBHelper.ReadAllArea();
+            listOutlet.ItemsSource = SQLiteDBHelper.ReadAllOutlet();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

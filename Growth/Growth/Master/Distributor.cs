@@ -10,7 +10,7 @@ namespace Growth.Master
     {
         private int id, kd_kota;
         private string kd_dist, kd_tipe, nm_dist, almt_dist, telp_dist;
-
+        public string kota { set; get; }
         public int Kd_kota
         {
             get

@@ -8,45 +8,45 @@ namespace Growth.Master
 {
     class Product
     {
-        private int id;
-        private string kd_produk, nm_produk;
+        private int Id;
+        private string Kd_produk, Nm_produk;
 
-        public int Id
+        public int id
         {
             get
             {
-                return id;
+                return Id;
             }
 
             set
             {
-                id = value;
+                Id = value;
             }
         }
 
-        public string Kd_produk
+        public string kd_produk
         {
             get
             {
-                return kd_produk;
+                return Kd_produk;
             }
 
             set
             {
-                kd_produk = value;
+                Kd_produk = value;
             }
         }
 
-        public string Nm_produk
+        public string nm_produk
         {
             get
             {
-                return nm_produk;
+                return Nm_produk;
             }
 
             set
             {
-                nm_produk = value;
+                Nm_produk = value;
             }
         }
 

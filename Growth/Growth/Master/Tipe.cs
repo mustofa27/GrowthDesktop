@@ -8,32 +8,32 @@ namespace Growth.Master
 {
     class Tipe
     {
-        private int id;
-        private string nm_tipe;
+        private int Id;
+        private string Nm_tipe;
 
-        public int Id
+        public int id
         {
             get
             {
-                return id;
+                return Id;
             }
 
             set
             {
-                id = value;
+                Id = value;
             }
         }
 
-        public string Nm_tipe
+        public string nm_tipe
         {
             get
             {
-                return nm_tipe;
+                return Nm_tipe;
             }
 
             set
             {
-                nm_tipe = value;
+                Nm_tipe = value;
             }
         }
 

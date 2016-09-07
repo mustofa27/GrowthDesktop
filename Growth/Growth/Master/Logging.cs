@@ -8,10 +8,10 @@ namespace Growth.Master
 {
     class Logging
     {
-        private int kd_logging, kd_user;
-        private string description, log_time, detail_akses;
+        private int kd_logging, id_user;
+        private string Description, Log_time, Detail_akses;
 
-        public int Kd_logging
+        public int id
         {
             get
             {
@@ -24,55 +24,55 @@ namespace Growth.Master
             }
         }
 
-        public int Kd_user
+        public int kd_user
         {
             get
             {
-                return kd_user;
+                return id_user;
             }
 
             set
             {
-                kd_user = value;
+                id_user = value;
             }
         }
 
-        public string Description
+        public string description
         {
             get
             {
-                return description;
+                return Description;
             }
 
             set
             {
-                description = value;
+                Description = value;
             }
         }
 
-        public string Log_time
+        public string log_time
         {
             get
             {
-                return log_time;
+                return Log_time;
             }
 
             set
             {
-                log_time = value;
+                Log_time = value;
             }
         }
 
-        public string Detail_akses
+        public string detail_akses
         {
             get
             {
-                return detail_akses;
+                return Detail_akses;
             }
 
             set
             {
-                detail_akses = value;
+                Detail_akses = value;
             }
         }
 
@@ -96,41 +96,41 @@ namespace Growth.Master
         }
         public int getKd_user()
         {
-            return kd_user;
+            return id_user;
         }
 
         public void setKd_user(int kd_user)
         {
-            this.kd_user = kd_user;
+            this.id_user = kd_user;
         }
 
         public string getDescription()
         {
-            return description;
+            return Description;
         }
 
         public void setDescription(string description)
         {
-            this.description = description;
+            this.Description = description;
         }
 
         public string getLog_time()
         {
-            return log_time;
+            return Log_time;
         }
 
         public void setLog_time(string log_time)
         {
-            this.log_time = log_time;
+            this.Log_time = log_time;
         }
         public string getDetail_akses()
         {
-            return detail_akses;
+            return Detail_akses;
         }
 
         public void setDetail_akses(string detail_akses)
         {
-            this.detail_akses = detail_akses;
+            this.Detail_akses = detail_akses;
         }
     }
 }

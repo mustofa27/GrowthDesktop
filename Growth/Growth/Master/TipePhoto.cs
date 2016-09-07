@@ -8,32 +8,32 @@ namespace Growth.Master
 {
     class TipePhoto
     {
-        private int id;
-        private string nama_tipe;
+        private int Id;
+        private string Nama_tipe;
 
-        public int Id
+        public int id
         {
             get
             {
-                return id;
+                return Id;
             }
 
             set
             {
-                id = value;
+                Id = value;
             }
         }
 
-        public string Nama_tipe
+        public string nama_tipe
         {
             get
             {
-                return nama_tipe;
+                return Nama_tipe;
             }
 
             set
             {
-                nama_tipe = value;
+                Nama_tipe = value;
             }
         }
 

@@ -32,7 +32,7 @@ namespace Growth
             //{
             //    Application.Current.Shutdown();
             //}
-            if(!SQLiteDBHelper.checkDB())
+            if (!SQLiteDBHelper.checkDB())
             {
                 ConnectionHandler con = new ConnectionHandler(this);
                 con.getAllData();
@@ -87,99 +87,147 @@ namespace Growth
 
         public void Done(string res)
         {
-            int i = 0;
             DataUser dataUser = JsonConvert.DeserializeObject<DataUser>(res);
-            InsertToDB("area", dataUser.Area);
-            InsertToDB("competitor", dataUser.Competitor);
-            InsertToDB("distributor", dataUser.Distributor);
-            InsertToDB("konfigurasi", dataUser.Konfigurasi);
-            InsertToDB("kota", dataUser.Kota);
-            InsertToDB("logging", dataUser.Logging);
-            InsertToDB("outlet", dataUser.Outlet);
-            InsertToDB("photoact", dataUser.PhotoActivity);
-            InsertToDB("produk", dataUser.Produk);
-            InsertToDB("takeorder", dataUser.TakeOrder);
-            InsertToDB("tipe", dataUser.Tipe);
-            InsertToDB("tipephoto", dataUser.TipePhoto);
-            InsertToDB("user", dataUser.User);
-            InsertToDB("visitplan", dataUser.VisitPlan);
+            InsertToDB(dataUser.area);
+            InsertToDB(dataUser.competitor);
+            InsertToDB(dataUser.distributor);
+            //InsertToDB(dataUser.konfigurasi);
+            InsertToDB(dataUser.kota);
+            InsertToDB(dataUser.logging);
+            InsertToDB(dataUser.outlet);
+            InsertToDB(dataUser.photoactivity);
+            InsertToDB(dataUser.produk);
+            InsertToDB(dataUser.takeorder);
+            InsertToDB(dataUser.tipe);
+            InsertToDB(dataUser.tipe_photo);
+            InsertToDB(dataUser.user);
+            InsertToDB(dataUser.visitplan);
 
         }
         private class DataUser
         {
-            public string Area { get; set; }
-            public string Competitor { get; set; }
-            public string Distributor { get; set; }
-            public string Konfigurasi { get; set; }
-            public string Kota { get; set; }
-            public string Logging { get; set; }
-            public string Outlet { get; set; }
-            public string PhotoActivity { get; set; }
-            public string Produk { get; set; }
-            public string TakeOrder { get; set; }
-            public string Tipe { get; set; }
-            public string TipePhoto { get; set; }
-            public string User { get; set; }
-            public string VisitPlan { get; set; }
+            public List<Area> area { get; set; }
+            public List<Competitor> competitor { get; set; }
+            public List<Distributor> distributor { get; set; }
+            //public string konfigurasi { get; set; }
+            public List<City> kota { get; set; }
+            public List<Logging> logging { get; set; }
+            public List<Outlet> outlet { get; set; }
+            public List<PhotoActivity> photoactivity { get; set; }
+            public List<Product> produk { get; set; }
+            public List<TakeOrder> takeorder { get; set; }
+            public List<Tipe> tipe { get; set; }
+            public List<TipePhoto> tipe_photo { get; set; }
+            public List<User> user { get; set; }
+            public List<VisitPlan> visitplan { get; set; }
         }
-        private void InsertToDB(string tipe,string json)
+        private void InsertToDB(List<Area> area)
         {
-            JsonTextReader reader = new JsonTextReader(new StringReader(json));
-            reader.SupportMultipleContent = true;
-            while (true)
-            {
-                if (!reader.Read())
-                    {
-                        break;
-                    }
-                
-                JsonSerializer serializer = new JsonSerializer();
-                switch (tipe)
+            if(area != null)
+                foreach (Area item in area)
                 {
-                    case "area":
-                        SQLiteDBHelper.InsertArea(serializer.Deserialize<Area>(reader));
-                        break;
-                    case "competitor":
-                        SQLiteDBHelper.InsertCompetitor(serializer.Deserialize<Competitor>(reader));
-                        break;
-                    case "distributor":
-                        SQLiteDBHelper.InsertDistributor(serializer.Deserialize<Distributor>(reader));
-                        break;
-                    case "konfigurasi":
-                        SQLiteDBHelper.InsertKonfigurasi(int.Parse(reader.Value.ToString()));
-                        break;
-                    case "kota":
-                        SQLiteDBHelper.InsertCity(serializer.Deserialize<City>(reader));
-                        break;
-                    case "logging":
-                        SQLiteDBHelper.InsertLogging(serializer.Deserialize<Logging>(reader));
-                        break;
-                    case "outlet":
-                        SQLiteDBHelper.InsertOutlet(serializer.Deserialize<Outlet>(reader));
-                        break;
-                    case "photoact":
-                        SQLiteDBHelper.InsertPhotoActivity(serializer.Deserialize<PhotoActivity>(reader));
-                        break;
-                    case "produk":
-                        SQLiteDBHelper.InsertProduct(serializer.Deserialize<Product>(reader));
-                        break;
-                    case "takeorder":
-                        SQLiteDBHelper.InsertTakeOrder(serializer.Deserialize<TakeOrder>(reader));
-                        break;
-                    case "tipe":
-                        SQLiteDBHelper.InsertTipe(serializer.Deserialize<Tipe>(reader));
-                        break;
-                    case "tipephoto":
-                        SQLiteDBHelper.InsertTipePhoto(serializer.Deserialize<TipePhoto>(reader));
-                        break;
-                    case "user":
-                        SQLiteDBHelper.InsertUser(serializer.Deserialize<User>(reader));
-                        break;
-                    default:
-                        SQLiteDBHelper.InsertVisitPlan(serializer.Deserialize<VisitPlan>(reader));
-                        break;
+                    SQLiteDBHelper.InsertArea(item);
                 }
-            }
+        }
+        private void InsertToDB(List<Competitor> competitor)
+        {
+            if (competitor != null)
+                foreach (Competitor item in competitor)
+                {
+                    SQLiteDBHelper.InsertCompetitor(item);
+                }
+        }
+        private void InsertToDB(List<Distributor> distributor)
+        {
+            if (distributor != null)
+                foreach (Distributor item in distributor)
+                {
+                    SQLiteDBHelper.InsertDistributor(item);
+                }
+        }
+        private void InsertToDB(string konfigurasi)
+        {
+            SQLiteDBHelper.InsertKonfigurasi(int.Parse(konfigurasi));
+        }
+        private void InsertToDB(List<City> kota)
+        {
+            if (kota != null)
+                foreach (City item in kota)
+                {
+                    SQLiteDBHelper.InsertCity(item);
+                }
+        }
+        private void InsertToDB(List<Logging> logging)
+        {
+            if (logging != null)
+                foreach (Logging item in logging)
+                {
+                    SQLiteDBHelper.InsertLogging(item);
+                }
+        }
+        private void InsertToDB(List<Outlet> outlet)
+        {
+            if (outlet != null)
+                foreach (Outlet item in outlet)
+                {
+                    SQLiteDBHelper.InsertOutlet(item);
+                }
+        }
+        private void InsertToDB(List<PhotoActivity> photoact)
+        {
+            if (photoact != null)
+                foreach (PhotoActivity item in photoact)
+                {
+                    SQLiteDBHelper.InsertPhotoActivity(item);
+                }
+        }
+        private void InsertToDB(List<Product> produk)
+        {
+            if (produk != null)
+                foreach (Product item in produk)
+                {
+                    SQLiteDBHelper.InsertProduct(item);
+                }
+        }
+        private void InsertToDB(List<TakeOrder> takeorder)
+        {
+            if (takeorder != null)
+                foreach (TakeOrder item in takeorder)
+                {
+                    SQLiteDBHelper.InsertTakeOrder(item);
+                }
+        }
+        private void InsertToDB(List<Tipe> tipe)
+        {
+            if (tipe != null)
+                foreach (Tipe item in tipe)
+                {
+                    SQLiteDBHelper.InsertTipe(item);
+                }
+        }
+        private void InsertToDB(List<TipePhoto> tipephoto)
+        {
+            if (tipephoto != null)
+                foreach (TipePhoto item in tipephoto)
+                {
+                    SQLiteDBHelper.InsertTipePhoto(item);
+                }
+        }
+        private void InsertToDB(List<User> user)
+        {
+            if (user != null)
+                foreach (User item in user)
+                {
+                    SQLiteDBHelper.InsertUser(item);
+                }
+        }
+        private void InsertToDB(List<VisitPlan> visitplan)
+        {
+            if (visitplan != null)
+                foreach (VisitPlan item in visitplan)
+                {
+                    SQLiteDBHelper.InsertVisitPlan(item);
+                }
         }
     }
 }

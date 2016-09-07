@@ -29,8 +29,8 @@
                                         <Setter Property="TextElement.FontWeight" Value="Bold"/>
                                     </Style>
                                 </GridView.ColumnHeaderContainerStyle>
-                                <GridViewColumn Header="Kode Produk" Width="366" DisplayMemberBinding="{Binding Kode}" />
-                                <GridViewColumn Header="Nama Produk" Width="365" DisplayMemberBinding="{Binding Nama}" />
+                                <GridViewColumn Header="Kode Produk" Width="366" DisplayMemberBinding="{Binding kd_produk}" />
+                                <GridViewColumn Header="Nama Produk" Width="365" DisplayMemberBinding="{Binding nm_produk}" />
                                 <GridViewColumn Header="Action" Width="365">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>

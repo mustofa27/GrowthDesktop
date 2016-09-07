@@ -28,7 +28,7 @@
                 <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
                     <StackPanel Orientation="Vertical">
                         <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5">Approval</Button>
-                        <ListView x:Name="listOutlet" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black">
+                        <ListView x:Name="listVisit" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black">
                             <ListView.View>
                                 <GridView>
                                     <GridView.ColumnHeaderContainerStyle>
@@ -37,15 +37,15 @@
                                             <Setter Property="TextElement.FontWeight" Value="Bold"/>
                                         </Style>
                                     </GridView.ColumnHeaderContainerStyle>
-                                    <GridViewColumn Header="Sales Force" Width="120" DisplayMemberBinding="{Binding Nama}" />
-                                    <GridViewColumn Header="Nama Outlet" Width="130" DisplayMemberBinding="{Binding Nama}" />
-                                    <GridViewColumn Header="Alamat Outlet" Width="130" DisplayMemberBinding="{Binding Kode}" />
-                                    <GridViewColumn Header="Distributor" Width="100" DisplayMemberBinding="{Binding Nama}" />
-                                    <GridViewColumn Header="Kota Outlet" Width="100" DisplayMemberBinding="{Binding Kode}" />
-                                    <GridViewColumn Header="Date Create Visit Plan" Width="167" DisplayMemberBinding="{Binding Nama}" />
-                                    <GridViewColumn Header="Date Visit Plan" Width="128" DisplayMemberBinding="{Binding Kode}" />
-                                    <GridViewColumn Header="Status Approval" Width="120" DisplayMemberBinding="{Binding Kode}" />
-                                    <GridViewColumn Header="Action" Width="98">
+                                    <GridViewColumn Header="Sales Force" Width="120" DisplayMemberBinding="{Binding nm_sales}" />
+                                    <GridViewColumn Header="Nama Outlet" Width="140" DisplayMemberBinding="{Binding nm_outlet}" />
+                                    <GridViewColumn Header="Alamat Outlet" Width="130" DisplayMemberBinding="{Binding alamat_outlet}" />
+                                    <GridViewColumn Header="Distributor" Width="110" DisplayMemberBinding="{Binding nm_dist}" />
+                                    <GridViewColumn Header="Kota Outlet" Width="100" DisplayMemberBinding="{Binding kota}" />
+                                    <GridViewColumn Header="Date Create Visit Plan" Width="167" DisplayMemberBinding="{Binding date_created}" />
+                                    <GridViewColumn Header="Date Visit Plan" Width="128" DisplayMemberBinding="{Binding date_visit}" />
+                                    <GridViewColumn Header="Status Approval" Width="120" DisplayMemberBinding="{Binding status_approval}" />
+                                    <GridViewColumn Header="Action" Width="78">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Horizontal">

@@ -10,9 +10,9 @@ namespace Growth.Master
     {
         private int kode, kodeArea;
         string nama;
-        public int Kode { set { kode = value; } get { return kode; } }
-        public int KodeArea { set { kodeArea = value; } get { return kodeArea; } }
-        public string Nama { set { nama = value; } get { return nama; } }
+        public int id { set { kode = value; } get { return kode; } }
+        public int kd_area { set { kodeArea = value; } get { return kodeArea; } }
+        public string nm_kota { set { nama = value; } get { return nama; } }
         public City(int kode, int kodeArea, string nama)
         {
             setKode(kode);

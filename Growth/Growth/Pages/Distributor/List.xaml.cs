@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Growth.Master;
 
 namespace Growth.Pages.Distributor
 {
@@ -24,7 +25,7 @@ namespace Growth.Pages.Distributor
         public List()
         {
             InitializeComponent();
-            listDistributor.ItemsSource = SQLiteDBHelper.ReadAllArea();
+            listDistributor.ItemsSource = SQLiteDBHelper.ReadAllDistributor();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

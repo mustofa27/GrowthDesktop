@@ -29,12 +29,12 @@
                                         <Setter Property="TextElement.FontWeight" Value="Bold"/>
                                     </Style>
                                 </GridView.ColumnHeaderContainerStyle>
-                                <GridViewColumn Header="Kode Distributor" Width="156" DisplayMemberBinding="{Binding Kode}" />
-                                <GridViewColumn Header="Nama" Width="156" DisplayMemberBinding="{Binding Nama}" />
-                                <GridViewColumn Header="Alamat" Width="156" DisplayMemberBinding="{Binding Nama}" />
-                                <GridViewColumn Header="Tipe" Width="156" DisplayMemberBinding="{Binding Nama}" />
-                                <GridViewColumn Header="Kota" Width="156" DisplayMemberBinding="{Binding Nama}" />
-                                <GridViewColumn Header="Telepon" Width="156" DisplayMemberBinding="{Binding Nama}" />
+                                <GridViewColumn Header="Kode Distributor" Width="156" DisplayMemberBinding="{Binding Kd_dist}" />
+                                <GridViewColumn Header="Nama" Width="156" DisplayMemberBinding="{Binding Nm_dist}" />
+                                <GridViewColumn Header="Alamat" Width="156" DisplayMemberBinding="{Binding Almt_dist}" />
+                                <GridViewColumn Header="Tipe" Width="156" DisplayMemberBinding="{Binding Kd_tipe}" />
+                                <GridViewColumn Header="Kota" Width="156" DisplayMemberBinding="{Binding kota}" />
+                                <GridViewColumn Header="Telepon" Width="156" DisplayMemberBinding="{Binding Telp_dist}" />
                                 <GridViewColumn Header="Action" Width="156">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>

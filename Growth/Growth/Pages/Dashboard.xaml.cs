@@ -16,39 +16,40 @@ using Growth.Master;
 using Growth.Helper;
 using System.Collections.ObjectModel;
 using Growth.Interfaces;
+using Growth.Pages.Pageclasses;
+using Newtonsoft.Json;
 
 namespace Growth.Pages
 {
     /// <summary>
     /// Interaction logic for Dashboard.xaml
     /// </summary>
-    public partial class Dashboard : Page
+    public partial class Dashboard : Page,Callback
     {
-        private class Sales
+        private class Top
         {
-            public string Name { set; get; }
-            public string Area { set; get; }
-            public int TotalVisit { set; get; }
-            public int EffectiveCall { set; get; }
-            public Sales(string nama, string area, int total, int effect)
+            public List<TopSales> top { set; get; }
+            public Top(List<TopSales> top)
             {
-                Name = nama;
-                Area = area;
-                TotalVisit = total;
-                EffectiveCall = effect;
+                this.top = top;
             }
         }
         public Dashboard()
         {
+            ConnectionHandler con = new ConnectionHandler(this);
+            con.getTop();
             InitializeComponent();
-            //ConnectionHandler con = new ConnectionHandler(this);
-            //con.getAllData();
-            listSales.ItemsSource = SQLiteDBHelper.ReadAllVisitPlan();
         }
 
         public void Done(string res)
         {
-            throw new NotImplementedException();
+            Top topSales = JsonConvert.DeserializeObject<Top>(res);
+            int i = 1;
+            foreach (TopSales item in topSales.top)
+            {
+                item.Urut = i++;
+            }
+            listSales.ItemsSource = topSales.top;
         }
     }
 }

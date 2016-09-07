@@ -8,9 +8,19 @@ namespace Growth.Master
 {
     class Competitor
     {
-        private int id, kd_kota;
-        public int Id { get { return id; } set { id = value; } }
-        public int Kd_kota { get { return kd_kota; } set { kd_kota = value; } }
+        private int Id, Kd_kota;
+        private string Nm_competitor, Alamat;
+        public Competitor(int id, int kd_kota, string nm_competitor, string alamat)
+        {
+            this.id = id;
+            this.kd_kota = kd_kota;
+            this.nm_competitor = nm_competitor;
+            this.alamat = alamat;
+        }
+        public int id { get { return Id; } set { Id = value; } }
+        public int kd_kota { get { return Kd_kota; } set { Kd_kota = value; } }
+        public string nm_competitor { set { Nm_competitor = value; } get { return Nm_competitor; } }
+        public string alamat { set { Alamat = value; } get { return Alamat; } }
         public string getNm_competitor()
         {
             return nm_competitor;
@@ -48,23 +58,6 @@ namespace Growth.Master
 
         public void setAlamat(string alamat)
         {
-            this.alamat = alamat;
-        }
-
-        private string nm_competitor, alamat;
-
-        public Competitor(int id, int kd_kota, string nm_competitor, string alamat)
-        {
-            this.id = id;
-            this.kd_kota = kd_kota;
-            this.nm_competitor = nm_competitor;
-            this.alamat = alamat;
-        }
-
-        public Competitor(int kd_kota, string nm_competitor, string alamat)
-        {
-            this.kd_kota = kd_kota;
-            this.nm_competitor = nm_competitor;
             this.alamat = alamat;
         }
 

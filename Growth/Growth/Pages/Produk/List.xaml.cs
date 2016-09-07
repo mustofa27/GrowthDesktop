@@ -24,7 +24,7 @@ namespace Growth.Pages.Produk
         public List()
         {
             InitializeComponent();
-            listProduk.ItemsSource = SQLiteDBHelper.ReadAllArea();
+            listProduk.ItemsSource = SQLiteDBHelper.ReadAllProduct();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

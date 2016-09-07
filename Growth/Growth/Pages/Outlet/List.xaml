@@ -38,14 +38,14 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Nama Outlet" Width="139" DisplayMemberBinding="{Binding Nama}" />
-                                <GridViewColumn Header="Alamat" Width="139" DisplayMemberBinding="{Binding Kode}" />
-                                <GridViewColumn Header="Kode Pos" Width="100" DisplayMemberBinding="{Binding Nama}" />
-                                <GridViewColumn Header="Kota" Width="118" DisplayMemberBinding="{Binding Kode}" />
-                                <GridViewColumn Header="Area" Width="70" DisplayMemberBinding="{Binding Nama}" />
-                                <GridViewColumn Header="Tipe" Width="100" DisplayMemberBinding="{Binding Kode}" />
-                                <GridViewColumn Header="Nama PIC" Width="139" DisplayMemberBinding="{Binding Kode}" />
-                                <GridViewColumn Header="Tlp PIC" Width="139" DisplayMemberBinding="{Binding Nama}" />
+                                <GridViewColumn Header="Nama Outlet" Width="139" DisplayMemberBinding="{Binding nm_outlet}" />
+                                <GridViewColumn Header="Alamat" Width="139" DisplayMemberBinding="{Binding almt_outlet}" />
+                                <GridViewColumn Header="Kode Pos" Width="100" DisplayMemberBinding="{Binding kodepos}" />
+                                <GridViewColumn Header="Kota" Width="118" DisplayMemberBinding="{Binding kota}" />
+                                <GridViewColumn Header="Area" Width="70" DisplayMemberBinding="{Binding area}" />
+                                <GridViewColumn Header="Tipe" Width="100" DisplayMemberBinding="{Binding nm_tipe}" />
+                                <GridViewColumn Header="Nama PIC" Width="139" DisplayMemberBinding="{Binding nm_pic}" />
+                                <GridViewColumn Header="Tlp PIC" Width="139" DisplayMemberBinding="{Binding tlp_pic}" />
                                 <GridViewColumn Header="Action" Width="79">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>

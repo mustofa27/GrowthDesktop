@@ -18,7 +18,6 @@ namespace Growth.Helper
             {
                 // ... Read the string.
                 string result = await content.ReadAsStringAsync();
-
                 // ... Display the result.
                 if (result != null)
                 {

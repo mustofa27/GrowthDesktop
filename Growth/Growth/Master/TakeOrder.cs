@@ -8,23 +8,23 @@ namespace Growth.Master
 {
     class TakeOrder
     {
-        private int id, kd_visit, kd_produk, qty, status;
-        private string date_order, satuan, kd_to;
+        private int Id, kd_visit, Kd_produk, qty, status;
+        private string Date_order, Satuan, Kd_to;
 
-        public int Id
+        public int id
         {
             get
             {
-                return id;
+                return Id;
             }
 
             set
             {
-                id = value;
+                Id = value;
             }
         }
 
-        public int Kd_visit
+        public int kd_visitplan
         {
             get
             {
@@ -37,20 +37,20 @@ namespace Growth.Master
             }
         }
 
-        public int Kd_produk
+        public int kd_produk
         {
             get
             {
-                return kd_produk;
+                return Kd_produk;
             }
 
             set
             {
-                kd_produk = value;
+                Kd_produk = value;
             }
         }
 
-        public int Qty
+        public int qty_order
         {
             get
             {
@@ -63,7 +63,7 @@ namespace Growth.Master
             }
         }
 
-        public int Status
+        public int status_order
         {
             get
             {
@@ -76,42 +76,42 @@ namespace Growth.Master
             }
         }
 
-        public string Date_order
+        public string date_order
         {
             get
             {
-                return date_order;
+                return Date_order;
             }
 
             set
             {
-                date_order = value;
+                Date_order = value;
             }
         }
 
-        public string Satuan
+        public string satuan
         {
             get
             {
-                return satuan;
+                return Satuan;
             }
 
             set
             {
-                satuan = value;
+                Satuan = value;
             }
         }
 
-        public string Kd_to
+        public string kd_to
         {
             get
             {
-                return kd_to;
+                return Kd_to;
             }
 
             set
             {
-                kd_to = value;
+                Kd_to = value;
             }
         }
 

@@ -13,10 +13,12 @@ namespace Growth.Master
         private int kode_distributor;
         private int kode_user;
         private int tipe;
-        private int status_area,toleransi;
-        private string nama, namaPIC, alamat, rank, telpon, reg_status,kodepos, longitude, latitude, telpPIC, foto;
-
-        public int Kode
+        private int Status_area,toleransi;
+        private string nama, namaPIC, alamat, rank, telpon, Reg_status, Kodepos, Longitude, Latitude, telpPIC, foto;
+        public string kota { set; get; }
+        public string area { set; get; }
+        public string nm_tipe { set; get; }
+        public int kd_outlet
         {
             get
             {
@@ -29,7 +31,7 @@ namespace Growth.Master
             }
         }
 
-        public int Kode_kota
+        public int kd_kota
         {
             get
             {
@@ -42,7 +44,7 @@ namespace Growth.Master
             }
         }
 
-        public int Kode_distributor
+        public int kd_dist
         {
             get
             {
@@ -55,7 +57,7 @@ namespace Growth.Master
             }
         }
 
-        public int Kode_user
+        public int kd_user
         {
             get
             {
@@ -68,7 +70,7 @@ namespace Growth.Master
             }
         }
 
-        public int Tipe
+        public int kd_tipe
         {
             get
             {
@@ -81,20 +83,20 @@ namespace Growth.Master
             }
         }
 
-        public int Status_area
+        public int status_area
         {
             get
             {
-                return status_area;
+                return Status_area;
             }
 
             set
             {
-                status_area = value;
+                Status_area = value;
             }
         }
 
-        public int Toleransi
+        public int toleransi_long
         {
             get
             {
@@ -107,7 +109,7 @@ namespace Growth.Master
             }
         }
 
-        public string Nama
+        public string nm_outlet
         {
             get
             {
@@ -120,7 +122,7 @@ namespace Growth.Master
             }
         }
 
-        public string NamaPIC
+        public string nm_pic
         {
             get
             {
@@ -133,7 +135,7 @@ namespace Growth.Master
             }
         }
 
-        public string Alamat
+        public string almt_outlet
         {
             get
             {
@@ -146,7 +148,7 @@ namespace Growth.Master
             }
         }
 
-        public string Rank
+        public string rank_outlet
         {
             get
             {
@@ -172,59 +174,59 @@ namespace Growth.Master
             }
         }
 
-        public string Reg_status
+        public string reg_status
         {
             get
             {
-                return reg_status;
+                return Reg_status;
             }
 
             set
             {
-                reg_status = value;
+                Reg_status = value;
             }
         }
 
-        public string Kodepos
+        public string kodepos
         {
             get
             {
-                return kodepos;
+                return Kodepos;
             }
 
             set
             {
-                kodepos = value;
+                Kodepos = value;
             }
         }
 
-        public string Longitude
+        public string longitude
         {
             get
             {
-                return longitude;
+                return Longitude;
             }
 
             set
             {
-                longitude = value;
+                Longitude = value;
             }
         }
 
-        public string Latitude
+        public string latitude
         {
             get
             {
-                return latitude;
+                return Latitude;
             }
 
             set
             {
-                latitude = value;
+                Latitude = value;
             }
         }
 
-        public string TelpPIC
+        public string tlp_pic
         {
             get
             {
@@ -237,7 +239,7 @@ namespace Growth.Master
             }
         }
 
-        public string Foto
+        public string foto_outlet
         {
             get
             {
@@ -250,7 +252,7 @@ namespace Growth.Master
             }
         }
 
-        public Outlet(int kd, int kd_kota, int kd_user, int kode_distributor, string nama, string alamat, int tipe, string rank, string telpon, string reg_status, string kodepos, string latitude, string longitude, int toleransi, string foto, string namaPIC, string telpPIC, int status_area)
+        public Outlet(int kd, int kode_distributor, int kd_kota, int kd_user, string nama, string alamat, int tipe, string rank, string telpon, string reg_status, string kodepos, string latitude, string longitude, int toleransi, string foto, string namaPIC, string telpPIC, int status_area)
         {
             setKode(kd);
             setKode_kota(kd_kota);
@@ -284,12 +286,12 @@ namespace Growth.Master
 
         public string getKodepos()
         {
-            return kodepos;
+            return Kodepos;
         }
 
         public void setKodepos(string kodepos)
         {
-            this.kodepos = kodepos;
+            this.Kodepos = kodepos;
         }
 
         public string getFoto()
@@ -314,12 +316,12 @@ namespace Growth.Master
 
         public int getStatus_area()
         {
-            return status_area;
+            return Status_area;
         }
 
         public void setStatus_area(int status_area)
         {
-            this.status_area = status_area;
+            this.Status_area = status_area;
         }
 
         public int getToleransi()
@@ -424,32 +426,32 @@ namespace Growth.Master
 
         public string getLongitude()
         {
-            return longitude;
+            return Longitude;
         }
 
         public void setLongitude(string longitude)
         {
-            this.longitude = longitude;
+            this.Longitude = longitude;
         }
 
         public string getLatitude()
         {
-            return latitude;
+            return Latitude;
         }
 
         public void setLatitude(string latitude)
         {
-            this.latitude = latitude;
+            this.Latitude = latitude;
         }
 
         public string getReg_status()
         {
-            return reg_status;
+            return Reg_status;
         }
 
         public void setReg_status(string reg_status)
         {
-            this.reg_status = reg_status;
+            this.Reg_status = reg_status;
         }
     }
 }

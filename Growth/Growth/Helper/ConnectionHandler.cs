@@ -19,5 +19,9 @@ namespace Growth.Helper
         {
             ConnectionHelper.DownloadPageAsync(URL + "desktop/getAll", callback);
         }
+        public void getTop()
+        {
+            ConnectionHelper.DownloadPageAsync(URL + "desktop/getTop", callback);
+        }
     }
 }

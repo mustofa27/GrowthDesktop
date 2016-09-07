@@ -8,49 +8,49 @@ namespace Growth.Master
 {
     class PhotoActivity
     {
-        private int id, kd_user, kd_outlet, kd_kompetitor, kd_tipe;
-        private string nama, tgl_take, tgl_upload, alamat, keterangan, foto;
+        private int Id, Kd_user, Kd_outlet, kd_kompetitor, kd_tipe;
+        private string nama, tgl_take, tgl_upload, alamat, Keterangan, foto;
 
-        public int Id
+        public int id
         {
             get
             {
-                return id;
+                return Id;
             }
 
             set
             {
-                id = value;
+                Id = value;
             }
         }
 
-        public int Kd_user
+        public int kd_user
         {
             get
             {
-                return kd_user;
+                return Kd_user;
             }
 
             set
             {
-                kd_user = value;
+                Kd_user = value;
             }
         }
 
-        public int Kd_outlet
+        public int kd_outlet
         {
             get
             {
-                return kd_outlet;
+                return Kd_outlet;
             }
 
             set
             {
-                kd_outlet = value;
+                Kd_outlet = value;
             }
         }
 
-        public int Kd_kompetitor
+        public int kd_competitor
         {
             get
             {
@@ -63,7 +63,7 @@ namespace Growth.Master
             }
         }
 
-        public int Kd_tipe
+        public int jenis_photo
         {
             get
             {
@@ -76,7 +76,7 @@ namespace Growth.Master
             }
         }
 
-        public string Nama
+        public string nm_photo
         {
             get
             {
@@ -89,7 +89,7 @@ namespace Growth.Master
             }
         }
 
-        public string Tgl_take
+        public string date_take_photo
         {
             get
             {
@@ -102,7 +102,7 @@ namespace Growth.Master
             }
         }
 
-        public string Tgl_upload
+        public string date_upload_photo
         {
             get
             {
@@ -115,7 +115,7 @@ namespace Growth.Master
             }
         }
 
-        public string Alamat
+        public string almt_comp_activity
         {
             get
             {
@@ -128,20 +128,20 @@ namespace Growth.Master
             }
         }
 
-        public string Keterangan
+        public string keterangan
         {
             get
             {
-                return keterangan;
+                return Keterangan;
             }
 
             set
             {
-                keterangan = value;
+                Keterangan = value;
             }
         }
 
-        public string Foto
+        public string path_photo
         {
             get
             {

@@ -125,12 +125,12 @@ namespace Growth.Helper
                             + KEY_TIPE_OUTLET + " INTEGER NOT NULL,"
                             + KEY_RANK_OUTLET + " TEXT NOT NULL,"
                             + KEY_TELP_OUTLET + " TEXT NOT NULL,"
-                            + KEY_KODE_POS + "TEXT NOT NULL,"
+                            + KEY_KODE_POS + " TEXT NOT NULL,"
                             + KEY_REGISTER_STATUS + " TEXT NOT NULL,"
                             + KEY_LATITUDE + " TEXT NOT NULL,"
                             + KEY_LONGITUDE + " TEXT NOT NULL,"
-                            + KEY_TOLERANSI + "INTEGER NOT NULL,"
-                            + KEY_FOTO + "TEXT NOT NULL,"
+                            + KEY_TOLERANSI + " INTEGER NOT NULL,"
+                            + KEY_FOTO + " TEXT NOT NULL,"
                             + KEY_NMPIC + " TEXT NOT NULL,"
                             + KEY_TLPPIC + " TEXT NOT NULL,"
                             + KEY_STATUS_AREA + " INTEGER NOT NULL)");
@@ -172,7 +172,7 @@ namespace Growth.Helper
                             + KEY_NAMA_AREA + " TEXT NOT NULL)");
                 sqlList.Add("CREATE TABLE IF NOT EXISTS " + TABLE_LOGGING +
                             "(" + KEY_KODE_LOGGING + " INTEGER PRIMARY KEY NOT NULL,"
-                            + KEY_KODE_USER + " INTEGER PRIMARY KEY NOT NULL,"
+                            + KEY_KODE_USER + " INTEGER NOT NULL,"
                             + KEY_DESCRIPTION + " TEXT NOT NULL,"
                             + KEY_LOG_TIME + " TEXT NOT NULL,"
                             + KEY_DETAIL_AKSES + " TEXT NOT NULL)");
@@ -442,10 +442,12 @@ namespace Growth.Helper
             List<Distributor> distributors = new List<Distributor>();
             while (reader.Read())
             {
-                distributors.Add(new Distributor(int.Parse(reader[KEY_ID_DISTRIBUTOR].ToString()),
+                Distributor dist = new Distributor(int.Parse(reader[KEY_ID_DISTRIBUTOR].ToString()),
                     reader[KEY_KODE_DISTRIBUTOR].ToString(), reader[KEY_KODE_TIPE].ToString()
                     , int.Parse(reader[KEY_KODE_KOTA].ToString()), reader[KEY_NAMA_DISTRIBUTOR].ToString()
-                    , reader[KEY_ALAMAT_DISTRIBUTOR].ToString(), reader[KEY_TELEPON_DISTRIBUTOR].ToString()));
+                    , reader[KEY_ALAMAT_DISTRIBUTOR].ToString(), reader[KEY_TELEPON_DISTRIBUTOR].ToString());
+                dist.kota = ReadCity(dist.Kd_kota).nm_kota;
+                distributors.Add(dist);
             }
             reader.Close();
             return distributors;
@@ -569,14 +571,19 @@ namespace Growth.Helper
             List<Outlet> outlets = new List<Outlet>();
             while (reader.Read())
             {
-                 outlets.Add(new Outlet(int.Parse(reader[KEY_KODE_OUTLET].ToString()),
+                Outlet outlet = new Outlet(int.Parse(reader[KEY_KODE_OUTLET].ToString()),
                     int.Parse(reader[KEY_KODE_DISTRIBUTOR].ToString()), int.Parse(reader[KEY_KODE_KOTA].ToString()),
                      int.Parse(reader[KEY_KODE_USER].ToString()), reader[KEY_NAMA_OUTLET].ToString(),
                      reader[KEY_ALAMAT_OUTLET].ToString(), int.Parse(reader[KEY_TIPE_OUTLET].ToString()),
                      reader[KEY_RANK_OUTLET].ToString(), reader[KEY_TELP_OUTLET].ToString(),
                      reader[KEY_REGISTER_STATUS].ToString(), reader[KEY_KODE_POS].ToString(), reader[KEY_LATITUDE].ToString(),
                      reader[KEY_LONGITUDE].ToString(), int.Parse(reader[KEY_TOLERANSI].ToString()), reader[KEY_FOTO].ToString(),
-                     reader[KEY_NMPIC].ToString(), reader[KEY_TLPPIC].ToString(), int.Parse(reader[KEY_STATUS_AREA].ToString())));
+                     reader[KEY_NMPIC].ToString(), reader[KEY_TLPPIC].ToString(), int.Parse(reader[KEY_STATUS_AREA].ToString()));
+                City kota = ReadCity(outlet.kd_kota);
+                outlet.area = ReadArea(kota.getKodeArea()).getNama();
+                outlet.kota = kota.getNama();
+                outlet.nm_tipe = ReadTipe(outlet.kd_tipe).nm_tipe;
+                outlets.Add(outlet);
             }
             reader.Close();
             return outlets;
@@ -1017,11 +1024,19 @@ namespace Growth.Helper
             List<VisitPlan> visitPlans = new List<VisitPlan>();
             while (reader.Read())
             {
-                visitPlans.Add(new VisitPlan(int.Parse(reader[KEY_KODE_VISITPLAN].ToString()),
+                VisitPlan visit = new VisitPlan(int.Parse(reader[KEY_KODE_VISITPLAN].ToString()),
                     int.Parse(reader[KEY_KODE_OUTLET].ToString()), reader[KEY_DATE_VISIT].ToString(),
                      reader[KEY_DATE_CREATE_VISIT].ToString(), int.Parse(reader[KEY_APPROVE_VISIT].ToString()),
                      int.Parse(reader[KEY_STATUS_VISIT].ToString()), reader[KEY_DATE_VISITING].ToString(),
-                     reader[KEY_SKIP_ORDER_REASON].ToString(), reader[KEY_SKIP_REASON].ToString()));
+                     reader[KEY_SKIP_ORDER_REASON].ToString(), reader[KEY_SKIP_REASON].ToString());
+                Outlet outlet = ReadOutlet(visit.getKd_outlet());
+                User user = ReadUser(outlet.getKode_user());
+                visit.kota = ReadCity(user.getKd_kota()).getNama();
+                visit.nm_outlet = outlet.getNama();
+                visit.nm_dist = ReadDistributor(outlet.getKode_distributor()).getNm_dist();
+                visit.alamat_outlet = outlet.getAlamat();
+                visit.nm_sales = user.getNama();
+                visitPlans.Add(visit);
             }
             reader.Close();
             return visitPlans;
@@ -1069,6 +1084,9 @@ namespace Growth.Helper
             command.ExecuteNonQuery();
         }
         #endregion
+        #endregion
+        #region Dashboard query
+
         #endregion
     }
 }

@@ -9,22 +9,22 @@ namespace Growth.Master
     class User
     {
         private int kode;
-        private int kd_kota;
-        private int kd_area;
+        private int Kd_kota;
+        private int Kd_area;
         private int kodeRole;
         private int status;
         private string NIK;
-        private string nama;
-        private string alamat;
-        private string telepon;
+        private string Nama;
+        private string Alamat;
+        private string Telepon;
         private string path_foto;
-        private string username;
-        private string password;
+        private string Username;
+        private string Password;
         private string email;
         private string gcmId;
         private int toleransi;
 
-        public int Kode
+        public int id
         {
             get
             {
@@ -37,33 +37,33 @@ namespace Growth.Master
             }
         }
 
-        public int Kd_kota
+        public int kd_kota
         {
             get
             {
-                return kd_kota;
+                return Kd_kota;
             }
 
             set
             {
-                kd_kota = value;
+                Kd_kota = value;
             }
         }
 
-        public int Kd_area
+        public int kd_area
         {
             get
             {
-                return kd_area;
+                return Kd_area;
             }
 
             set
             {
-                kd_area = value;
+                Kd_area = value;
             }
         }
 
-        public int KodeRole
+        public int kd_role
         {
             get
             {
@@ -89,7 +89,7 @@ namespace Growth.Master
             }
         }
 
-        public string NIK1
+        public string nik
         {
             get
             {
@@ -102,46 +102,46 @@ namespace Growth.Master
             }
         }
 
-        public string Nama
+        public string nama
         {
             get
             {
-                return nama;
+                return Nama;
             }
 
             set
             {
-                nama = value;
+                Nama = value;
             }
         }
 
-        public string Alamat
+        public string alamat
         {
             get
             {
-                return alamat;
+                return Alamat;
             }
 
             set
             {
-                alamat = value;
+                Alamat = value;
             }
         }
 
-        public string Telepon
+        public string telepon
         {
             get
             {
-                return telepon;
+                return Telepon;
             }
 
             set
             {
-                telepon = value;
+                Telepon = value;
             }
         }
 
-        public string Path_foto
+        public string foto
         {
             get
             {
@@ -154,33 +154,33 @@ namespace Growth.Master
             }
         }
 
-        public string Username
+        public string username
         {
             get
             {
-                return username;
+                return Username;
             }
 
             set
             {
-                username = value;
+                Username = value;
             }
         }
 
-        public string Password
+        public string password
         {
             get
             {
-                return password;
+                return Password;
             }
 
             set
             {
-                password = value;
+                Password = value;
             }
         }
 
-        public string Email
+        public string email_user
         {
             get
             {
@@ -193,7 +193,7 @@ namespace Growth.Master
             }
         }
 
-        public string GcmId
+        public string id_gcm
         {
             get
             {
@@ -238,11 +238,11 @@ namespace Growth.Master
             setGcmId(gcmId);
             setToleransi(toleransi);
         }
-        public User(string username, string password)
-        {
-            setUsername(username);
-            setPassword(password);
-        }
+        //public User(string username, string password)
+        //{
+        //    setUsername(username);
+        //    setPassword(password);
+        //}
         public string getGcmId()
         {
             return gcmId;
