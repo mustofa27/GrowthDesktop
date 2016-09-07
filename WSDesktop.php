@@ -75,4 +75,36 @@ class WSDesktop extends Controller
 		->take(5)->get();
 		return Response::json($data,200);
     }
+    public function setVisit()
+    {
+    	$data=new VisitPlan;
+        if(!Input::has('kd_outlet'))
+        {
+            $out['status'] = "no data sent";
+            $out['id'] = 0;
+            return Response::json($out,500);
+        }
+        $data->kd_outlet=Input::get('kd_outlet');
+        $data->date_visit=Input::get('date_visit');
+        $data->date_create_visit=Input::get('date_create_visit');
+        $data->approve_visit=Input::get('approve_visit');
+        $data->status_visit = 1;
+        $success=$data->save();
+             
+        if(!$success)
+        {
+            $out['status'] = "error saving";
+            $out['id'] = 0;
+            return Response::json($out,501);
+        }
+        $logging = new Logging;
+        $logging->kd_user = 0;
+        $logging->description = "Register visit plan to outlet ".Outlet::where("kd_outlet",Input::get("kd_outlet"))->first()->nm_outlet;
+        $logging->log_time = Input::get('date_create_visit');
+        $logging->detail_akses = "desktop";
+        $logging->save();
+        $out['status'] = "success";
+        $out['id'] = $data->id;
+        return Response::json($out,201);
+    }
 }

@@ -23,5 +23,9 @@ namespace Growth.Helper
         {
             ConnectionHelper.DownloadPageAsync(URL + "desktop/getTop", callback);
         }
+        public void setVisit(string json)
+        {
+            ConnectionHelper.PostToPage(URL + "desktop/setVisit", callback, json);
+        }
     }
 }
