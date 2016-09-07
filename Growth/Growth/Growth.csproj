@@ -246,6 +246,7 @@
     <Compile Include="Pages\Outlet\List.xaml.cs">
       <DependentUpon>List.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Pageclasses\Respon.cs" />
     <Compile Include="Pages\Pageclasses\TopSales.cs" />
     <Compile Include="Pages\Produk\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>

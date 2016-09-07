@@ -107,4 +107,14 @@ class WSDesktop extends Controller
         $out['id'] = $data->id;
         return Response::json($out,201);
     }
+    public function setArea()
+    {
+    	$data = new Area;
+    	$data->kd_area = Input::get('kd_area');
+    	$data->nm_area = Input::get('nm_area');
+    	$data->save();
+    	$out['status'] = "success";
+        $out['id'] = $data->id;
+        return Response::json($out,201);
+    }
 }

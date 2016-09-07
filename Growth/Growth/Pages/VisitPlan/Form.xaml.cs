@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Growth.Helper;
 using Newtonsoft.Json;
 using Growth.Interfaces;
+using Growth.Pages.Pageclasses;
 
 namespace Growth.Pages.VisitPlan
 {
@@ -29,16 +30,6 @@ namespace Growth.Pages.VisitPlan
             InitializeComponent();
             selectOutlet.ItemsSource = SQLiteDBHelper.ReadAllOutlet();
             selectOutlet.SelectedIndex = 0;
-        }
-        private class Respon
-        {
-            public string status { set; get; }
-            public int id { set; get; }
-            public Respon(int id, string status)
-            {
-                this.status = status;
-                this.id = id;
-            }
         }
         private void selectOutlet_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

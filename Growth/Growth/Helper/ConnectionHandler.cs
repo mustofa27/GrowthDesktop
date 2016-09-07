@@ -27,5 +27,9 @@ namespace Growth.Helper
         {
             ConnectionHelper.PostToPage(URL + "desktop/setVisit", callback, json);
         }
+        public void setArea(string json)
+        {
+            ConnectionHelper.PostToPage(URL + "desktop/setArea", callback, json);
+        }
     }
 }

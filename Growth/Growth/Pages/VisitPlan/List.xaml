@@ -42,7 +42,7 @@
                                     <GridViewColumn Header="Alamat Outlet" Width="130" DisplayMemberBinding="{Binding alamat_outlet}" />
                                     <GridViewColumn Header="Distributor" Width="110" DisplayMemberBinding="{Binding nm_dist}" />
                                     <GridViewColumn Header="Kota Outlet" Width="100" DisplayMemberBinding="{Binding kota}" />
-                                    <GridViewColumn Header="Date Create Visit Plan" Width="167" DisplayMemberBinding="{Binding date_created}" />
+                                    <GridViewColumn Header="Date Create Visit Plan" Width="167" DisplayMemberBinding="{Binding date_create_visit}" />
                                     <GridViewColumn Header="Date Visit Plan" Width="128" DisplayMemberBinding="{Binding date_visit}" />
                                     <GridViewColumn Header="Status Approval" Width="120" DisplayMemberBinding="{Binding status_approval}" />
                                     <GridViewColumn Header="Action" Width="78">

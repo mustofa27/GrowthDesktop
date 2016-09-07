@@ -9,7 +9,7 @@ namespace Growth.Master
     class VisitPlan
     {
         int kd_visit, Approve_visit, Status_visit, Kd_outlet;
-        string Skip_reason, Skip_order_reason, Date_visit, Date_visiting, Date_created;
+        string Skip_reason, Skip_order_reason, Date_visit, Date_visiting, date_created;
         public string nm_sales { set; get; }
         public string nm_outlet { set; get; }
         public string alamat_outlet { set; get; }
@@ -120,16 +120,16 @@ namespace Growth.Master
             }
         }
 
-        public string date_created
+        public string date_create_visit
         {
             get
             {
-                return Date_created;
+                return date_created;
             }
 
             set
             {
-                Date_created = value;
+                date_created = value;
             }
         }
 
