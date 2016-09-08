@@ -13,6 +13,8 @@ namespace Growth.Master
         public int id { set { kode = value; } get { return kode; } }
         public int kd_area { set { kodeArea = value; } get { return kodeArea; } }
         public string nm_kota { set { nama = value; } get { return nama; } }
+        public string nm_area { set; get; }
+        public string kode_area { get; set; }
         public City(int kode, int kodeArea, string nama)
         {
             setKode(kode);

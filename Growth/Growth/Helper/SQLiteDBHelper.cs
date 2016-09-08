@@ -320,7 +320,19 @@ namespace Growth.Helper
             SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                cityList.Add(new City(int.Parse(reader[KEY_KODE_KOTA].ToString()), int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NAMA_KOTA].ToString()));
+                City city = new City(int.Parse(reader[KEY_KODE_KOTA].ToString()), int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NAMA_KOTA].ToString());
+                if (city.kd_area != 0)
+                {
+                    Area area = ReadArea(city.kd_area);
+                    city.kode_area = area.kd_area;
+                    city.nm_area = area.getNama();
+                }
+                else
+                {
+                    city.kode_area = "Area belum tersedia";
+                    city.nm_area = "Unregistered";
+                }
+                cityList.Add(city);
             }
             reader.Close();
             return cityList;

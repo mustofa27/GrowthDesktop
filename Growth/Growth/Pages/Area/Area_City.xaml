@@ -20,9 +20,9 @@
                                 <Setter Property="TextElement.FontWeight" Value="Bold"/>
                             </Style>
                         </GridView.ColumnHeaderContainerStyle>
-                        <GridViewColumn Header="Kode Area" Width="274" DisplayMemberBinding="{Binding Kode_area}" />
-                        <GridViewColumn Header="Nama Area" Width="274" DisplayMemberBinding="{Binding Nama_area}" />
-                        <GridViewColumn Header="Nama Kota" Width="274" DisplayMemberBinding="{Binding Nama_kota}" />
+                        <GridViewColumn Header="Kode Area" Width="274" DisplayMemberBinding="{Binding kode_area}" />
+                        <GridViewColumn Header="Nama Area" Width="274" DisplayMemberBinding="{Binding nm_area}" />
+                        <GridViewColumn Header="Nama Kota" Width="274" DisplayMemberBinding="{Binding nm_kota}" />
                         <GridViewColumn Header="Action" Width="274">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>

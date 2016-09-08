@@ -28,36 +28,28 @@
                 <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
                     <StackPanel Orientation="Vertical">
                         <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5">Approval</Button>
-                        <ListView x:Name="listVisit" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black">
-                            <ListView.View>
-                                <GridView>
-                                    <GridView.ColumnHeaderContainerStyle>
-                                        <Style>
-                                            <Setter Property="TextElement.FontSize" Value="15" />
-                                            <Setter Property="TextElement.FontWeight" Value="Bold"/>
-                                        </Style>
-                                    </GridView.ColumnHeaderContainerStyle>
-                                    <GridViewColumn Header="Sales Force" Width="120" DisplayMemberBinding="{Binding nm_sales}" />
-                                    <GridViewColumn Header="Nama Outlet" Width="140" DisplayMemberBinding="{Binding nm_outlet}" />
-                                    <GridViewColumn Header="Alamat Outlet" Width="130" DisplayMemberBinding="{Binding alamat_outlet}" />
-                                    <GridViewColumn Header="Distributor" Width="110" DisplayMemberBinding="{Binding nm_dist}" />
-                                    <GridViewColumn Header="Kota Outlet" Width="100" DisplayMemberBinding="{Binding kota}" />
-                                    <GridViewColumn Header="Date Create Visit Plan" Width="167" DisplayMemberBinding="{Binding date_create_visit}" />
-                                    <GridViewColumn Header="Date Visit Plan" Width="128" DisplayMemberBinding="{Binding date_visit}" />
-                                    <GridViewColumn Header="Status Approval" Width="120" DisplayMemberBinding="{Binding status_approval}" />
-                                    <GridViewColumn Header="Action" Width="78">
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <StackPanel Orientation="Horizontal">
-                                                    <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
-                                                    <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
-                                                </StackPanel>
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
+                        <DataGrid x:Name="listVisit" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Sales Force" Width="120" Binding="{Binding nm_sales}" />
+                                <DataGridTextColumn Header="Nama Outlet" Width="140" Binding="{Binding nm_outlet}" />
+                                <DataGridTextColumn Header="Alamat Outlet" Width="130" Binding="{Binding alamat_outlet}" />
+                                <DataGridTextColumn Header="Distributor" Width="110" Binding="{Binding nm_dist}" />
+                                <DataGridTextColumn Header="Kota Outlet" Width="100" Binding="{Binding kota}" />
+                                <DataGridTextColumn Header="Date Create Visit Plan" Width="167" Binding="{Binding date_create_visit}" />
+                                <DataGridTextColumn Header="Date Visit Plan" Width="128" Binding="{Binding date_visit}" />
+                                <DataGridTextColumn Header="Status Approval" Width="120" Binding="{Binding status_approval}" />
+                                <DataGridTemplateColumn  Header="Action" Width="78">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
+                                                <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </StackPanel>
                 </Grid>
             </StackPanel>
