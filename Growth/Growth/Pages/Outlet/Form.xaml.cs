@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Growth.Helper;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace Growth.Pages.Outlet
 {
@@ -83,7 +84,8 @@ namespace Growth.Pages.Outlet
             outlet = new Master.Outlet(0, int.Parse(selectDistributor.SelectedValue.ToString()), int.Parse(selectKota.SelectedValue.ToString()),
                 int.Parse(selectSF.SelectedValue.ToString()), nama.Text, alamat.Text, int.Parse(selectTipe.SelectedValue.ToString()), selectRank.SelectedValue.ToString(), telpPIC.Text,
                 selectRegStatus.SelectedValue.ToString(), kodepos.Text, latitude.Text, longitude.Text, 0, encodedImage, nmPIC.Text, telpPIC.Text, (2*selectStatus.SelectedIndex+1)%3);
-            
+            string json = JsonConvert.SerializeObject(outlet);
+            ConnectionHandler con = new ConnectionHandler(this);
         }
     }
 }
