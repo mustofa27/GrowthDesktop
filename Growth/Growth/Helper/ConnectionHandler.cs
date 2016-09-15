@@ -35,5 +35,9 @@ namespace Growth.Helper
         {
             ConnectionHelper.PostToPage(URL + "desktop/setDistributor", callback, json);
         }
+        public void setProduk(string json)
+        {
+            ConnectionHelper.PostToPage(URL + "desktop/setProduk", callback, json);
+        }
     }
 }

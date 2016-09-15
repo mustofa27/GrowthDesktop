@@ -39,13 +39,13 @@ namespace Growth.Pages.Distributor
             {
                 dist.setId(respon.id);
                 SQLiteDBHelper.InsertDistributor(dist);
-                status.Text = "Create area sukses";
+                status.Text = "Create distributor sukses";
                 status.Foreground = Brushes.Green;
                 status.Visibility = Visibility.Visible;
             }
             else
             {
-                status.Text = "Create area gagal";
+                status.Text = "Create distributor gagal";
                 status.Foreground = Brushes.Red;
                 status.Visibility = Visibility.Visible;
             }

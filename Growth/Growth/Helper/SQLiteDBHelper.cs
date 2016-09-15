@@ -337,6 +337,32 @@ namespace Growth.Helper
             reader.Close();
             return cityList;
         }
+        public static List<City> ReadAllCity(int id)
+        {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_CITY + " where " + KEY_KODE_AREA + "= " + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            List<City> cityList = new List<City>();
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                City city = new City(int.Parse(reader[KEY_KODE_KOTA].ToString()), int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NAMA_KOTA].ToString());
+                if (city.kd_area != 0)
+                {
+                    Area area = ReadArea(city.kd_area);
+                    city.kode_area = area.kd_area;
+                    city.nm_area = area.getNama();
+                }
+                else
+                {
+                    city.kode_area = "Area belum tersedia";
+                    city.nm_area = "Unregistered";
+                }
+                cityList.Add(city);
+            }
+            reader.Close();
+            return cityList;
+        }
         public static List<City> ReadAllCityRegistered()
         {
             CreateOrReadDB();
@@ -980,6 +1006,27 @@ namespace Growth.Helper
             return null;
         }
         public static List<User> ReadAllUser()
+        {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_USER + " WHERE " + KEY_KODE_ROLE + "= 3";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<User> users = new List<User>();
+            while (reader.Read())
+            {
+                users.Add(new User(int.Parse(reader[KEY_KODE_USER].ToString()),
+                    int.Parse(reader[KEY_KODE_ROLE].ToString()), int.Parse(reader[KEY_KODE_KOTA].ToString()),
+                     int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NIK].ToString(),
+                     reader[KEY_NAMA_USER].ToString(), reader[KEY_ALAMAT_USER].ToString(),
+                     reader[KEY_TELEPON].ToString(), reader[KEY_FOTO].ToString(),
+                     reader[KEY_USERNAME].ToString(), reader[KEY_PASSWORD].ToString(),
+                     reader[KEY_EMAIL].ToString(), int.Parse(reader[KEY_STATUS].ToString()),
+                     reader[KEY_GCMID].ToString(), int.Parse(reader[KEY_TOLERANSI].ToString())));
+            }
+            reader.Close();
+            return users;
+        }
+        public static List<User> ReadAllSF()
         {
             CreateOrReadDB();
             string sql = "select * from " + TABLE_USER;
