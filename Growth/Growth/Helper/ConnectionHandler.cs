@@ -31,5 +31,9 @@ namespace Growth.Helper
         {
             ConnectionHelper.PostToPage(URL + "desktop/setArea", callback, json);
         }
+        public void setDistributor(string json)
+        {
+            ConnectionHelper.PostToPage(URL + "desktop/setDistributor", callback, json);
+        }
     }
 }

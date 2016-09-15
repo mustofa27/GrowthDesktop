@@ -337,6 +337,32 @@ namespace Growth.Helper
             reader.Close();
             return cityList;
         }
+        public static List<City> ReadAllCityRegistered()
+        {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_CITY + " where " + KEY_KODE_AREA + "!= 0";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            List<City> cityList = new List<City>();
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                City city = new City(int.Parse(reader[KEY_KODE_KOTA].ToString()), int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NAMA_KOTA].ToString());
+                if (city.kd_area != 0)
+                {
+                    Area area = ReadArea(city.kd_area);
+                    city.kode_area = area.kd_area;
+                    city.nm_area = area.getNama();
+                }
+                else
+                {
+                    city.kode_area = "Area belum tersedia";
+                    city.nm_area = "Unregistered";
+                }
+                cityList.Add(city);
+            }
+            reader.Close();
+            return cityList;
+        }
         public static void UpdateCity(City city)
         {
             CreateOrReadDB();
