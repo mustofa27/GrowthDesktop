@@ -20,34 +20,26 @@
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
                 <StackPanel Orientation="Vertical">
                     <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" Click="Button_Click">Tambah Distributor</Button>
-                    <ListView x:Name="listDistributor" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black">
-                        <ListView.View>
-                            <GridView>
-                                <GridView.ColumnHeaderContainerStyle>
-                                    <Style>
-                                        <Setter Property="TextElement.FontSize" Value="15" />
-                                        <Setter Property="TextElement.FontWeight" Value="Bold"/>
-                                    </Style>
-                                </GridView.ColumnHeaderContainerStyle>
-                                <GridViewColumn Header="Kode Distributor" Width="156" DisplayMemberBinding="{Binding Kd_dist}" />
-                                <GridViewColumn Header="Nama" Width="156" DisplayMemberBinding="{Binding Nm_dist}" />
-                                <GridViewColumn Header="Alamat" Width="156" DisplayMemberBinding="{Binding Almt_dist}" />
-                                <GridViewColumn Header="Tipe" Width="156" DisplayMemberBinding="{Binding Kd_tipe}" />
-                                <GridViewColumn Header="Kota" Width="156" DisplayMemberBinding="{Binding kota}" />
-                                <GridViewColumn Header="Telepon" Width="156" DisplayMemberBinding="{Binding Telp_dist}" />
-                                <GridViewColumn Header="Action" Width="156">
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <StackPanel Orientation="Horizontal">
-                                                <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
-                                                <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <DataGrid x:Name="listDistributor" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Kode Distributor" Width="156" Binding="{Binding Kd_dist}" />
+                            <DataGridTextColumn Header="Nama" Width="156" Binding="{Binding Nm_dist}" />
+                            <DataGridTextColumn Header="Alamat" Width="156" Binding="{Binding Almt_dist}" />
+                            <DataGridTextColumn Header="Tipe" Width="156" Binding="{Binding Kd_tipe}" />
+                            <DataGridTextColumn Header="Kota" Width="156" Binding="{Binding kota}" />
+                            <DataGridTextColumn Header="Telepon" Width="156" Binding="{Binding Telp_dist}" />
+                            <DataGridTemplateColumn Header="Action" Width="156">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
+                                            <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </StackPanel>
             </Grid>
         </StackPanel>

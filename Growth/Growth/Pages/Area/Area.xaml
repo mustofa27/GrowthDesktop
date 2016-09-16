@@ -12,30 +12,22 @@
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
         <StackPanel Orientation="Vertical">
             <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" Click="Button_Click">Tambah Area</Button>
-            <ListView x:Name="listArea" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black">
-                <ListView.View>
-                    <GridView>
-                        <GridView.ColumnHeaderContainerStyle>
-                            <Style>
-                                <Setter Property="TextElement.FontSize" Value="15" />
-                                <Setter Property="TextElement.FontWeight" Value="Bold"/>
-                            </Style>
-                        </GridView.ColumnHeaderContainerStyle>
-                        <GridViewColumn Header="Kode Area" Width="366" DisplayMemberBinding="{Binding id}" />
-                        <GridViewColumn Header="Nama Area" Width="365" DisplayMemberBinding="{Binding nm_area}" />
-                        <GridViewColumn Header="Action" Width="365">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
-                                        <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                    </GridView>
-                </ListView.View>
-            </ListView>
+            <DataGrid x:Name="listArea" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Kode Area" Width="366" Binding="{Binding id}" />
+                    <DataGridTextColumn Header="Nama Area" Width="365" Binding="{Binding nm_area}" />
+                    <DataGridTemplateColumn Header="Action" Width="365">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
+                                    <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
     </Grid>
 </Page>

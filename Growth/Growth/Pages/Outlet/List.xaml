@@ -20,45 +20,37 @@
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
                 <StackPanel Orientation="Vertical">
                     <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" Click="Button_Click">Tambah Outlet</Button>
-                    <ListView x:Name="listOutlet" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black">
-                        <ListView.View>
-                            <GridView>
-                                <GridView.ColumnHeaderContainerStyle>
-                                    <Style>
-                                        <Setter Property="TextElement.FontSize" Value="15" />
-                                        <Setter Property="TextElement.FontWeight" Value="Bold"/>
-                                    </Style>
-                                </GridView.ColumnHeaderContainerStyle>
-                                <GridViewColumn Header="View" Width="70">
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <StackPanel Orientation="Horizontal">
-                                                <fa:ImageAwesome Icon="Search" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-                                <GridViewColumn Header="Nama Outlet" Width="139" DisplayMemberBinding="{Binding nm_outlet}" />
-                                <GridViewColumn Header="Alamat" Width="139" DisplayMemberBinding="{Binding almt_outlet}" />
-                                <GridViewColumn Header="Kode Pos" Width="100" DisplayMemberBinding="{Binding kodepos}" />
-                                <GridViewColumn Header="Kota" Width="118" DisplayMemberBinding="{Binding kota}" />
-                                <GridViewColumn Header="Area" Width="70" DisplayMemberBinding="{Binding area}" />
-                                <GridViewColumn Header="Tipe" Width="100" DisplayMemberBinding="{Binding nm_tipe}" />
-                                <GridViewColumn Header="Nama PIC" Width="139" DisplayMemberBinding="{Binding nm_pic}" />
-                                <GridViewColumn Header="Tlp PIC" Width="139" DisplayMemberBinding="{Binding tlp_pic}" />
-                                <GridViewColumn Header="Action" Width="79">
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <StackPanel Orientation="Horizontal">
-                                                <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
-                                                <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <DataGrid x:Name="listOutlet" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="View" Width="70">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <fa:ImageAwesome Icon="Search" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Nama Outlet" Width="139" Binding="{Binding nm_outlet}" />
+                            <DataGridTextColumn Header="Alamat" Width="139" Binding="{Binding almt_outlet}" />
+                            <DataGridTextColumn Header="Kode Pos" Width="100" Binding="{Binding kodepos}" />
+                            <DataGridTextColumn Header="Kota" Width="118" Binding="{Binding kota}" />
+                            <DataGridTextColumn Header="Area" Width="70" Binding="{Binding area}" />
+                            <DataGridTextColumn Header="Tipe" Width="100" Binding="{Binding nm_tipe}" />
+                            <DataGridTextColumn Header="Nama PIC" Width="139" Binding="{Binding nm_pic}" />
+                            <DataGridTextColumn Header="Tlp PIC" Width="139" Binding="{Binding tlp_pic}" />
+                            <DataGridTemplateColumn Header="Action" Width="79">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
+                                            <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </StackPanel>
             </Grid>
         </StackPanel>
