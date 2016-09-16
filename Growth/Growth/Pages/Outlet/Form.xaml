@@ -9,101 +9,104 @@
       Title="Form">
 
     <Grid>
-        <StackPanel Orientation="Horizontal">
-            <StackPanel Orientation="Vertical" Margin="10">
-                <TextBlock FontFamily="Verdana" FontSize="15">Outlet Distributor</TextBlock>
-                <ComboBox x:Name="selectDistributor" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
+        <StackPanel Orientation="Vertical">
+            <TextBlock x:Name="status" FontFamily="Verdana" FontSize="25" Margin="0 0 0 30" Foreground="Green" Visibility="Collapsed">Create area sukses</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <TextBlock FontFamily="Verdana" FontSize="15">Outlet Distributor</TextBlock>
+                    <ComboBox x:Name="selectDistributor" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
                         DisplayMemberPath="Nm_dist"
                         SelectedValuePath="Id"
                         HorizontalAlignment="Left"
                         Width="350"
                         Height="30"/>
-                <TextBlock FontFamily="Verdana" FontSize="15">Outlet Area</TextBlock>
-                <ComboBox x:Name="selectArea" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
+                    <TextBlock FontFamily="Verdana" FontSize="15">Outlet Area</TextBlock>
+                    <ComboBox x:Name="selectArea" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
                         DisplayMemberPath="nm_area"
                         SelectedValuePath="id"
                         HorizontalAlignment="Left"
                         Width="350"
                         Height="30" SelectionChanged="selectArea_SelectionChanged"/>
-                <TextBlock FontFamily="Verdana" FontSize="15">Kota</TextBlock>
-                <ComboBox x:Name="selectKota" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
+                    <TextBlock FontFamily="Verdana" FontSize="15">Kota</TextBlock>
+                    <ComboBox x:Name="selectKota" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
                         DisplayMemberPath="nm_kota"
                         SelectedValuePath="id"
                         HorizontalAlignment="Left"
                         Width="350"
                         Height="30"/>
-                <TextBlock FontFamily="Verdana" FontSize="15">Registered Sales Force</TextBlock>
-                <ComboBox x:Name="selectSF" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
+                    <TextBlock FontFamily="Verdana" FontSize="15">Registered Sales Force</TextBlock>
+                    <ComboBox x:Name="selectSF" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
                         DisplayMemberPath="nama"
                         SelectedValuePath="id"
                         HorizontalAlignment="Left"
                         Width="350"
                         Height="30"/>
-                <TextBlock FontFamily="Verdana" FontSize="15">Nama Outlet</TextBlock>
-                <TextBox x:Name="nama" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-                <TextBlock FontFamily="Verdana" FontSize="15">Kode Outlet</TextBlock>
-                <TextBox x:Name="id" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Vertical" Margin="10">
-                <TextBlock FontFamily="Verdana" FontSize="15">Alamat</TextBlock>
-                <TextBox x:Name="alamat" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-                <TextBlock FontFamily="Verdana" FontSize="15">Kode Pos</TextBlock>
-                <TextBox x:Name="kodepos" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-                <TextBlock FontFamily="Verdana" FontSize="15">Tipe Outlet</TextBlock>
-                <ComboBox x:Name="selectTipe" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
+                    <TextBlock FontFamily="Verdana" FontSize="15">Nama Outlet</TextBlock>
+                    <TextBox x:Name="nama" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                    <TextBlock FontFamily="Verdana" FontSize="15">Kode Outlet</TextBlock>
+                    <TextBox x:Name="id" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <TextBlock FontFamily="Verdana" FontSize="15">Alamat</TextBlock>
+                    <TextBox x:Name="alamat" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                    <TextBlock FontFamily="Verdana" FontSize="15">Kode Pos</TextBlock>
+                    <TextBox x:Name="kodepos" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                    <TextBlock FontFamily="Verdana" FontSize="15">Tipe Outlet</TextBlock>
+                    <ComboBox x:Name="selectTipe" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
                         DisplayMemberPath="nm_tipe"
                         SelectedValuePath="id"
                         HorizontalAlignment="Left"
                         Width="350"
                         Height="30"/>
-                <TextBlock FontFamily="Verdana" FontSize="15">Nama PIC</TextBlock>
-                <TextBox x:Name="nmPIC" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-                <TextBlock FontFamily="Verdana" FontSize="15">Telepon PIC</TextBlock>
-                <TextBox x:Name="telpPIC" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-                <!--<Image x:Name="pict" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></Image>-->
-            </StackPanel>
-            <StackPanel Orientation="Vertical" Margin="10">
-                <TextBlock FontFamily="Verdana" FontSize="15">Rank Outlet</TextBlock>
-                <ComboBox x:Name="selectRank" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
-                        HorizontalAlignment="Left"
-                        Width="350"
-                        Height="30"
-                        SelectedIndex="0">
-                    <ComboBoxItem>A</ComboBoxItem>
-                    <ComboBoxItem>B</ComboBoxItem>
-                    <ComboBoxItem>C</ComboBoxItem>
-                    <ComboBoxItem>D</ComboBoxItem>
-                    <ComboBoxItem>E</ComboBoxItem>
-                    <ComboBoxItem>F</ComboBoxItem>
-                </ComboBox>
-                <TextBlock FontFamily="Verdana" FontSize="15">Register Status</TextBlock>
-                <ComboBox x:Name="selectRegStatus" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
-                        HorizontalAlignment="Left"
-                        Width="350"
-                        Height="30"
-                        SelectedIndex="0">
-                    <ComboBoxItem>YES</ComboBoxItem>
-                    <ComboBoxItem>NO</ComboBoxItem>
-                </ComboBox>
-                <TextBlock FontFamily="Verdana" FontSize="15">Status Area</TextBlock>
-                <ComboBox x:Name="selectStatus" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
-                        HorizontalAlignment="Left"
-                        Width="350"
-                        Height="30"
-                        SelectedIndex="0">
-                    <ComboBoxItem>Good Coverage</ComboBoxItem>
-                    <ComboBoxItem>Bad Coverage</ComboBoxItem>
-                </ComboBox>
-                <TextBlock FontFamily="Verdana" FontSize="15">Longitude</TextBlock>
-                <TextBox x:Name="longitude" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-                <TextBlock FontFamily="Verdana" FontSize="15">Latitude</TextBlock>
-                <TextBox x:Name="latitude" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-                <TextBlock FontFamily="Verdana" FontSize="15">Upload Foto</TextBlock>
-                <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="dir" Height="30" Width="200" HorizontalAlignment="Left" Margin="0 5 20 10"></TextBox>
-                    <Button Width="130" Height="30" Background="#AAAAAA" Foreground="White" FontSize="15" Click="Button_Click">Choose File</Button>
+                    <TextBlock FontFamily="Verdana" FontSize="15">Nama PIC</TextBlock>
+                    <TextBox x:Name="nmPIC" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                    <TextBlock FontFamily="Verdana" FontSize="15">Telepon PIC</TextBlock>
+                    <TextBox x:Name="telpPIC" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                    <!--<Image x:Name="pict" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></Image>-->
                 </StackPanel>
-                <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" FontSize="15" Click="Button_Click_1">Simpan</Button>
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <TextBlock FontFamily="Verdana" FontSize="15">Rank Outlet</TextBlock>
+                    <ComboBox x:Name="selectRank" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
+                        HorizontalAlignment="Left"
+                        Width="350"
+                        Height="30"
+                        SelectedIndex="0">
+                        <ComboBoxItem>A</ComboBoxItem>
+                        <ComboBoxItem>B</ComboBoxItem>
+                        <ComboBoxItem>C</ComboBoxItem>
+                        <ComboBoxItem>D</ComboBoxItem>
+                        <ComboBoxItem>E</ComboBoxItem>
+                        <ComboBoxItem>F</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock FontFamily="Verdana" FontSize="15">Register Status</TextBlock>
+                    <ComboBox x:Name="selectRegStatus" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
+                        HorizontalAlignment="Left"
+                        Width="350"
+                        Height="30"
+                        SelectedIndex="0">
+                        <ComboBoxItem>YES</ComboBoxItem>
+                        <ComboBoxItem>NO</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock FontFamily="Verdana" FontSize="15">Status Area</TextBlock>
+                    <ComboBox x:Name="selectStatus" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
+                        HorizontalAlignment="Left"
+                        Width="350"
+                        Height="30"
+                        SelectedIndex="0">
+                        <ComboBoxItem>Good Coverage</ComboBoxItem>
+                        <ComboBoxItem>Bad Coverage</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock FontFamily="Verdana" FontSize="15">Longitude</TextBlock>
+                    <TextBox x:Name="longitude" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                    <TextBlock FontFamily="Verdana" FontSize="15">Latitude</TextBlock>
+                    <TextBox x:Name="latitude" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                    <TextBlock FontFamily="Verdana" FontSize="15">Upload Foto</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="dir" Height="30" Width="200" HorizontalAlignment="Left" Margin="0 5 20 10"></TextBox>
+                        <Button Width="130" Height="30" Background="#AAAAAA" Foreground="White" FontSize="15" Click="Button_Click">Choose File</Button>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" FontSize="15" Click="Button_Click_1">Simpan</Button>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </Grid>

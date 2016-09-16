@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using Growth.Helper;
 using System.IO;
 using Newtonsoft.Json;
+using Growth.Pages.Pageclasses;
 
 namespace Growth.Pages.Outlet
 {
@@ -37,7 +38,21 @@ namespace Growth.Pages.Outlet
 
         public void Done(string res)
         {
-            throw new NotImplementedException();
+            ResponOutlet respon = JsonConvert.DeserializeObject<ResponOutlet>(res);
+            if (respon.status == "success")
+            {
+                outlet.kd_outlet = respon.id;
+                SQLiteDBHelper.InsertOutlet(outlet);
+                status.Text = "Create outlet sukses";
+                status.Foreground = Brushes.Green;
+                status.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                status.Text = "Create outlet gagal";
+                status.Foreground = Brushes.Red;
+                status.Visibility = Visibility.Visible;
+            }
         }
 
         private void selectArea_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -82,10 +97,11 @@ namespace Growth.Pages.Outlet
                 encodedImage = Convert.ToBase64String(ms.ToArray());
             }
             outlet = new Master.Outlet(0, int.Parse(selectDistributor.SelectedValue.ToString()), int.Parse(selectKota.SelectedValue.ToString()),
-                int.Parse(selectSF.SelectedValue.ToString()), nama.Text, alamat.Text, int.Parse(selectTipe.SelectedValue.ToString()), selectRank.SelectedValue.ToString(), telpPIC.Text,
-                selectRegStatus.SelectedValue.ToString(), kodepos.Text, latitude.Text, longitude.Text, 0, encodedImage, nmPIC.Text, telpPIC.Text, (2*selectStatus.SelectedIndex+1)%3);
+                int.Parse(selectSF.SelectedValue.ToString()), nama.Text, alamat.Text, int.Parse(selectTipe.SelectedValue.ToString()), selectRank.Text, telpPIC.Text,
+                selectRegStatus.Text, kodepos.Text, latitude.Text, longitude.Text, 0, encodedImage, nmPIC.Text, telpPIC.Text, (2*selectStatus.SelectedIndex+1)%3);
             string json = JsonConvert.SerializeObject(outlet);
             ConnectionHandler con = new ConnectionHandler(this);
+            con.setOutlet(json);
         }
     }
 }
