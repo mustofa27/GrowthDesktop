@@ -22,6 +22,7 @@
                     <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" Click="Button_Click">Tambah Distributor</Button>
                     <DataGrid x:Name="listDistributor" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False">
                         <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" MaxWidth="0" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Kode Distributor" Width="156" Binding="{Binding Kd_dist}" />
                             <DataGridTextColumn Header="Nama" Width="156" Binding="{Binding Nm_dist}" />
                             <DataGridTextColumn Header="Alamat" Width="156" Binding="{Binding Almt_dist}" />
@@ -32,8 +33,12 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
-                                            <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
+                                            <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"
+                                                             MouseLeftButtonUp="Edit_MouseLeftButtonUp"
+                                                 MouseEnter="ImageAwesome_MouseEnter" MouseLeave="ImageAwesome_MouseLeave"/>
+                                            <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"
+                                                             MouseLeftButtonUp="Delete_MouseLeftButtonUp"
+                                                 MouseEnter="ImageAwesome_MouseEnter" MouseLeave="ImageAwesome_MouseLeave"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>

@@ -51,5 +51,20 @@ namespace Growth.Pages
             }
             listSales.ItemsSource = topSales.top;
         }
+
+        private void ImageAwesome_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Do you want to close this window?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+        }
+
+        private void ImageAwesome_MouseEnter(object sender, MouseEventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void ImageAwesome_MouseLeave(object sender, MouseEventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+        }
     }
 }
