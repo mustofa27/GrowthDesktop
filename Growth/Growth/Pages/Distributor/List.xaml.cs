@@ -39,7 +39,20 @@ namespace Growth.Pages.Distributor
 
         private void Edit_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Do you want to close this window?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            for (var vis = sender as Visual; vis != null; vis = VisualTreeHelper.GetParent(vis) as Visual)
+                if (vis is DataGridRow)
+                {
+                    var row = (DataGridRow)vis;
+                    DataGridCellsPresenter presenter = GetVisualChild<DataGridCellsPresenter>(row);
+                    // find grid cell object for the cell with index 0
+                    DataGridCell cell = presenter.ItemContainerGenerator.ContainerFromIndex(0) as DataGridCell;
+                    if (cell != null)
+                    {
+                        //Console.WriteLine(((TextBlock)cell.Content).Text);
+                        this.NavigationService.Navigate(new Form(int.Parse(((TextBlock)cell.Content).Text)));
+                    }
+                    break;
+                }
         }
 
         private void Delete_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
