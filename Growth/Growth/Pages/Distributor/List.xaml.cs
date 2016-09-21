@@ -15,13 +15,16 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Growth.Master;
 using System.Windows.Controls.Primitives;
+using Growth.Interfaces;
+using Growth.Pages.Pageclasses;
+using Newtonsoft.Json;
 
 namespace Growth.Pages.Distributor
 {
     /// <summary>
     /// Interaction logic for List.xaml
     /// </summary>
-    public partial class List : Page
+    public partial class List : Page,Callback
     {
         public List()
         {
@@ -54,8 +57,8 @@ namespace Growth.Pages.Distributor
                         if (cell != null)
                         {
                             //Console.WriteLine(((TextBlock)cell.Content).Text);
-                            SQLiteDBHelper.DeleteDistributor(int.Parse(((TextBlock)cell.Content).Text));
-                            listDistributor.ItemsSource = SQLiteDBHelper.ReadAllDistributor();
+                            ConnectionHandler con = new ConnectionHandler(this);
+                            con.delDistributor(int.Parse(((TextBlock)cell.Content).Text));
                         }
                         break;
                     }
@@ -83,6 +86,21 @@ namespace Growth.Pages.Distributor
                 if (child != null) break;
             }
             return child;
+        }
+
+        public void Done(string res)
+        {
+            Respon respon = JsonConvert.DeserializeObject<Respon>(res);
+            if (respon.status == "success")
+            {
+                SQLiteDBHelper.DeleteDistributor(respon.id);
+                listDistributor.ItemsSource = SQLiteDBHelper.ReadAllDistributor();
+                MessageBoxResult result = MessageBox.Show("Delete data success", "Status", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Delete data failed", "Status", MessageBoxButton.YesNo, MessageBoxImage.Information);
+            }
         }
     }
 }

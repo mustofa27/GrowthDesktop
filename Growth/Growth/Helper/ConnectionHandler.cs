@@ -43,5 +43,9 @@ namespace Growth.Helper
         {
             ConnectionHelper.PostToPage(URL + "desktop/setOutlet", callback, json);
         }
+        public void delDistributor(int id)
+        {
+            ConnectionHelper.DownloadPageAsync(URL + "desktop/delDistributor/" + id, callback);
+        }
     }
 }
