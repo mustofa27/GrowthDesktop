@@ -43,8 +43,8 @@
                         Height="30"/>
                     <TextBlock FontFamily="Verdana" FontSize="15">Nama Outlet</TextBlock>
                     <TextBox x:Name="nama" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-                    <TextBlock FontFamily="Verdana" FontSize="15">Kode Outlet</TextBlock>
-                    <TextBox x:Name="id" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
+                    <!--<TextBlock FontFamily="Verdana" FontSize="15">Kode Outlet</TextBlock>
+                    <TextBox x:Name="id" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>-->
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="10">
                     <TextBlock FontFamily="Verdana" FontSize="15">Alamat</TextBlock>

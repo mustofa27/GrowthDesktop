@@ -26,11 +26,14 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <fa:ImageAwesome Icon="Search" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
+                                            <fa:ImageAwesome Icon="Search" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"
+                                                             MouseLeftButtonUp="View_MouseLeftButtonUp"
+                                                             MouseEnter="ImageAwesome_MouseEnter" MouseLeave="ImageAwesome_MouseLeave"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="ID" MaxWidth="0" Binding="{Binding kd_outlet}"/>
                             <DataGridTextColumn Header="Nama Outlet" Width="139" Binding="{Binding nm_outlet}" />
                             <DataGridTextColumn Header="Alamat" Width="139" Binding="{Binding almt_outlet}" />
                             <DataGridTextColumn Header="Kode Pos" Width="100" Binding="{Binding kodepos}" />
@@ -43,8 +46,12 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
-                                            <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
+                                            <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"
+                                                             MouseLeftButtonUp="Edit_MouseLeftButtonUp"
+                                                 MouseEnter="ImageAwesome_MouseEnter" MouseLeave="ImageAwesome_MouseLeave"/>
+                                            <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"
+                                                             MouseLeftButtonUp="Delete_MouseLeftButtonUp"
+                                                 MouseEnter="ImageAwesome_MouseEnter" MouseLeave="ImageAwesome_MouseLeave"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>

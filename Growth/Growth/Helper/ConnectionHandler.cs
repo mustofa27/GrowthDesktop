@@ -31,17 +31,10 @@ namespace Growth.Helper
         {
             ConnectionHelper.PostToPage(URL + "desktop/setArea", callback, json);
         }
+        #region distributor
         public void setDistributor(string json)
         {
             ConnectionHelper.PostToPage(URL + "desktop/setDistributor", callback, json);
-        }
-        public void setProduk(string json)
-        {
-            ConnectionHelper.PostToPage(URL + "desktop/setProduk", callback, json);
-        }
-        public void setOutlet(string json)
-        {
-            ConnectionHelper.PostToPage(URL + "desktop/setOutlet", callback, json);
         }
         public void delDistributor(int id)
         {
@@ -51,5 +44,24 @@ namespace Growth.Helper
         {
             ConnectionHelper.PostToPage(URL + "desktop/editDistributor", callback, json);
         }
+        #endregion
+        public void setProduk(string json)
+        {
+            ConnectionHelper.PostToPage(URL + "desktop/setProduk", callback, json);
+        }
+        #region outlet
+        public void setOutlet(string json)
+        {
+            ConnectionHelper.PostToPage(URL + "desktop/setOutlet", callback, json);
+        }
+        public void delOutlet(int id)
+        {
+            ConnectionHelper.DownloadPageAsync(URL + "desktop/delOutlet/" + id, callback);
+        }
+        public void editOutlet(string json)
+        {
+            ConnectionHelper.PostToPage(URL + "desktop/editOutlet", callback, json);
+        }
+        #endregion
     }
 }
