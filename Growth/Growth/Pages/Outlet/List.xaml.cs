@@ -47,7 +47,7 @@ namespace Growth.Pages.Outlet
                     if (cell != null)
                     {
                         //Console.WriteLine(((TextBlock)cell.Content).Text);
-                        this.NavigationService.Navigate(new Form(int.Parse(((TextBlock)cell.Content).Text)));
+                        this.NavigationService.Navigate(new View(int.Parse(((TextBlock)cell.Content).Text)));
                     }
                     break;
                 }

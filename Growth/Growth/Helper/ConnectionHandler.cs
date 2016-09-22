@@ -63,5 +63,9 @@ namespace Growth.Helper
             ConnectionHelper.PostToPage(URL + "desktop/editOutlet", callback, json);
         }
         #endregion
+        public void getFoto(int id)
+        {
+            ConnectionHelper.DownloadPageAsync(URL + "desktop/getFoto/" + id, callback);
+        }
     }
 }

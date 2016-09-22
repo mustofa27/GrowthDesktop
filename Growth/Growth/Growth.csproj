@@ -170,6 +170,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Outlet\View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Produk\Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -246,6 +250,10 @@
     <Compile Include="Pages\Outlet\List.xaml.cs">
       <DependentUpon>List.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Outlet\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Pageclasses\ResponFoto.cs" />
     <Compile Include="Pages\Pageclasses\Respon.cs" />
     <Compile Include="Pages\Pageclasses\ResponOutlet.cs" />
     <Compile Include="Pages\Pageclasses\TopSales.cs" />
@@ -287,6 +295,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Assets\no_image_outlet.png" />
     <Content Include="Fonts\fontawesome-webfont.ttf" />
     <Content Include="Fonts\FontAwesome.otf" />
     <Content Include="Fonts\fontawesome-webfont.eot" />
