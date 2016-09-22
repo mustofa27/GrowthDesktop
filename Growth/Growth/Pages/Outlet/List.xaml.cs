@@ -43,7 +43,7 @@ namespace Growth.Pages.Outlet
                     var row = (DataGridRow)vis;
                     DataGridCellsPresenter presenter = GetVisualChild<DataGridCellsPresenter>(row);
                     // find grid cell object for the cell with index 0
-                    DataGridCell cell = presenter.ItemContainerGenerator.ContainerFromIndex(0) as DataGridCell;
+                    DataGridCell cell = presenter.ItemContainerGenerator.ContainerFromIndex(1) as DataGridCell;
                     if (cell != null)
                     {
                         //Console.WriteLine(((TextBlock)cell.Content).Text);
@@ -81,7 +81,7 @@ namespace Growth.Pages.Outlet
                         var row = (DataGridRow)vis;
                         DataGridCellsPresenter presenter = GetVisualChild<DataGridCellsPresenter>(row);
                         // find grid cell object for the cell with index 0
-                        DataGridCell cell = presenter.ItemContainerGenerator.ContainerFromIndex(0) as DataGridCell;
+                        DataGridCell cell = presenter.ItemContainerGenerator.ContainerFromIndex(1) as DataGridCell;
                         if (cell != null)
                         {
                             //Console.WriteLine(((TextBlock)cell.Content).Text);
@@ -122,12 +122,12 @@ namespace Growth.Pages.Outlet
             if (respon.status == "success")
             {
                 SQLiteDBHelper.DeleteOutlet(respon.id);
-                listOutlet.ItemsSource = SQLiteDBHelper.ReadAllDistributor();
+                listOutlet.ItemsSource = SQLiteDBHelper.ReadAllOutlet();
                 MessageBoxResult result = MessageBox.Show("Delete data success", "Status", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("Delete data failed", "Status", MessageBoxButton.YesNo, MessageBoxImage.Information);
+                MessageBoxResult result = MessageBox.Show("Delete data failed", "Status", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }

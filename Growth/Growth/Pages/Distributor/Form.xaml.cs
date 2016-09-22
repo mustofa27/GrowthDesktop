@@ -67,7 +67,14 @@ namespace Growth.Pages.Distributor
             }
             else
             {
-                status.Text = "Create distributor gagal";
+                if (state == "new")
+                {
+                    status.Text = "Create distributor gagal";
+                }
+                else
+                {
+                    status.Text = "Update distributor gagal";
+                }
                 status.Foreground = Brushes.Red;
                 status.Visibility = Visibility.Visible;
             }
