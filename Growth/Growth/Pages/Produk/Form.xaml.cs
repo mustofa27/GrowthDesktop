@@ -25,13 +25,19 @@ namespace Growth.Pages.Produk
     public partial class Form : Page, Callback
     {
         Master.Product product;
+        string state;
         public Form()
         {
             InitializeComponent();
+            state = "new";
         }
         public Form(int id)
         {
             InitializeComponent();
+            product = SQLiteDBHelper.ReadProduct(id);
+            this.id.Text = product.kd_produk;
+            nama.Text = product.nm_produk;
+            state = "edit";
         }
 
         public void Done(string res)
@@ -40,14 +46,17 @@ namespace Growth.Pages.Produk
             if (respon.status == "success")
             {
                 product.id = respon.id;
-                SQLiteDBHelper.InsertProduct(product);
-                status.Text = "Create product sukses";
+                if(state == "new")
+                    SQLiteDBHelper.InsertProduct(product);
+                else
+                    SQLiteDBHelper.UpdateProduct(product);
+                status.Text = state == "new" ? "Create product sukses" : "Update product sukses";
                 status.Foreground = Brushes.Green;
                 status.Visibility = Visibility.Visible;
             }
             else
             {
-                status.Text = "Create product gagal";
+                status.Text = state == "new" ? "Create product gagal" : "Update product gagal";
                 status.Foreground = Brushes.Red;
                 status.Visibility = Visibility.Visible;
             }
@@ -55,10 +64,21 @@ namespace Growth.Pages.Produk
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            product = new Master.Product(0, id.Text, nama.Text);
-            string json = JsonConvert.SerializeObject(product);
-            Helper.ConnectionHandler con = new Helper.ConnectionHandler(this);
-            con.setProduk(json);
+            if (state == "new")
+            {
+                product = new Master.Product(0, id.Text, nama.Text);
+                string json = JsonConvert.SerializeObject(product);
+                ConnectionHandler con = new ConnectionHandler(this);
+                con.setProduk(json);
+            }
+            else
+            {
+                product.kd_produk = id.Text;
+                product.nm_produk = nama.Text;
+                string json = JsonConvert.SerializeObject(product);
+                ConnectionHandler con = new ConnectionHandler(this);
+                con.editProduk(json);
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
