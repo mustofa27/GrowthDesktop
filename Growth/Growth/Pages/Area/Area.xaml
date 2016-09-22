@@ -12,7 +12,8 @@
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
         <StackPanel Orientation="Vertical">
             <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" Click="Button_Click">Tambah Area</Button>
-            <DataGrid x:Name="listArea" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False">
+            <DataGrid x:Name="listArea" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False"
+                      IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Kode Area" Width="366" Binding="{Binding id}" />
                     <DataGridTextColumn Header="Nama Area" Width="365" Binding="{Binding nm_area}" />
