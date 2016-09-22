@@ -45,10 +45,20 @@ namespace Growth.Helper
             ConnectionHelper.PostToPage(URL + "desktop/editDistributor", callback, json);
         }
         #endregion
+        #region Produk
         public void setProduk(string json)
         {
             ConnectionHelper.PostToPage(URL + "desktop/setProduk", callback, json);
         }
+        public void delProduk(int id)
+        {
+            ConnectionHelper.DownloadPageAsync(URL + "desktop/delProduk/" + id, callback);
+        }
+        public void editProduk(string json)
+        {
+            ConnectionHelper.PostToPage(URL + "desktop/editProduk", callback, json);
+        }
+        #endregion
         #region outlet
         public void setOutlet(string json)
         {

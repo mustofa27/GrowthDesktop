@@ -29,6 +29,10 @@ namespace Growth.Pages.Produk
         {
             InitializeComponent();
         }
+        public Form(int id)
+        {
+            InitializeComponent();
+        }
 
         public void Done(string res)
         {
@@ -55,6 +59,11 @@ namespace Growth.Pages.Produk
             string json = JsonConvert.SerializeObject(product);
             Helper.ConnectionHandler con = new Helper.ConnectionHandler(this);
             con.setProduk(json);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/Produk/List.xaml", UriKind.Relative));
         }
     }
 }

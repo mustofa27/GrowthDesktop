@@ -101,5 +101,10 @@ namespace Growth.Pages.Distributor
                 con.editDistributor(json);
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/Distributor/List.xaml", UriKind.Relative));
+        }
     }
 }

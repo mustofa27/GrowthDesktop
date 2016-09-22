@@ -26,7 +26,10 @@
                         Height="30"/>
             <TextBlock FontFamily="Verdana" FontSize="15">Telepon</TextBlock>
             <TextBox x:Name="telepon" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-            <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" FontSize="15" Click="Button_Click">Simpan</Button>
+            <StackPanel Orientation="Horizontal">
+                <Button Width="80" Background="Red" Foreground="White" FontSize="15" Margin="0 0 10 0" Click="Button_Click_1">Back</Button>
+                <Button Background="Green" Foreground="White" Padding="10 5 10 5" FontSize="15" Click="Button_Click">Simpan</Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>
