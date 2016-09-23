@@ -27,7 +27,7 @@ namespace Growth.Pages.Outlet
     public partial class Form : Page, Callback
     {
         Master.Outlet outlet;
-        string path,state;
+        string path="",state;
         public Form()
         {
             InitializeComponent();
@@ -89,6 +89,7 @@ namespace Growth.Pages.Outlet
             selectStatus.SelectedIndex = (int)Math.Pow(0, outlet.status_area);
             latitude.Text = outlet.latitude;
             longitude.Text = outlet.longitude;
+            dir.Text = outlet.foto_outlet;
             state = "edit";
         }
         public void Done(string res)
@@ -97,14 +98,31 @@ namespace Growth.Pages.Outlet
             if (respon.status == "success")
             {
                 outlet.kd_outlet = respon.id;
-                SQLiteDBHelper.InsertOutlet(outlet);
-                status.Text = "Create outlet sukses";
+                outlet.toleransi_long = respon.toleransi;
+                outlet.foto_outlet = respon.foto;
+                if (state == "new")
+                {
+                    SQLiteDBHelper.InsertOutlet(outlet);
+                    status.Text = "Create outlet sukses";
+                }
+                else
+                {
+                    SQLiteDBHelper.UpdateOutlet(outlet);
+                    status.Text = "Update outlet sukses";
+                }
                 status.Foreground = Brushes.Green;
                 status.Visibility = Visibility.Visible;
             }
             else
             {
-                status.Text = "Create outlet gagal";
+                if (state == "new")
+                {
+                    status.Text = "Create outlet gagal";
+                }
+                else
+                {
+                    status.Text = "Update outlet gagal";
+                }
                 status.Foreground = Brushes.Red;
                 status.Visibility = Visibility.Visible;
             }
@@ -146,6 +164,11 @@ namespace Growth.Pages.Outlet
             }
         }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/Outlet/List.xaml", UriKind.Relative));
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (state == "new")
@@ -167,7 +190,38 @@ namespace Growth.Pages.Outlet
                 con.setOutlet(json);
             }
             else
-                this.NavigationService.Navigate(new List());
+            {
+                string encodedImage = "";
+                if (path != "")
+                {
+                    BitmapImage bitmapImage = new BitmapImage(new Uri(path));
+                    JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+                    encoder.Frames.Add(BitmapFrame.Create(bitmapImage));
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        encoder.Save(ms);
+                        encodedImage = Convert.ToBase64String(ms.ToArray());
+                    }
+                    outlet.foto_outlet = encodedImage;
+                }
+                outlet.kd_dist = int.Parse(selectDistributor.SelectedValue.ToString());
+                outlet.kd_kota = int.Parse(selectKota.SelectedValue.ToString());
+                outlet.kd_user = int.Parse(selectSF.SelectedValue.ToString());
+                outlet.nm_outlet = nama.Text;
+                outlet.almt_outlet = alamat.Text;
+                outlet.kodepos = kodepos.Text;
+                outlet.kd_tipe = int.Parse(selectTipe.SelectedValue.ToString());
+                outlet.nm_pic = nmPIC.Text;
+                outlet.tlp_pic = telpPIC.Text;
+                outlet.rank_outlet = selectRank.Text;
+                outlet.reg_status = selectRegStatus.Text;
+                outlet.status_area = (2 * selectStatus.SelectedIndex + 1) % 3;
+                outlet.latitude = latitude.Text;
+                outlet.longitude = longitude.Text;
+                string json = JsonConvert.SerializeObject(outlet);
+                ConnectionHandler con = new ConnectionHandler(this);
+                con.editOutlet(json);
+            }
         }
     }
 }

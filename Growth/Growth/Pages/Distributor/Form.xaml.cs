@@ -67,7 +67,14 @@ namespace Growth.Pages.Distributor
             }
             else
             {
-                status.Text = "Create distributor gagal";
+                if (state == "new")
+                {
+                    status.Text = "Create distributor gagal";
+                }
+                else
+                {
+                    status.Text = "Update distributor gagal";
+                }
                 status.Foreground = Brushes.Red;
                 status.Visibility = Visibility.Visible;
             }
@@ -93,6 +100,11 @@ namespace Growth.Pages.Distributor
                 ConnectionHandler con = new ConnectionHandler(this);
                 con.editDistributor(json);
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/Distributor/List.xaml", UriKind.Relative));
         }
     }
 }

@@ -195,3 +195,5 @@ E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Pages\
 E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Growth.g.resources
 E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Growth.Properties.Resources.resources
 E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Growth.csproj.GenerateResource.Cache
+E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\View.g.cs
+E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\View.baml

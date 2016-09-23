@@ -22,14 +22,19 @@
                     <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" Click="Button_Click">Tambah Produk</Button>
                     <DataGrid x:Name="listProduk" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False">
                         <DataGrid.Columns>
+                            <DataGridTextColumn Header="id" MaxWidth="0" Binding="{Binding id}"/>
                             <DataGridTextColumn Header="Kode Produk" Width="366" Binding="{Binding kd_produk}" />
                             <DataGridTextColumn Header="Nama Produk" Width="365" Binding="{Binding nm_produk}" />
                             <DataGridTemplateColumn Header="Action" Width="365">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                            <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
-                                            <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 30 0" Foreground="Black"
+                                                             MouseLeftButtonUp="Edit_MouseLeftButtonUp"
+                                                 MouseEnter="ImageAwesome_MouseEnter" MouseLeave="ImageAwesome_MouseLeave"/>
+                                            <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"
+                                                             MouseLeftButtonUp="Delete_MouseLeftButtonUp"
+                                                 MouseEnter="ImageAwesome_MouseEnter" MouseLeave="ImageAwesome_MouseLeave"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>

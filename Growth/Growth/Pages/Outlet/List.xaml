@@ -25,7 +25,7 @@
                             <DataGridTemplateColumn Header="View" Width="70">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <fa:ImageAwesome Icon="Search" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"
                                                              MouseLeftButtonUp="View_MouseLeftButtonUp"
                                                              MouseEnter="ImageAwesome_MouseEnter" MouseLeave="ImageAwesome_MouseLeave"/>
@@ -45,7 +45,7 @@
                             <DataGridTemplateColumn Header="Action" Width="79">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"
                                                              MouseLeftButtonUp="Edit_MouseLeftButtonUp"
                                                  MouseEnter="ImageAwesome_MouseEnter" MouseLeave="ImageAwesome_MouseLeave"/>
