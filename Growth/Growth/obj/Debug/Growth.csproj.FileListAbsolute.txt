@@ -197,3 +197,5 @@ E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Growth
 E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Growth.csproj.GenerateResource.Cache
 E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\View.g.cs
 E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\View.baml
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\View.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\View.baml

@@ -20,7 +20,8 @@
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
                 <StackPanel Orientation="Vertical">
                     <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" Click="Button_Click">Tambah Outlet</Button>
-                    <DataGrid x:Name="listOutlet" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False">
+                    <DataGrid x:Name="listOutlet" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False"
+                              IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn Header="View" Width="70">
                                 <DataGridTemplateColumn.CellTemplate>

@@ -11,7 +11,8 @@
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
         <StackPanel Orientation="Vertical">
-            <DataGrid x:Name="listArea" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False">
+            <DataGrid x:Name="listArea" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False"
+                      IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Kode Area" Width="274" Binding="{Binding kode_area}" />
                     <DataGridTextColumn Header="Nama Area" Width="274" Binding="{Binding nm_area}" />

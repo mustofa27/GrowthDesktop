@@ -27,36 +27,30 @@
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
                     <StackPanel Orientation="Vertical">
-                        <ListView x:Name="listVisit" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black">
-                            <ListView.View>
-                                <GridView>
-                                    <GridView.ColumnHeaderContainerStyle>
-                                        <Style>
-                                            <Setter Property="TextElement.FontSize" Value="15" />
-                                            <Setter Property="TextElement.FontWeight" Value="Bold"/>
-                                        </Style>
-                                    </GridView.ColumnHeaderContainerStyle>
-                                    <GridViewColumn Header="Sales Force" Width="120" DisplayMemberBinding="{Binding nm_sales}" />
-                                    <GridViewColumn Header="Nama Outlet" Width="140" DisplayMemberBinding="{Binding nm_outlet}" />
-                                    <GridViewColumn Header="Alamat Outlet" Width="130" DisplayMemberBinding="{Binding alamat_outlet}" />
-                                    <GridViewColumn Header="Distributor" Width="110" DisplayMemberBinding="{Binding nm_dist}" />
-                                    <GridViewColumn Header="Kota Outlet" Width="100" DisplayMemberBinding="{Binding kota}" />
-                                    <GridViewColumn Header="Date Create Visit Plan" Width="167" DisplayMemberBinding="{Binding date_created}" />
-                                    <GridViewColumn Header="Date Visit Plan" Width="128" DisplayMemberBinding="{Binding date_visit}" />
-                                    <GridViewColumn Header="Status Approval" Width="120" DisplayMemberBinding="{Binding status_approval}" />
-                                    <GridViewColumn Header="Action" Width="78">
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <StackPanel Orientation="Horizontal">
-                                                    <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
-                                                    <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
-                                                </StackPanel>
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
+                        <DataGrid x:Name="listVisit" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black" AutoGenerateColumns="False"
+                                  IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Kode Visit" Width="112" Binding="{Binding nm_sales}" />
+                                <DataGridTextColumn Header="Sales Force" Width="112" Binding="{Binding nm_sales}" />
+                                <DataGridTextColumn Header="Nama Outlet" Width="112" Binding="{Binding nm_outlet}" />
+                                <DataGridTextColumn Header="Alamat Outlet" Width="112" Binding="{Binding alamat_outlet}" />
+                                <DataGridTextColumn Header="Kota Outlet" Width="112" Binding="{Binding kota}" />
+                                <DataGridTextColumn Header="Actual Visit" Width="112" Binding="{Binding date_visiting}" />
+                                <DataGridTextColumn Header="Status Visit" Width="112" Binding="{Binding status_visit}" />
+                                <DataGridTextColumn Header="Skip Order Reason" Width="112" Binding="{Binding skip_order_reason}" />
+                                <DataGridTextColumn Header="Unvisited Reason" Width="112" Binding="{Binding skip_reason}" />
+                                <DataGridTemplateColumn  Header="Action" Width="78">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"/>
+                                                <fa:ImageAwesome Icon="Trash" Height="12" Width="12" Margin="0 0 0 0" Foreground="Black"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </StackPanel>
                 </Grid>
             </StackPanel>

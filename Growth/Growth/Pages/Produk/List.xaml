@@ -20,7 +20,8 @@
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
                 <StackPanel Orientation="Vertical">
                     <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" Click="Button_Click">Tambah Produk</Button>
-                    <DataGrid x:Name="listProduk" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False">
+                    <DataGrid x:Name="listProduk" Margin="0 15 0 0" TextElement.FontSize="15" Foreground="Black" AutoGenerateColumns="False"
+                              IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="id" MaxWidth="0" Binding="{Binding id}"/>
                             <DataGridTextColumn Header="Kode Produk" Width="366" Binding="{Binding kd_produk}" />

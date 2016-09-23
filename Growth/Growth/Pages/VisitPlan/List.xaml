@@ -28,7 +28,8 @@
                 <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
                     <StackPanel Orientation="Vertical">
                         <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5">Approval</Button>
-                        <DataGrid x:Name="listVisit" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black" AutoGenerateColumns="False">
+                        <DataGrid x:Name="listVisit" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black" AutoGenerateColumns="False"
+                                  IsReadOnly="True">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Sales Force" Width="120" Binding="{Binding nm_sales}" />
                                 <DataGridTextColumn Header="Nama Outlet" Width="140" Binding="{Binding nm_outlet}" />
