@@ -23,10 +23,47 @@
           Background="Black" Margin="0,0,0,0" Height="70" VerticalAlignment="Top">
             <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <Grid VerticalAlignment="Center" Margin="30,0,0,0">
-                    <TextBlock Foreground="White" FontSize="30" >Growth Admin Panel</TextBlock>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-
-                    </StackPanel>
+                    <TextBlock Foreground="White" FontSize="30" HorizontalAlignment="Left">Growth Admin Panel</TextBlock>
+                    <Menu HorizontalAlignment="Right"
+                        Background="Black" Margin="0 0 30 0">
+                        <Menu.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </Menu.ItemsPanel>
+                        <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" VerticalAlignment="Center">
+                            <MenuItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:ImageAwesome Icon="Wrench" Height="12" Width="12" Margin="0 0 5 0" Foreground="White"/>
+                                    <ContentPresenter Content="Profil" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" VerticalAlignment="Center" Margin="10 0 0 0">
+                            <MenuItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:ImageAwesome Icon="User" Height="12" Width="12" Margin="0 0 5 0" Foreground="White"/>
+                                    <ContentPresenter Content="User" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </MenuItem.Header>
+                            <MenuItem x:Name="changepass" Padding="5 10 5 10" Foreground="Black">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:ImageAwesome Icon="User" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
+                                        <ContentPresenter Content="Change Password" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem x:Name="logout" Padding="5 10 5 10" Foreground="Black">
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:ImageAwesome Icon="SignOut" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
+                                        <ContentPresenter Content="Log Out" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+                        </MenuItem>
+                    </Menu>
                 </Grid>
                 <Menu HorizontalAlignment="Stretch"
                     Background="#EEEEEE" Height="30" Padding="20 0 20 0">
@@ -103,34 +140,34 @@
                         <ContentPresenter Content="Master Data" VerticalAlignment="Center"/>
                     </StackPanel>
                 </MenuItem.Header>
-                <MenuItem x:Name="area" Background="#3A3A3A" Padding="5 10 5 10" Click="area_Click">
+                <MenuItem x:Name="area" Foreground="Black" Padding="5 10 5 10" Click="area_Click">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Area" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem x:Name="outlet" Background="#3A3A3A" Padding="5 10 5 10" Click="outlet_Click">
+                <MenuItem x:Name="outlet" Foreground="Black" Padding="5 10 5 10" Click="outlet_Click">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Outlet" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem x:Name="distributor" Background="#3A3A3A" Padding="5 10 5 10" Click="distributor_Click">
+                <MenuItem x:Name="distributor" Foreground="Black" Padding="5 10 5 10" Click="distributor_Click">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Distributor" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem x:Name="produk" Background="#3A3A3A" Padding="5 10 5 10" Click="produk_Click">
+                <MenuItem x:Name="produk" Foreground="Black" Padding="5 10 5 10" Click="produk_Click">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Produk" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
@@ -144,34 +181,34 @@
                         <ContentPresenter Content="Visit Plan" VerticalAlignment="Center"/>
                     </StackPanel>
                 </MenuItem.Header>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10" Click="MenuItem_Click">
+                <MenuItem Foreground="Black" Padding="5 10 5 10" Click="MenuItem_Click">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Create Visit Plan" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10" Click="MenuItem_Click_1">
+                <MenuItem Foreground="Black" Padding="5 10 5 10" Click="MenuItem_Click_1">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Visit Plan List" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10" Click="MenuItem_Click_2">
+                <MenuItem Foreground="Black" Padding="5 10 5 10" Click="MenuItem_Click_2">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Visiting Monitor" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10" Click="MenuItem_Click_3">
+                <MenuItem Foreground="Black" Padding="5 10 5 10" Click="MenuItem_Click_3">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Take Order List" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
@@ -185,18 +222,18 @@
                         <ContentPresenter Content="Photo Activity" VerticalAlignment="Center"/>
                     </StackPanel>
                 </MenuItem.Header>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10">
+                <MenuItem Foreground="Black" Padding="5 10 5 10">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Photo Display" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10">
+                <MenuItem Foreground="Black" Padding="5 10 5 10">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Competitor Activity" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
@@ -210,26 +247,26 @@
                         <ContentPresenter Content="User Manager" VerticalAlignment="Center"/>
                     </StackPanel>
                 </MenuItem.Header>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10">
+                <MenuItem Foreground="Black" Padding="5 10 5 10">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Sales Force" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10">
+                <MenuItem Foreground="Black" Padding="5 10 5 10">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Non SF" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10">
+                <MenuItem Foreground="Black" Padding="5 10 5 10">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Add User" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
@@ -252,42 +289,42 @@
                         <ContentPresenter Content="Configuration" VerticalAlignment="Center"/>
                     </StackPanel>
                 </MenuItem.Header>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10">
+                <MenuItem Foreground="Black" Padding="5 10 5 10">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Role Management" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10">
+                <MenuItem Foreground="Black" Padding="5 10 5 10">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Admin Menu" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10">
+                <MenuItem Foreground="Black" Padding="5 10 5 10">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Permission" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10">
+                <MenuItem Foreground="Black" Padding="5 10 5 10">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Outlet Management" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>
                 </MenuItem>
-                <MenuItem Background="#3A3A3A" Padding="5 10 5 10">
+                <MenuItem Foreground="Black" Padding="5 10 5 10">
                     <MenuItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
+                            <fa:ImageAwesome Icon="CaretRight" Height="14" Width="14" Margin="0 0 10 0" Foreground="Black"/>
                             <ContentPresenter Content="Tipe Photo" VerticalAlignment="Center"/>
                         </StackPanel>
                     </MenuItem.Header>

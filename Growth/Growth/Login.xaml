@@ -1,0 +1,42 @@
+﻿<Window x:Class="Growth.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Growth.Helper"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="  Login" Height="500" Width="400">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <local:TextInputToVisibilityConverter x:Key="TextInputToVisibilityConverter" />
+    </Window.Resources>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Image x:Name="foto" Source="/Assets/Growth-red-logo.png" Width="250" Margin="0 30 0 80"/>
+            <StackPanel Orientation="Horizontal" Margin="20 0 20 30" Height="40">
+                <Grid Height="40" Width="40" Margin="0 0 0 0" Background="#EEEEEE">
+                    <fa:ImageAwesome Icon="User" Foreground="Black" Height="18" Width="18"/>
+                </Grid>
+                <Grid>
+                    <TextBlock FontSize="18" Text="Username" VerticalAlignment="Center"
+                   Foreground="LightSteelBlue" Visibility="{Binding ElementName=username, Path=Text.IsEmpty, 
+                        Converter={StaticResource BooleanToVisibilityConverter}}" Padding="7 0 20 0"/>
+                    <TextBox x:Name="username" Width="320" Padding="5 0 20 0" VerticalAlignment="Center" FontSize="18" Background="Transparent" BorderThickness="0"></TextBox>
+                </Grid>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20 0 20 0" Height="40">
+                <Grid Height="40" Width="40" Margin="0 0 0 0" Background="#EEEEEE">
+                    <fa:ImageAwesome Icon="Lock" Foreground="Black" Height="18" Width="18"/>
+                </Grid>
+                <Grid>
+                    <TextBlock FontSize="18" Text="Password" VerticalAlignment="Center"
+                   Foreground="LightSteelBlue" Visibility="{Binding ElementName=password, Path=Text.IsEmpty, 
+                        Converter={StaticResource BooleanToVisibilityConverter}}" Padding="7 0 20 0"/>
+                    <TextBox x:Name="password" Width="320" Padding="5 0 20 0" VerticalAlignment="Center" FontSize="18" Background="Transparent" BorderThickness="0"></TextBox>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
