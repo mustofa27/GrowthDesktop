@@ -96,7 +96,8 @@ namespace Growth.Helper
                 KEY_KODE_PRODUK = "kd_produk",
                 KEY_NAMA_PRODUK = "nm_produk",
                 TABLE_KONFIGURASI = "Konfigurasi",
-                KEY_TOLERANSI_MAX = "toleransi_max";
+                KEY_TOLERANSI_MAX = "toleransi_max",
+                TABLE_LOGGEDIN = "loggedin";
         #endregion
         public static bool checkDB()
         {
@@ -220,6 +221,22 @@ namespace Growth.Helper
                             + KEY_STATUS_ORDER + " INTEGER NOT NULL)");
                 sqlList.Add("CREATE TABLE IF NOT EXISTS " + TABLE_KONFIGURASI +
                             "(" + KEY_TOLERANSI_MAX + " INTEGER DEFAULT 0)");
+                sqlList.Add("CREATE TABLE IF NOT EXISTS " + TABLE_LOGGEDIN +
+                            "(" + KEY_KODE_USER + " INTEGER PRIMARY KEY NOT NULL,"
+                            + KEY_KODE_ROLE + " INTEGER NOT NULL,"
+                            + KEY_KODE_KOTA + " INTEGER NOT NULL,"
+                            + KEY_KODE_AREA + " INTEGER NOT NULL,"
+                            + KEY_NIK + " TEXT NOT NULL,"
+                            + KEY_NAMA_USER + " TEXT NOT NULL,"
+                            + KEY_ALAMAT_USER + " TEXT NOT NULL,"
+                            + KEY_TELEPON + " TEXT NOT NULL,"
+                            + KEY_FOTO + " TEXT,"
+                            + KEY_USERNAME + " TEXT NOT NULL,"
+                            + KEY_PASSWORD + " TEXT NOT NULL,"
+                            + KEY_EMAIL + " TEXT NOT NULL,"
+                            + KEY_STATUS + " INTEGER NOT NULL,"
+                            + KEY_TOLERANSI + " INTEGER,"
+                            + KEY_GCMID + " TEXT)");
                 foreach (var sql in sqlList)
                 {
                     SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
@@ -1170,9 +1187,52 @@ namespace Growth.Helper
             command.ExecuteNonQuery();
         }
         #endregion
-        #endregion
         #region Dashboard query
 
+        #endregion
+        #region Login
+        public static void InsertLoginUser(User user)
+        {
+            CreateOrReadDB();
+            string sql = "insert into " + TABLE_LOGGEDIN + " values ("
+                + user.getKode() + ", " + user.getKodeRole() + ", " + user.getKd_kota()
+                + ", " + user.getKd_area() + ", '" + user.getNIK() + "', '"
+                + user.getNama() + "', '" + user.getAlamat() + "', '" + user.getTelepon() + "', '" + user.getPath_foto() +
+                "', '" + user.getUsername() + "', '" + user.getPassword() + "', '" + user.getEmail() +
+                "', " + user.getStatus() + ", " + user.getToleransi() + ", '" + user.getGcmId() + "')";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
+        }
+        public static void DeleteLoginUser(int id)
+        {
+            CreateOrReadDB();
+            string sql = "DELETE FROM " + TABLE_LOGGEDIN + " WHERE " + KEY_KODE_USER + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            command.ExecuteNonQuery();
+        }
+        public static User ReadLoginUser(int id)
+        {
+            CreateOrReadDB();
+            string sql = "select * from " + TABLE_LOGGEDIN + " WHERE " + KEY_KODE_USER + "=" + id;
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                User user = new User(int.Parse(reader[KEY_KODE_USER].ToString()),
+                    int.Parse(reader[KEY_KODE_ROLE].ToString()), int.Parse(reader[KEY_KODE_KOTA].ToString()),
+                     int.Parse(reader[KEY_KODE_AREA].ToString()), reader[KEY_NIK].ToString(),
+                     reader[KEY_NAMA_USER].ToString(), reader[KEY_ALAMAT_USER].ToString(),
+                     reader[KEY_TELEPON].ToString(), reader[KEY_FOTO].ToString(),
+                     reader[KEY_USERNAME].ToString(), reader[KEY_PASSWORD].ToString(),
+                     reader[KEY_EMAIL].ToString(), int.Parse(reader[KEY_STATUS].ToString()),
+                     reader[KEY_GCMID].ToString(), int.Parse(reader[KEY_TOLERANSI].ToString()));
+                reader.Close();
+                return user;
+            }
+            reader.Close();
+            return null;
+        }
+        #endregion
         #endregion
     }
 }

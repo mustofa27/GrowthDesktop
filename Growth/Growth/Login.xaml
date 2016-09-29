@@ -11,6 +11,42 @@
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <local:TextInputToVisibilityConverter x:Key="TextInputToVisibilityConverter" />
+        <Style x:Key="{x:Type PasswordBox}"
+    	TargetType="{x:Type PasswordBox}">
+            <Setter Property="local:PasswordBoxMonitor.IsMonitoring"
+              Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border Name="Bd"
+                    Background="{TemplateBinding Background}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    SnapsToDevicePixels="true">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost"
+                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                <TextBlock FontFamily="Verdana" FontSize="18" Text="Password" VerticalAlignment="Center"
+                                   Foreground="LightSteelBlue" Padding="7 0 20 0" Visibility="Collapsed" Name="txtPrompt"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled"
+    									 Value="false">
+                                <Setter TargetName="Bd"
+    										Property="Background"
+    										Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                <Setter Property="Foreground"
+    										Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="local:PasswordBoxMonitor.PasswordLength" Value="0">
+                                <Setter Property="Visibility" TargetName="txtPrompt" Value="Visible"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <StackPanel Orientation="Vertical">
@@ -20,23 +56,26 @@
                     <fa:ImageAwesome Icon="User" Foreground="Black" Height="18" Width="18"/>
                 </Grid>
                 <Grid>
-                    <TextBlock FontSize="18" Text="Username" VerticalAlignment="Center"
+                    <TextBlock FontFamily="Verdana" FontSize="18" Text="Username" VerticalAlignment="Center"
                    Foreground="LightSteelBlue" Visibility="{Binding ElementName=username, Path=Text.IsEmpty, 
                         Converter={StaticResource BooleanToVisibilityConverter}}" Padding="7 0 20 0"/>
-                    <TextBox x:Name="username" Width="320" Padding="5 0 20 0" VerticalAlignment="Center" FontSize="18" Background="Transparent" BorderThickness="0"></TextBox>
+                    <TextBox FontFamily="Verdana" x:Name="username" Width="320" Padding="5 0 20 0" VerticalAlignment="Center" FontSize="18" Background="Transparent" BorderThickness="0"></TextBox>
                 </Grid>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="20 0 20 0" Height="40">
+            <StackPanel Orientation="Horizontal" Margin="20 0 20 30" Height="40">
                 <Grid Height="40" Width="40" Margin="0 0 0 0" Background="#EEEEEE">
                     <fa:ImageAwesome Icon="Lock" Foreground="Black" Height="18" Width="18"/>
                 </Grid>
                 <Grid>
-                    <TextBlock FontSize="18" Text="Password" VerticalAlignment="Center"
-                   Foreground="LightSteelBlue" Visibility="{Binding ElementName=password, Path=Text.IsEmpty, 
-                        Converter={StaticResource BooleanToVisibilityConverter}}" Padding="7 0 20 0"/>
-                    <TextBox x:Name="password" Width="320" Padding="5 0 20 0" VerticalAlignment="Center" FontSize="18" Background="Transparent" BorderThickness="0"></TextBox>
+                    <PasswordBox FontFamily="Verdana" x:Name="password" Width="320" Padding="5 0 20 0" VerticalAlignment="Center" FontSize="18" Background="Transparent" BorderThickness="0" PasswordChar="*"></PasswordBox>
                 </Grid>
             </StackPanel>
+            <Grid Margin="20 0 20 30" Height="80">
+                <Button HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18" Padding="15 8 15 8"
+                        Background="#51A351" Foreground="White" Click="Button_Click">Sign In</Button>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="14" Foreground="Blue"
+                           FontFamily="Verdana" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave">Forgot Password</TextBlock>
+            </Grid>
         </StackPanel>
     </Grid>
 </Window>

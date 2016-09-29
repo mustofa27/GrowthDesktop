@@ -77,5 +77,9 @@ namespace Growth.Helper
         {
             ConnectionHelper.DownloadPageAsync(URL + "desktop/getFoto/" + id, callback);
         }
+        public void authUser(string username,string password)
+        {
+            ConnectionHelper.DownloadPageAsync(URL + "desktop/login/" + username + "/" + password, callback);
+        }
     }
 }
