@@ -13,7 +13,7 @@
         <Grid HorizontalAlignment="Stretch" Background="#EEEEEE" VerticalAlignment="Top" Height="40">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20 0 0 0">
                 <fa:ImageAwesome Icon="Home" Foreground="#3A3A3A" Height="14" Width="14"/>
-                <TextBlock Padding="5 0 0 0" FontFamily="Verdana" FontSize="14">Dashboard</TextBlock>
+                <TextBlock Padding="5 0 0 0" FontFamily="Segoe UI" FontSize="14">Dashboard</TextBlock>
             </StackPanel>
         </Grid>
         <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
@@ -23,8 +23,8 @@
                     <Grid Background="#EEEEEE" Height="40">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 0 0 0">
                             <fa:ImageAwesome Icon="User" Foreground="#3A3A3A" Height="14" Width="14" RenderTransformOrigin="0.536,0.5"/>
-                            <TextBlock FontFamily="Verdana" FontSize="14" Margin="20 0 0 0">Top 5 Sales This Month</TextBlock>
-                            <TextBlock FontFamily="Verdana" FontSize="14" Margin="5 0 0 0">(Bulan)</TextBlock>
+                            <TextBlock FontFamily="Segoe UI" FontSize="14" Margin="20 0 0 0">Top 5 Sales This Month</TextBlock>
+                            <TextBlock FontFamily="Segoe UI" FontSize="14" Margin="5 0 0 0">(Bulan)</TextBlock>
                         </StackPanel>
                     </Grid>
                     <Grid>
@@ -52,13 +52,13 @@
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
                                 <fa:ImageAwesome Icon="Truck" Foreground="White"/>
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="30" Margin="30 0 0 0"
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="30" Margin="30 0 0 0"
                                            VerticalAlignment="Bottom">10</TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14"
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="14"
                                            Margin="0 0 5 0">Finished Visit Plan This Month</TextBlock>
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14">( Bulan )</TextBlock>
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="14">( Bulan )</TextBlock>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -66,13 +66,13 @@
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
                                 <fa:ImageAwesome Icon="CheckSquareOutline" Foreground="White"/>
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="30" Margin="30 0 0 0"
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="30" Margin="30 0 0 0"
                                            VerticalAlignment="Bottom">10</TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14"
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="14"
                                            Margin="0 0 5 0">Pending Visit Plan This Month</TextBlock>
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14">( Bulan )</TextBlock>
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="14">( Bulan )</TextBlock>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -80,13 +80,13 @@
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
                                 <fa:ImageAwesome Icon="ShoppingCart" Foreground="White"/>
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="30" Margin="30 0 0 0"
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="30" Margin="30 0 0 0"
                                            VerticalAlignment="Bottom">10</TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14"
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="14"
                                            Margin="0 0 5 0">Effective Call This Month</TextBlock>
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14">( Bulan )</TextBlock>
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="14">( Bulan )</TextBlock>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -96,13 +96,13 @@
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
                                 <fa:ImageAwesome Icon="Group" Foreground="White" Height="81"/>
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="30" Margin="30 0 0 0"
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="30" Margin="30 0 0 0"
                                            VerticalAlignment="Bottom">10</TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14"
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="14"
                                            Margin="0 0 5 0">Competitor Activity This Month</TextBlock>
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14">( Bulan )</TextBlock>
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="14">( Bulan )</TextBlock>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -110,13 +110,13 @@
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
                                 <fa:ImageAwesome Icon="Camera" Foreground="White" Height="81"/>
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="30" Margin="30 0 0 0"
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="30" Margin="30 0 0 0"
                                            VerticalAlignment="Bottom">10</TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14"
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="14"
                                            Margin="0 0 5 0">Photo Outlet This Month</TextBlock>
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14">( Bulan )</TextBlock>
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="14">( Bulan )</TextBlock>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -124,13 +124,13 @@
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
                                 <fa:ImageAwesome Icon="Home" Foreground="White" Height="81"/>
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="30" Margin="30 0 0 0"
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="30" Margin="30 0 0 0"
                                            VerticalAlignment="Bottom">10</TextBlock>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14"
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="14"
                                            Margin="0 0 5 0">Registered Outlet This Month</TextBlock>
-                                <TextBlock Foreground="White" FontFamily="Verdana" FontSize="14">( Bulan )</TextBlock>
+                                <TextBlock Foreground="White" FontFamily="Segoe UI" FontSize="14">( Bulan )</TextBlock>
                             </StackPanel>
                         </StackPanel>
                     </Grid>

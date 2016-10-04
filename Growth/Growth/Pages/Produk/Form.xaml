@@ -10,10 +10,10 @@
 
     <Grid>
         <StackPanel Orientation="Vertical">
-            <TextBlock x:Name="status" FontFamily="Verdana" FontSize="25" Margin="0 0 0 30" Foreground="Green" Visibility="Collapsed">Create area sukses</TextBlock>
-            <TextBlock FontFamily="Verdana" FontSize="15">Kode Produk</TextBlock>
+            <TextBlock x:Name="status" FontFamily="Segoe UI" FontSize="25" Margin="0 0 0 30" Foreground="Green" Visibility="Collapsed">Create area sukses</TextBlock>
+            <TextBlock FontFamily="Segoe UI" FontSize="15">Kode Produk</TextBlock>
             <TextBox x:Name="id" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-            <TextBlock FontFamily="Verdana" FontSize="15">Nama Produk</TextBlock>
+            <TextBlock FontFamily="Segoe UI" FontSize="15">Nama Produk</TextBlock>
             <TextBox x:Name="nama" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
             <StackPanel Orientation="Horizontal">
                 <Button Width="80" Background="Red" Foreground="White" FontSize="15" Margin="0 0 10 0" Click="Button_Click_1">Back</Button>

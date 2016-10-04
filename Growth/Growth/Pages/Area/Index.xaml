@@ -14,7 +14,7 @@
         <Grid HorizontalAlignment="Stretch" Background="#EEEEEE" VerticalAlignment="Top" Height="40">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20 0 0 0">
                 <fa:ImageAwesome Icon="LocationArrow" Foreground="#3A3A3A" Height="14" Width="14"/>
-                <TextBlock Padding="5 0 0 0" FontFamily="Verdana" FontSize="14">Area</TextBlock>
+                <TextBlock Padding="5 0 0 0" FontFamily="Segoe UI" FontSize="14">Area</TextBlock>
             </StackPanel>
         </Grid>
         <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
@@ -23,7 +23,7 @@
                 <Grid Background="#EEEEEE" Height="40" Margin="0 0 0 0" VerticalAlignment="Top">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 0 0 0">
                         <fa:ImageAwesome Icon="Th" Foreground="#3A3A3A" Height="14" Width="14"/>
-                        <TextBlock FontFamily="Verdana" FontSize="14" Margin="20 0 0 0">Area List</TextBlock>
+                        <TextBlock FontFamily="Segoe UI" FontSize="14" Margin="20 0 0 0">Area List</TextBlock>
                     </StackPanel>
                     <Menu HorizontalAlignment="Right"
                             Background="#EEEEEE" Height="30" Padding="20 0 20 0">
@@ -32,8 +32,8 @@
                                 <StackPanel Orientation="Horizontal"/>
                             </ItemsPanelTemplate>
                         </Menu.ItemsPanel>
-                        <MenuItem Header="Area Only" Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center" Click="MenuItem_Click"/>
-                        <MenuItem Header="Area-City" Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center" Click="MenuItem_Click_1"/>
+                        <MenuItem Header="Area Only" Foreground="Black" FontSize="12" FontFamily="Segoe UI" VerticalAlignment="Center" Click="MenuItem_Click"/>
+                        <MenuItem Header="Area-City" Foreground="Black" FontSize="12" FontFamily="Segoe UI" VerticalAlignment="Center" Click="MenuItem_Click_1"/>
                     </Menu>
                 </Grid>
                 <Frame x:Name="frameUtama"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 

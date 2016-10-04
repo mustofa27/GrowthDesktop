@@ -26,7 +26,7 @@
                             <Grid>
                                 <ScrollViewer x:Name="PART_ContentHost"
                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                                <TextBlock FontFamily="Verdana" FontSize="18" Text="Password" VerticalAlignment="Center"
+                                <TextBlock FontFamily="Segoe UI" FontSize="18" Text="Password" VerticalAlignment="Center"
                                    Foreground="LightSteelBlue" Padding="7 0 20 0" Visibility="Collapsed" Name="txtPrompt"/>
                             </Grid>
                         </Border>
@@ -56,10 +56,10 @@
                     <fa:ImageAwesome Icon="User" Foreground="Black" Height="18" Width="18"/>
                 </Grid>
                 <Grid>
-                    <TextBlock FontFamily="Verdana" FontSize="18" Text="Username" VerticalAlignment="Center"
+                    <TextBlock FontFamily="Segoe UI" FontSize="18" Text="Username" VerticalAlignment="Center"
                    Foreground="LightSteelBlue" Visibility="{Binding ElementName=username, Path=Text.IsEmpty, 
                         Converter={StaticResource BooleanToVisibilityConverter}}" Padding="7 0 20 0"/>
-                    <TextBox FontFamily="Verdana" x:Name="username" Width="320" Padding="5 0 20 0" VerticalAlignment="Center" FontSize="18" Background="Transparent" BorderThickness="0"></TextBox>
+                    <TextBox FontFamily="Segoe UI" x:Name="username" Width="320" Padding="5 0 20 0" VerticalAlignment="Center" FontSize="18" Background="Transparent" BorderThickness="0"></TextBox>
                 </Grid>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="20 0 20 30" Height="40">
@@ -67,14 +67,14 @@
                     <fa:ImageAwesome Icon="Lock" Foreground="Black" Height="18" Width="18"/>
                 </Grid>
                 <Grid>
-                    <PasswordBox FontFamily="Verdana" x:Name="password" Width="320" Padding="5 0 20 0" VerticalAlignment="Center" FontSize="18" Background="Transparent" BorderThickness="0" PasswordChar="*"></PasswordBox>
+                    <PasswordBox FontFamily="Segoe UI" x:Name="password" Width="320" Padding="5 0 20 0" VerticalAlignment="Center" FontSize="18" Background="Transparent" BorderThickness="0" PasswordChar="*"></PasswordBox>
                 </Grid>
             </StackPanel>
             <Grid Margin="20 0 20 30" Height="80">
                 <Button HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18" Padding="15 8 15 8"
-                        Background="#51A351" Foreground="White" Click="Button_Click">Sign In</Button>
+                        Background="#51A351" Foreground="White" Click="Button_Click" FontFamily="Segoe UI">Sign In</Button>
                 <TextBlock HorizontalAlignment="Left" FontSize="14" Foreground="Blue"
-                           FontFamily="Verdana" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" Margin="0,63,0,0" Height="17" VerticalAlignment="Top" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp">Forgot Password</TextBlock>
+                           FontFamily="Segoe UI" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" Margin="0,60,0,0" VerticalAlignment="Top" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp">Forgot Password</TextBlock>
             </Grid>
         </StackPanel>
     </Grid>

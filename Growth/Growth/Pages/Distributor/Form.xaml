@@ -10,21 +10,21 @@
 
     <Grid>
         <StackPanel Orientation="Vertical">
-            <TextBlock x:Name="status" FontFamily="Verdana" FontSize="25" Margin="0 0 0 30" Foreground="Green" Visibility="Collapsed">Create area sukses</TextBlock>
-            <TextBlock FontFamily="Verdana" FontSize="15">Kode Distributor</TextBlock>
+            <TextBlock x:Name="status" FontFamily="Segoe UI" FontSize="25" Margin="0 0 0 30" Foreground="Green" Visibility="Collapsed">Create area sukses</TextBlock>
+            <TextBlock FontFamily="Segoe UI" FontSize="15">Kode Distributor</TextBlock>
             <TextBox x:Name="id" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-            <TextBlock FontFamily="Verdana" FontSize="15">Nama Distributor</TextBlock>
+            <TextBlock FontFamily="Segoe UI" FontSize="15">Nama Distributor</TextBlock>
             <TextBox x:Name="nama" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-            <TextBlock FontFamily="Verdana" FontSize="15">Alamat</TextBlock>
+            <TextBlock FontFamily="Segoe UI" FontSize="15">Alamat</TextBlock>
             <TextBox x:Name="alamat" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
-            <TextBlock FontFamily="Verdana" FontSize="15">Kota</TextBlock>
-            <ComboBox x:Name="selectKota" Margin="0 5 0 10" FontSize="15" FontFamily="Verdana"
+            <TextBlock FontFamily="Segoe UI" FontSize="15">Kota</TextBlock>
+            <ComboBox x:Name="selectKota" Margin="0 5 0 10" FontSize="15" FontFamily="Segoe UI"
                         DisplayMemberPath="nm_kota"
                         SelectedValuePath="id"
                         HorizontalAlignment="Left"
                         Width="350"
                         Height="30"/>
-            <TextBlock FontFamily="Verdana" FontSize="15">Telepon</TextBlock>
+            <TextBlock FontFamily="Segoe UI" FontSize="15">Telepon</TextBlock>
             <TextBox x:Name="telepon" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBox>
             <StackPanel Orientation="Horizontal">
                 <Button Width="80" Background="Red" Foreground="White" FontSize="15" Margin="0 0 10 0" Click="Button_Click_1">Back</Button>

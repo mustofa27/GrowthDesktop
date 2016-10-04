@@ -14,7 +14,7 @@
         <Grid HorizontalAlignment="Stretch" Background="#EEEEEE" VerticalAlignment="Top" Height="40">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20 0 0 0">
                 <fa:ImageAwesome Icon="LocationArrow" Foreground="#3A3A3A" Height="14" Width="14"/>
-                <TextBlock Padding="5 0 0 0" FontFamily="Verdana" FontSize="14">Distributor</TextBlock>
+                <TextBlock Padding="5 0 0 0" FontFamily="Segoe UI" FontSize="14">Distributor</TextBlock>
             </StackPanel>
         </Grid>
         <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch"

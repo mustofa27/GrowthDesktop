@@ -23,91 +23,91 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock FontSize="30" Margin="0 0 0 20">Detail</TextBlock>
                     <StackPanel Orientation="Horizontal" Margin="0 0 0 20" Background="Orange">
-                        <TextBlock Padding="10 5 0 5" FontFamily="Verdana" FontSize="15" Foreground="White">Nama Outlet :</TextBlock>
-                        <TextBlock x:Name="nama" Padding="10 5 0 5" FontFamily="Verdana" FontSize="15" Foreground="White"></TextBlock>
+                        <TextBlock Padding="10 5 0 5" FontFamily="Segoe UI" FontSize="15" Foreground="White">Nama Outlet :</TextBlock>
+                        <TextBlock x:Name="nama" Padding="10 5 0 5" FontFamily="Segoe UI" FontSize="15" Foreground="White"></TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Grid Width="426">
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="User" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Sales Force</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Sales Force</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="user" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="user" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="Barcode" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Kode Outlet</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Kode Outlet</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="kd_outlet" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="kd_outlet" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="Th" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Area</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Area</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="area" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="area" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="Home" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Alamat</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Alamat</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="alamat" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="alamat" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="Briefcase" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Kota</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Kota</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="kota" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="kota" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="Envelope" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Kode Pos</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Kode Pos</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="kodepos" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="kodepos" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="Print" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Distributor</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Distributor</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="distributor" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="distributor" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="User" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Nama PIC</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Nama PIC</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="nm_pic" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="nm_pic" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                             </StackPanel>
                         </Grid>
                         <Grid Width="426">
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="MobilePhone" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Telepon PIC</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Telepon PIC</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="tlp_pic" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="tlp_pic" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="CheckSquare" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Tipe</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Tipe</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="tipe" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="tipe" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="Star" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Rank</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Rank</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="rank" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="rank" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="MapMarker" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Longitude</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Longitude</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="longitude" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="longitude" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="MapMarker" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Latitude</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Latitude</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="latitude" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="latitude" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="Plus" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Toleransi Max</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Toleransi Max</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="toleransi" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="toleransi" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="BarChart" Foreground="#3A3A3A" Height="14" Width="14"/>
-                                    <TextBlock Padding="10 0 0 0" FontFamily="Verdana" FontSize="15">Status Outlet</TextBlock>
+                                    <TextBlock Padding="10 0 0 0" FontFamily="Segoe UI" FontSize="15">Status Outlet</TextBlock>
                                 </StackPanel>
-                                <TextBlock x:Name="status" HorizontalAlignment="Stretch" FontFamily="Verdana" FontSize="15" Margin="0 5 0 10"/>
+                                <TextBlock x:Name="status" HorizontalAlignment="Stretch" FontFamily="Segoe UI" FontSize="15" Margin="0 5 0 10"/>
                             </StackPanel>
                         </Grid>
                     </StackPanel>
@@ -115,7 +115,7 @@
             </Grid>
         </StackPanel>
         <Grid x:Name="loading" Background="White" Opacity="0.85" Visibility="Visible">
-            <TextBlock FontFamily="Verdana" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Please Wait</TextBlock>
+            <TextBlock FontFamily="Segoe UI" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Please Wait</TextBlock>
         </Grid>
     </Grid>
 </Page>

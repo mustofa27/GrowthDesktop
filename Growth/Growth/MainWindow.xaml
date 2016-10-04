@@ -31,7 +31,7 @@
                                 <StackPanel Orientation="Horizontal"/>
                             </ItemsPanelTemplate>
                         </Menu.ItemsPanel>
-                        <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" VerticalAlignment="Center">
+                        <MenuItem Foreground="White" FontSize="14" FontFamily="Segoe UI" VerticalAlignment="Center">
                             <MenuItem.Header>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="Wrench" Height="12" Width="12" Margin="0 0 5 0" Foreground="White"/>
@@ -39,7 +39,7 @@
                                 </StackPanel>
                             </MenuItem.Header>
                         </MenuItem>
-                        <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" VerticalAlignment="Center" Margin="10 0 0 0">
+                        <MenuItem Foreground="White" FontSize="14" FontFamily="Segoe UI" VerticalAlignment="Center" Margin="10 0 0 0">
                             <MenuItem.Header>
                                 <StackPanel Orientation="Horizontal">
                                     <fa:ImageAwesome Icon="User" Height="12" Width="12" Margin="0 0 5 0" Foreground="White"/>
@@ -72,7 +72,7 @@
                             <StackPanel Orientation="Horizontal"/>
                         </ItemsPanelTemplate>
                     </Menu.ItemsPanel>
-                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center">
+                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Segoe UI" VerticalAlignment="Center">
                         <MenuItem.Header>
                             <StackPanel Orientation="Horizontal">
                                 <fa:ImageAwesome Icon="File" Height="12" Width="12" Margin="0 0 5 0" Foreground="Black"/>
@@ -80,7 +80,7 @@
                             </StackPanel>
                         </MenuItem.Header>
                     </MenuItem>
-                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center">
+                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Segoe UI" VerticalAlignment="Center">
                         <MenuItem.Header>
                             <StackPanel Orientation="Horizontal">
                                 <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 5 0" Foreground="Black"/>
@@ -88,7 +88,7 @@
                             </StackPanel>
                         </MenuItem.Header>
                     </MenuItem>
-                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center">
+                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Segoe UI" VerticalAlignment="Center">
                         <MenuItem.Header>
                             <StackPanel Orientation="Horizontal">
                                 <fa:ImageAwesome Icon="Th" Height="12" Width="12" Margin="0 0 5 0" Foreground="Black"/>
@@ -96,7 +96,7 @@
                             </StackPanel>
                         </MenuItem.Header>
                     </MenuItem>
-                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center">
+                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Segoe UI" VerticalAlignment="Center">
                         <MenuItem.Header>
                             <StackPanel Orientation="Horizontal">
                                 <fa:ImageAwesome Icon="Gear" Height="12" Width="12" Margin="0 0 5 0" Foreground="Black"/>
@@ -104,7 +104,7 @@
                             </StackPanel>
                         </MenuItem.Header>
                     </MenuItem>
-                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Verdana" VerticalAlignment="Center">
+                    <MenuItem Foreground="Black" FontSize="12" FontFamily="Segoe UI" VerticalAlignment="Center">
                         <MenuItem.Header>
                             <StackPanel Orientation="Horizontal">
                                 <fa:ImageAwesome Icon="Info" Height="12" Width="12" Margin="0 0 5 0" Foreground="Black"/>
@@ -123,7 +123,7 @@
                     <StackPanel />
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
-            <MenuItem x:Name="dashboard" Foreground="White" FontSize="14" FontFamily="Verdana"
+            <MenuItem x:Name="dashboard" Foreground="White" FontSize="14" FontFamily="Segoe UI"
                       Padding="15 10 5 10" Click="dashboard_Click">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -133,7 +133,7 @@
                 </MenuItem.Header>
             </MenuItem>
             <Rectangle HorizontalAlignment="Stretch" Fill="White" Height="1"/>
-            <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" Padding="15 10 5 10">
+            <MenuItem Foreground="White" FontSize="14" FontFamily="Segoe UI" Padding="15 10 5 10">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="AreaChart" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
@@ -174,7 +174,7 @@
                 </MenuItem>
             </MenuItem>
             <Rectangle HorizontalAlignment="Stretch" Fill="White" Height="1"/>
-            <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" Padding="15 10 5 10">
+            <MenuItem Foreground="White" FontSize="14" FontFamily="Segoe UI" Padding="15 10 5 10">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="Calendar" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
@@ -215,7 +215,7 @@
                 </MenuItem>
             </MenuItem>
             <Rectangle HorizontalAlignment="Stretch" Fill="White" Height="1"/>
-            <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" Padding="15 10 5 10">
+            <MenuItem Foreground="White" FontSize="14" FontFamily="Segoe UI" Padding="15 10 5 10">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="Camera" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
@@ -240,7 +240,7 @@
                 </MenuItem>
             </MenuItem>
             <Rectangle HorizontalAlignment="Stretch" Fill="White" Height="1"/>
-            <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" Padding="15 10 5 10">
+            <MenuItem Foreground="White" FontSize="14" FontFamily="Segoe UI" Padding="15 10 5 10">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="User" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
@@ -273,7 +273,7 @@
                 </MenuItem>
             </MenuItem>
             <Rectangle HorizontalAlignment="Stretch" Fill="White" Height="1"/>
-            <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" Padding="15 10 5 10">
+            <MenuItem Foreground="White" FontSize="14" FontFamily="Segoe UI" Padding="15 10 5 10">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="Book" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
@@ -282,7 +282,7 @@
                 </MenuItem.Header>
             </MenuItem>
             <Rectangle HorizontalAlignment="Stretch" Fill="White" Height="1"/>
-            <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" Padding="15 10 5 10">
+            <MenuItem Foreground="White" FontSize="14" FontFamily="Segoe UI" Padding="15 10 5 10">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="Gears" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
@@ -331,7 +331,7 @@
                 </MenuItem>
             </MenuItem>
             <Rectangle HorizontalAlignment="Stretch" Fill="White" Height="1"/>
-            <MenuItem Foreground="White" FontSize="14" FontFamily="Verdana" Padding="15 10 5 10">
+            <MenuItem Foreground="White" FontSize="14" FontFamily="Segoe UI" Padding="15 10 5 10">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="Download" Height="14" Width="14" Margin="0 0 10 0" Foreground="White"/>
@@ -350,7 +350,7 @@
             <Label Foreground="White" FontSize="14" VerticalAlignment="Center" Margin="20,0,0,0">© 2016. PT. Trikarya Teknologi Indonesia. All rights reserved.</Label>
         </Grid>
         <Grid x:Name="loading" Background="White" Opacity="0.85" Visibility="Collapsed">
-            <TextBlock FontFamily="Verdana" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Please Wait</TextBlock>
+            <TextBlock FontFamily="Segoe UI" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Please Wait</TextBlock>
         </Grid>
     </Grid>
 
