@@ -202,3 +202,81 @@ F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\P
 E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Login.g.cs
 E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Login.baml
 E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\Growth.exe.config
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Growth.exe
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Growth.pdb
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\Growth.exe
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\Growth.pdb
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\EntityFramework.dll
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\EntityFramework.SqlServer.dll
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\FontAwesome.WPF.dll
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\Newtonsoft.Json.dll
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\System.Data.SQLite.dll
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\System.Data.SQLite.EF6.dll
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\System.Data.SQLite.Linq.dll
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\System.Net.Http.Extensions.dll
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\System.Net.Http.Primitives.dll
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\EntityFramework.xml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\EntityFramework.SqlServer.xml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\FontAwesome.WPF.xml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\Newtonsoft.Json.xml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\System.Data.SQLite.xml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\System.Net.Http.Extensions.xml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\bin\Debug\System.Net.Http.Primitives.xml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Growth.csproj.App.config
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Growth.csprojResolveAssemblyReference.cache
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Login.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\MainWindow.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Area.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Area_City.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Form.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Index.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Dashboard.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Distributor\Form.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Distributor\Index.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Distributor\List.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\Form.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\Index.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\List.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\View.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Produk\Form.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Produk\Index.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Produk\List.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\VisitPlan\Form.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\VisitPlan\List.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\VisitPlan\Monitor.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\VisitPlan\TakeOrderList.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\App.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Growth_Content.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Growth_MarkupCompile.cache
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Growth_MarkupCompile.lref
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Login.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\MainWindow.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Area.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Area_City.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Form.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Area\Index.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Dashboard.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Distributor\Form.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Distributor\Index.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Distributor\List.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\Form.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\Index.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\List.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Outlet\View.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Produk\Form.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Produk\Index.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\Produk\List.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\VisitPlan\Form.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\VisitPlan\List.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\VisitPlan\Monitor.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Pages\VisitPlan\TakeOrderList.baml
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Growth.g.resources
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Growth.Properties.Resources.resources
+F:\5112100100\Semester 8\Bismillah Kerja\New Clone\GrowthDesktop\Growth\Growth\obj\Debug\Growth.csproj.GenerateResource.Cache
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\ForgotPassword.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Login.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\ForgotPassword.baml
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Login.baml

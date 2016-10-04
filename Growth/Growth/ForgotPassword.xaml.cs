@@ -1,8 +1,4 @@
-﻿using Growth.Helper;
-using Growth.Interfaces;
-using Growth.Master;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -21,9 +17,9 @@ using System.Windows.Shapes;
 namespace Growth
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for ForgotPassword.xaml
     /// </summary>
-    public partial class Login : Window,Callback
+    public partial class ForgotPassword : Window
     {
         [DllImport("user32.dll")]
 
@@ -66,7 +62,7 @@ namespace Growth
 
 
         const uint WM_SETICON = 0x0080;
-        public Login()
+        public ForgotPassword()
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
@@ -77,13 +73,13 @@ namespace Growth
 
             base.OnSourceInitialized(e);
 
- 
+
 
             // Get this window’s handle
 
             IntPtr hwnd = new WindowInteropHelper(this).Handle;
 
- 
+
 
             // Change the extended window style to not show a window icon
 
@@ -91,63 +87,12 @@ namespace Growth
 
             SetWindowLong(hwnd, GWL_EXSTYLE, extendedStyle | WS_EX_DLGMODALFRAME);
 
- 
+
 
             // Update the window’s non-client area to reflect the changes
 
             SetWindowPos(hwnd, IntPtr.Zero, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
 
-        }
-
-        private void TextBlock_MouseEnter(object sender, MouseEventArgs e)
-        {
-            Cursor = Cursors.Hand;
-        }
-
-        private void TextBlock_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Cursor = Cursors.Arrow;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ConnectionHandler con = new ConnectionHandler(this);
-            con.authUser(username.Text, password.Password);
-        }
-
-        public void Done(string res)
-        {
-            DataUser dataUser = JsonConvert.DeserializeObject<DataUser>(res);
-            if(dataUser.status == "success")
-            {
-                SQLiteDBHelper.InsertLoginUser(dataUser.user);
-                MainWindow win2 = new MainWindow();
-                win2.Show();
-                this.Close();
-            }
-            else
-            {
-                if (dataUser.status == "not found")
-                {
-                    MessageBoxResult result = MessageBox.Show("Wrong account, please try again", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                else
-                {
-                    MessageBoxResult result = MessageBox.Show("Wrong password, please try again", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-            }
-        }
-        private class DataUser
-        {
-            public string status { set; get; }
-            public User  user { set; get; }
-        }
-
-        private void TextBlock_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            ForgotPassword win2 = new ForgotPassword();
-            win2.Show();
-            this.Close();
         }
     }
 }

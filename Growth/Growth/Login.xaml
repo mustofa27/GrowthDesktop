@@ -7,7 +7,7 @@
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="  Login" Height="500" Width="400">
+        Title="Login" Height="500" Width="400">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <local:TextInputToVisibilityConverter x:Key="TextInputToVisibilityConverter" />
@@ -73,8 +73,8 @@
             <Grid Margin="20 0 20 30" Height="80">
                 <Button HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18" Padding="15 8 15 8"
                         Background="#51A351" Foreground="White" Click="Button_Click">Sign In</Button>
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="14" Foreground="Blue"
-                           FontFamily="Verdana" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave">Forgot Password</TextBlock>
+                <TextBlock HorizontalAlignment="Left" FontSize="14" Foreground="Blue"
+                           FontFamily="Verdana" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" Margin="0,63,0,0" Height="17" VerticalAlignment="Top" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp">Forgot Password</TextBlock>
             </Grid>
         </StackPanel>
     </Grid>
