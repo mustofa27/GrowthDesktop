@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Growth.Helper"
+        xmlns:DesignInControl="clr-namespace:Growth"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         ResizeMode="NoResize"
@@ -77,5 +78,22 @@
                            FontFamily="Segoe UI" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" Margin="0,60,0,0" VerticalAlignment="Top" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp">Forgot Password</TextBlock>
             </Grid>
         </StackPanel>
+        <Grid x:Name="progbar" Width="300" Height="150" Background="White" Opacity="0.8" Visibility="Collapsed">
+            <StackPanel Orientation="Vertical" Margin="10">
+                <TextBlock FontFamily="Segoe UI" FontSize="20" Margin="0 0 0 20">Processing</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="loader">
+                            <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="{Binding Value, ElementName=slider}" SegmentColor="#026873" StrokeThickness="25" Radius="10"/>
+                            <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="{Binding Value, ElementName=slider}" SegmentColor="White" StrokeThickness="2" Radius="8" />
+                            <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="{Binding Value, ElementName=slider}" SegmentColor="White" StrokeThickness="2" />
+                            <DesignInControl:CircularProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="{Binding Value, ElementName=slider}" SegmentColor="White" StrokeThickness="2" Radius="15" />
+                        </Grid>
+                    </StackPanel>
+                    <TextBlock FontFamily="Segoe UI" FontSize="16" VerticalAlignment="Center" Margin="10 0 0 0" Foreground="Gray">Please Wait</TextBlock>
+                </StackPanel>
+                <Slider x:Name="slider" Grid.Row="1" Maximum="100" Value="1" Visibility="Collapsed"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

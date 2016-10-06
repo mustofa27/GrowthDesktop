@@ -280,3 +280,7 @@ F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\L
 F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\GeneratedInternalTypeHelper.g.cs
 F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\ForgotPassword.baml
 F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Login.baml
+E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\ForgotPassword.g.cs
+E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\ForgotPassword.baml
+E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\CircularProgressBar.baml
+E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\CircularProgressBar.g.cs

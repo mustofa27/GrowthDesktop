@@ -81,5 +81,9 @@ namespace Growth.Helper
         {
             ConnectionHelper.DownloadPageAsync(URL + "desktop/login/" + username + "/" + password, callback);
         }
+        public void changePassword(string email, string nik, string telp)
+        {
+            ConnectionHelper.DownloadPageAsync(URL + "desktop/resetPass/" + email + "/" + nik + "/" + telp, callback);
+        }
     }
 }
