@@ -24,7 +24,7 @@ namespace Growth.Pages.VisitPlan
         public Monitor()
         {
             InitializeComponent();
-            listVisit.ItemsSource = SQLiteDBHelper.ReadAllVisitPlan();
+            listVisit.ItemsSource = SQLiteDBHelper.MonitorVisitPlan();
         }
     }
 }

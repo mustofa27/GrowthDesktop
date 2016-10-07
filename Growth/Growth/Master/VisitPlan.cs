@@ -16,6 +16,7 @@ namespace Growth.Master
         public string nm_dist { set; get; }
         public string kota { set; get; }
         public string status_approval { set; get; }
+        public string status_visit_string { set; get; }
         public int id
         {
             get

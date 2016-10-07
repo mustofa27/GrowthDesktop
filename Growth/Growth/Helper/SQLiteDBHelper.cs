@@ -2,6 +2,7 @@
 using System.Data.SQLite;
 using System.IO;
 using Growth.Master;
+using System;
 
 namespace Growth.Helper
 {
@@ -1139,6 +1140,43 @@ namespace Growth.Helper
                 visit.nm_dist = ReadDistributor(outlet.getKode_distributor()).getNm_dist();
                 visit.alamat_outlet = outlet.getAlamat();
                 visit.nm_sales = user.getNama();
+                visitPlans.Add(visit);
+            }
+            reader.Close();
+            return visitPlans;
+        }
+        public static List<VisitPlan> MonitorVisitPlan()
+        {
+            CreateOrReadDB();
+            DateTime skg = DateTime.Now;
+            string bulan = skg.Month < 10 ? "0" + skg.Month.ToString() : skg.Month.ToString();
+            string tgl = skg.Day < 10 ? "0" + skg.Day.ToString() : skg.Day.ToString();
+            string finish = skg.Year + "-" + bulan + "-" + tgl + " " +
+                skg.Hour + ":" + skg.Minute + ":" + skg.Second;
+            skg = skg.AddDays(-37);
+            bulan = skg.Month < 10 ? "0" + skg.Month.ToString() : skg.Month.ToString();
+            tgl = skg.Day < 10 ? "0" + skg.Day.ToString() : skg.Day.ToString();
+            string start = skg.Year + "-" + bulan + "-" + tgl + " " +
+                skg.Hour + ":" + skg.Minute + ":" + skg.Second;
+            string sql = "select * from " + TABLE_VISITPLAN + " where " + KEY_DATE_VISIT + " BETWEEN '" + start + "' AND '" + finish + "'";
+            SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<VisitPlan> visitPlans = new List<VisitPlan>();
+            while (reader.Read())
+            {
+                VisitPlan visit = new VisitPlan(int.Parse(reader[KEY_KODE_VISITPLAN].ToString()),
+                    int.Parse(reader[KEY_KODE_OUTLET].ToString()), reader[KEY_DATE_VISIT].ToString(),
+                     reader[KEY_DATE_CREATE_VISIT].ToString(), int.Parse(reader[KEY_APPROVE_VISIT].ToString()),
+                     int.Parse(reader[KEY_STATUS_VISIT].ToString()), reader[KEY_DATE_VISITING].ToString(),
+                     reader[KEY_SKIP_ORDER_REASON].ToString(), reader[KEY_SKIP_REASON].ToString());
+                Outlet outlet = ReadOutlet(visit.getKd_outlet());
+                User user = ReadUser(outlet.getKode_user());
+                visit.kota = ReadCity(user.getKd_kota()).getNama();
+                visit.nm_outlet = outlet.getNama();
+                visit.nm_dist = ReadDistributor(outlet.getKode_distributor()).getNm_dist();
+                visit.alamat_outlet = outlet.getAlamat();
+                visit.nm_sales = user.getNama();
+                visit.status_visit_string = visit.status_visit == 1 ? "Finished" : "Unvisited";
                 visitPlans.Add(visit);
             }
             reader.Close();

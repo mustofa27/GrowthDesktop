@@ -36,7 +36,7 @@
                                 <DataGridTextColumn Header="Alamat Outlet" Width="112" Binding="{Binding alamat_outlet}" />
                                 <DataGridTextColumn Header="Kota Outlet" Width="112" Binding="{Binding kota}" />
                                 <DataGridTextColumn Header="Actual Visit" Width="112" Binding="{Binding date_visiting}" />
-                                <DataGridTextColumn Header="Status Visit" Width="112" Binding="{Binding status_visit}" />
+                                <DataGridTextColumn Header="Status Visit" Width="112" Binding="{Binding status_visit_string}" />
                                 <DataGridTextColumn Header="Skip Order Reason" Width="112" Binding="{Binding skip_order_reason}" />
                                 <DataGridTextColumn Header="Unvisited Reason" Width="112" Binding="{Binding skip_reason}" />
                                 <DataGridTemplateColumn  Header="Action" Width="78">
