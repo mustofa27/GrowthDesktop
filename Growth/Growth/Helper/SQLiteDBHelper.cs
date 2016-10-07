@@ -1203,17 +1203,17 @@ namespace Growth.Helper
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             command.ExecuteNonQuery();
         }
-        public static void DeleteLoginUser(int id)
+        public static void DeleteLoginUser()
         {
             CreateOrReadDB();
-            string sql = "DELETE FROM " + TABLE_LOGGEDIN + " WHERE " + KEY_KODE_USER + "=" + id;
+            string sql = "DELETE FROM " + TABLE_LOGGEDIN;
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             command.ExecuteNonQuery();
         }
-        public static User ReadLoginUser(int id)
+        public static User ReadLoginUser()
         {
             CreateOrReadDB();
-            string sql = "select * from " + TABLE_LOGGEDIN + " WHERE " + KEY_KODE_USER + "=" + id;
+            string sql = "select * from " + TABLE_LOGGEDIN;
             SQLiteCommand command = new SQLiteCommand(sql, sqlite_conn);
             SQLiteDataReader reader = command.ExecuteReader();
             if (reader.Read())

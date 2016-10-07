@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,10 @@ namespace Growth
     /// <summary>
     /// Interaction logic for Login.xaml
     /// </summary>
+    public class Prop
+    {
+        public double loading { set; get; }
+    }
     public partial class Login : Window,Callback
     {
         [DllImport("user32.dll")]
@@ -66,10 +71,15 @@ namespace Growth
 
 
         const uint WM_SETICON = 0x0080;
+        private Thread thread;
+        Prop prop;
         public Login()
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            //prop = new Prop();
+            //prop.loading = 0;
+            //this.DataContext = prop;
         }
         protected override void OnSourceInitialized(EventArgs e)
 
@@ -113,10 +123,23 @@ namespace Growth
         {
             ConnectionHandler con = new ConnectionHandler(this);
             con.authUser(username.Text, password.Password);
+            //progbar.Visibility = Visibility.Visible;
+            //thread = new Thread(() => {
+            //    // Code executing in other thread
+            //    while (prop.loading < 100)
+            //    {
+            //        // Your application logic here
+            //        prop.loading++;
+            //        Thread.Sleep(10);
+            //    }
+            //});
+            //thread.Start();
         }
 
         public void Done(string res)
         {
+            //thread.Abort();
+            //progbar.Visibility = Visibility.Collapsed;
             DataUser dataUser = JsonConvert.DeserializeObject<DataUser>(res);
             if(dataUser.status == "success")
             {

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Growth.Helper;
+using Growth.Interfaces;
+using Growth.Pages.Pageclasses;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -19,7 +23,7 @@ namespace Growth
     /// <summary>
     /// Interaction logic for ForgotPassword.xaml
     /// </summary>
-    public partial class ForgotPassword : Window
+    public partial class ForgotPassword : Window,Callback
     {
         [DllImport("user32.dll")]
 
@@ -93,6 +97,54 @@ namespace Growth
 
             SetWindowPos(hwnd, IntPtr.Zero, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            toLogin();
+        }
+        private void toLogin()
+        {
+            Login win2 = new Login();
+            win2.Show();
+            this.Close();
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if(isNotNull(email)&& isNotNull(nik)&& isNotNull(phone))
+            {
+                //change pass;
+                ConnectionHandler con = new ConnectionHandler(this);
+                con.changePassword(email.Text,nik.Text,phone.Text);
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("You must fill all field", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+        private bool isNotNull(TextBox txt)
+        {
+            return txt != null && !string.IsNullOrWhiteSpace(txt.Text);
+        }
+
+        public void Done(string res)
+        {
+            Respon respon = JsonConvert.DeserializeObject<Respon>(res);
+            if (respon.status == "success")
+            {
+                MessageBoxResult result = MessageBox.Show("Password has been changed. Please check your email.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                if(result == MessageBoxResult.OK)
+                {
+                    toLogin();
+                }
+            }
+            else
+            {
+                if (respon.status == "not found")
+                {
+                    MessageBoxResult result = MessageBox.Show("Wrong credential, please try again", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
         }
     }
 }

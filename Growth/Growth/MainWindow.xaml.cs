@@ -39,8 +39,26 @@ namespace Growth
                 con.getAllData();
                 loading.Visibility = Visibility.Visible;
             }
+            if (SQLiteDBHelper.ReadLoginUser() != null)
+            {
+                user.Content = SQLiteDBHelper.ReadLoginUser().nama;
+                //getting user's data
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("You have to log in first", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (result == MessageBoxResult.OK)
+                {
+                    toLogin();
+                }
+            }
         }
-
+        private void toLogin()
+        {
+            Login win2 = new Login();
+            win2.Show();
+            this.Close();
+        }
         private void area_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Navigate(new Uri("/Pages/Area/Index.xaml", UriKind.Relative));
@@ -229,6 +247,16 @@ namespace Growth
                 {
                     SQLiteDBHelper.InsertVisitPlan(item);
                 }
+        }
+
+        private void logout_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                SQLiteDBHelper.DeleteLoginUser();
+                toLogin();
+            }
         }
     }
 }
