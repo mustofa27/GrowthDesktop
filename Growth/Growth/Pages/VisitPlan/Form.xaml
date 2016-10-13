@@ -33,6 +33,13 @@
                     <TextBlock x:Name="sales" FontFamily="Segoe UI" FontSize="15" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBlock>
                     <TextBlock FontFamily="Segoe UI" FontSize="15">Tanggal Visit</TextBlock>
                     <DatePicker x:Name="tanggal" HorizontalAlignment="Left" FontFamily="Segoe UI" FontSize="15" Height="30" Width="350" Margin="0 5 0 10"/>
+                    <!--<TextBlock FontFamily="Segoe UI" FontSize="15">Status Approval</TextBlock>
+                    <ComboBox x:Name="selectApproval" Margin="0 5 0 10" FontSize="15" FontFamily="Segoe UI"
+                        DisplayMemberPath="nm_outlet"
+                        SelectedValuePath="kd_outlet"
+                        HorizontalAlignment="Left"
+                        Width="350"
+                        Height="30" SelectionChanged="selectOutlet_SelectionChanged"/>-->
                     <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" FontSize="15" Click="Button_Click">Simpan</Button>
                 </StackPanel>
             </Grid>
