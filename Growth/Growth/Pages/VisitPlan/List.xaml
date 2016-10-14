@@ -31,6 +31,7 @@
                         <DataGrid x:Name="listVisit" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black" AutoGenerateColumns="False"
                                   IsReadOnly="True">
                             <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" MaxWidth="0" Binding="{Binding id}"/>
                                 <DataGridTextColumn Header="Sales Force" Width="120" Binding="{Binding nm_sales}" />
                                 <DataGridTextColumn Header="Nama Outlet" Width="140" Binding="{Binding nm_outlet}" />
                                 <DataGridTextColumn Header="Alamat Outlet" Width="130" Binding="{Binding alamat_outlet}" />

@@ -60,12 +60,12 @@ namespace Growth.Pages.VisitPlan
                         var row = (DataGridRow)vis;
                         DataGridCellsPresenter presenter = GetVisualChild<DataGridCellsPresenter>(row);
                         // find grid cell object for the cell with index 0
-                        DataGridCell cell = presenter.ItemContainerGenerator.ContainerFromIndex(1) as DataGridCell;
+                        DataGridCell cell = presenter.ItemContainerGenerator.ContainerFromIndex(0) as DataGridCell;
                         if (cell != null)
                         {
                             //Console.WriteLine(((TextBlock)cell.Content).Text);
                             ConnectionHandler con = new ConnectionHandler(this);
-                            con.delOutlet(int.Parse(((TextBlock)cell.Content).Text));
+                            con.delVisit(int.Parse(((TextBlock)cell.Content).Text));
                         }
                         break;
                     }
@@ -100,8 +100,8 @@ namespace Growth.Pages.VisitPlan
             Respon respon = JsonConvert.DeserializeObject<Respon>(res);
             if (respon.status == "success")
             {
-                SQLiteDBHelper.DeleteOutlet(respon.id);
-                //listOutlet.ItemsSource = SQLiteDBHelper.ReadAllOutlet();
+                SQLiteDBHelper.DeleteVisitPlan(respon.id);
+                listVisit.ItemsSource = SQLiteDBHelper.ReadAllVisitPlan();
                 MessageBoxResult result = MessageBox.Show("Delete data success", "Status", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else

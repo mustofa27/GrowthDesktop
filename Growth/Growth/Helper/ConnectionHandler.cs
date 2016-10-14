@@ -23,10 +23,20 @@ namespace Growth.Helper
         {
             ConnectionHelper.DownloadPageAsync(URL + "desktop/getTop", callback);
         }
+        #region visitplan
         public void setVisit(string json)
         {
             ConnectionHelper.PostToPage(URL + "desktop/setVisit", callback, json);
         }
+        public void delVisit(int id)
+        {
+            ConnectionHelper.DownloadPageAsync(URL + "desktop/delVisit/" + id, callback);
+        }
+        public void editVisit(string json)
+        {
+            ConnectionHelper.PostToPage(URL + "desktop/editVisit", callback, json);
+        }
+        #endregion
         public void setArea(string json)
         {
             ConnectionHelper.PostToPage(URL + "desktop/setArea", callback, json);

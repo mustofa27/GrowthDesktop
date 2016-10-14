@@ -30,7 +30,7 @@
                         <DataGrid x:Name="listVisit" Margin="0 15 0 0" TextElement.FontSize="13" Foreground="Black" AutoGenerateColumns="False"
                                   IsReadOnly="True">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Kode Visit" Width="112" Binding="{Binding nm_sales}" />
+                                <DataGridTextColumn Header="Kode Visit" Width="112" Binding="{Binding id}" />
                                 <DataGridTextColumn Header="Sales Force" Width="112" Binding="{Binding nm_sales}" />
                                 <DataGridTextColumn Header="Nama Outlet" Width="112" Binding="{Binding nm_outlet}" />
                                 <DataGridTextColumn Header="Alamat Outlet" Width="112" Binding="{Binding alamat_outlet}" />
