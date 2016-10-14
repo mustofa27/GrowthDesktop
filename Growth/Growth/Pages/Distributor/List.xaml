@@ -33,7 +33,7 @@
                             <DataGridTemplateColumn Header="Action" Width="156">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <fa:ImageAwesome Icon="Edit" Height="12" Width="12" Margin="0 0 20 0" Foreground="Black"
                                                              MouseLeftButtonUp="Edit_MouseLeftButtonUp"
                                                  MouseEnter="ImageAwesome_MouseEnter" MouseLeave="ImageAwesome_MouseLeave"/>

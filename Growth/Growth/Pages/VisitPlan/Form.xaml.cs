@@ -25,11 +25,22 @@ namespace Growth.Pages.VisitPlan
     public partial class Form : Page,Callback
     {
         Growth.Master.VisitPlan visitplan;
+        string state;
         public Form()
         {
             InitializeComponent();
             selectOutlet.ItemsSource = SQLiteDBHelper.ReadAllOutlet();
             selectOutlet.SelectedIndex = 0;
+            state = "new";
+        }
+        public Form(int id)
+        {
+            InitializeComponent();
+            selectOutlet.ItemsSource = SQLiteDBHelper.ReadAllOutlet();
+            visitplan = SQLiteDBHelper.ReadVisitPlan(id);
+            selectOutlet.Text = SQLiteDBHelper.ReadOutlet(visitplan.kd_outlet).nm_outlet;
+            tanggal.Text = visitplan.date_visit;
+            state = "edit";
         }
         private void selectOutlet_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

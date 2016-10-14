@@ -1153,7 +1153,7 @@ namespace Growth.Helper
             string tgl = skg.Day < 10 ? "0" + skg.Day.ToString() : skg.Day.ToString();
             string finish = skg.Year + "-" + bulan + "-" + tgl + " " +
                 skg.Hour + ":" + skg.Minute + ":" + skg.Second;
-            skg = skg.AddDays(-37);
+            skg = skg.AddDays(-100);
             bulan = skg.Month < 10 ? "0" + skg.Month.ToString() : skg.Month.ToString();
             tgl = skg.Day < 10 ? "0" + skg.Day.ToString() : skg.Day.ToString();
             string start = skg.Year + "-" + bulan + "-" + tgl + " " +
