@@ -857,10 +857,20 @@ namespace Growth.Helper
             List<TakeOrder> takeOrders = new List<TakeOrder>();
             while (reader.Read())
             {
-                takeOrders.Add(new TakeOrder(int.Parse(reader[KEY_KODE_TAKE_ORDER].ToString()),
+                TakeOrder takeOrder = new TakeOrder(int.Parse(reader[KEY_KODE_TAKE_ORDER].ToString()),
                     reader[KEY_KD_TO].ToString(), int.Parse(reader[KEY_KODE_VISITPLAN].ToString()),
                     int.Parse(reader[KEY_KODE_PRODUK].ToString()), int.Parse(reader[KEY_QUANTITY].ToString()),
-                    reader[KEY_SATUAN].ToString(), reader[KEY_DATE_ORDER].ToString(), int.Parse(reader[KEY_STATUS_ORDER].ToString())));
+                    reader[KEY_SATUAN].ToString(), reader[KEY_DATE_ORDER].ToString(), int.Parse(reader[KEY_STATUS_ORDER].ToString()));
+                VisitPlan visit = ReadVisitPlan(takeOrder.kd_visitplan);
+                Outlet outlet = ReadOutlet(visit.getKd_outlet());
+                User user = ReadUser(outlet.getKode_user());
+                City kota = ReadCity(outlet.kd_kota);
+                takeOrder.nm_outlet = outlet.nm_outlet;
+                takeOrder.nm_sales = user.nama;
+                takeOrder.nm_produk = ReadProduct(takeOrder.kd_produk).nm_produk;
+                takeOrder.kota = kota.nm_kota;
+                takeOrder.area = ReadArea(kota.kd_area).nm_area;
+                takeOrders.Add(takeOrder);
             }
             reader.Close();
             return takeOrders;

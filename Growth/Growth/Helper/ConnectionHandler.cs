@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Growth.Interfaces;
+using Growth.Pages.VisitPlan;
 
 namespace Growth.Helper
 {
@@ -11,10 +12,13 @@ namespace Growth.Helper
     {
         private Callback callback;
         private string URL = "http://demo.growth.co.id/";
+        private TakeOrderList takeOrderList;
+
         public ConnectionHandler(Callback callback)
         {
             this.callback = callback;
         }
+
         public void getAllData()
         {
             ConnectionHelper.DownloadPageAsync(URL + "desktop/getAll", callback);

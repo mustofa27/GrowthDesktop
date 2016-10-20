@@ -10,7 +10,11 @@ namespace Growth.Master
     {
         private int Id, kd_visit, Kd_produk, qty, status;
         private string Date_order, Satuan, Kd_to;
-
+        public string nm_sales { set; get; }
+        public string nm_outlet { set; get; }
+        public string nm_produk { set; get; }
+        public string kota { set; get; }
+        public string area { set; get; }
         public int id
         {
             get
