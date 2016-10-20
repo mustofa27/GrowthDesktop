@@ -42,7 +42,7 @@ namespace Growth.Pages.VisitPlan
                     if (cell != null)
                     {
                         //Console.WriteLine(((TextBlock)cell.Content).Text);
-                        this.NavigationService.Navigate(new Form(int.Parse(((TextBlock)cell.Content).Text)));
+                        this.NavigationService.Navigate(new Form(int.Parse(((TextBlock)cell.Content).Text),"monitor"));
                     }
                     break;
                 }

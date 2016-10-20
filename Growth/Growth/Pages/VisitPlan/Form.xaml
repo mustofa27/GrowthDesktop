@@ -31,15 +31,46 @@
                         Height="30" SelectionChanged="selectOutlet_SelectionChanged"/>
                     <TextBlock FontFamily="Segoe UI" FontSize="15">Nama Sales Force</TextBlock>
                     <TextBlock x:Name="sales" FontFamily="Segoe UI" FontSize="15" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 5 0 10"></TextBlock>
+                    <Grid x:Name="statusVisit">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock FontFamily="Segoe UI" FontSize="15">Status Visiting</TextBlock>
+                            <ComboBox x:Name="selectStatusVisit" Text="Select Status" Margin="0 5 0 10" FontSize="15" FontFamily="Segoe UI" 
+                                      HorizontalAlignment="Left" Width="350" Height="30">
+                                <ComboBoxItem Name="cbi1">YES</ComboBoxItem>
+                                <ComboBoxItem Name="cbi2">NO</ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
                     <TextBlock FontFamily="Segoe UI" FontSize="15">Tanggal Visit</TextBlock>
                     <DatePicker x:Name="tanggal" HorizontalAlignment="Left" FontFamily="Segoe UI" FontSize="15" Height="30" Width="350" Margin="0 5 0 10"/>
-                    <!--<TextBlock FontFamily="Segoe UI" FontSize="15">Status Approval</TextBlock>
-                    <ComboBox x:Name="selectApproval" Margin="0 5 0 10" FontSize="15" FontFamily="Segoe UI"
-                        DisplayMemberPath="nm_outlet"
-                        SelectedValuePath="kd_outlet"
-                        HorizontalAlignment="Left"
-                        Width="350"
-                        Height="30" SelectionChanged="selectOutlet_SelectionChanged"/>-->
+                    <Grid x:Name="statusApproval">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock FontFamily="Segoe UI" FontSize="15">Status Approval</TextBlock>
+                            <ComboBox x:Name="selectStatusApproval" Text="Select Status" Margin="0 5 0 10" FontSize="15" FontFamily="Segoe UI" 
+                                      HorizontalAlignment="Left" Width="350" Height="30">
+                                <ComboBoxItem Name="cb1">YES</ComboBoxItem>
+                                <ComboBoxItem Name="cb2">NO</ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+                    <Grid x:Name="tanggalVisit">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock FontFamily="Segoe UI" FontSize="15">Tanggal Visiting (Aktual)</TextBlock>
+                            <StackPanel Orientation="Horizontal" Margin="0 5 0 10">
+                                <DatePicker x:Name="tanggalVisiting" HorizontalAlignment="Left" FontFamily="Segoe UI" FontSize="15" Height="30" Width="350" Margin="0 0 20 0"/>
+                                <TextBlock FontFamily="Segoe UI" FontSize="15" Foreground="Green">Diisi jika Status Visit "YES"</TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Grid x:Name="skipVisit">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock FontFamily="Segoe UI" FontSize="15">Alasan Skip Visit</TextBlock>
+                            <StackPanel Orientation="Horizontal" Margin="0 5 0 10">
+                                <TextBox x:Name="skipReason" FontFamily="Segoe UI" FontSize="15" Height="30" Width="350" HorizontalAlignment="Left" Margin="0 0 20 0"></TextBox>
+                                <TextBlock FontFamily="Segoe UI" FontSize="15" Foreground="Red">Diisi jika Status Visit "NO"</TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
                     <Button HorizontalAlignment="Left" Background="#2D89EF" Foreground="White" Padding="10 5 10 5" FontSize="15" Click="Button_Click">Simpan</Button>
                 </StackPanel>
             </Grid>
