@@ -197,6 +197,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PhotoActivity\CompetitorList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PhotoActivity\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PhotoActivity\PhotoList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PhotoActivity\View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Produk\Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -280,6 +296,18 @@
     <Compile Include="Pages\Pageclasses\Respon.cs" />
     <Compile Include="Pages\Pageclasses\ResponOutlet.cs" />
     <Compile Include="Pages\Pageclasses\TopSales.cs" />
+    <Compile Include="Pages\PhotoActivity\CompetitorList.xaml.cs">
+      <DependentUpon>CompetitorList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PhotoActivity\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PhotoActivity\PhotoList.xaml.cs">
+      <DependentUpon>PhotoList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PhotoActivity\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Produk\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
@@ -348,7 +376,6 @@
   <ItemGroup>
     <Folder Include="Pages\Configuration\" />
     <Folder Include="Pages\ExportImport\" />
-    <Folder Include="Pages\PhotoActivity\" />
     <Folder Include="Pages\Report\" />
   </ItemGroup>
   <ItemGroup>

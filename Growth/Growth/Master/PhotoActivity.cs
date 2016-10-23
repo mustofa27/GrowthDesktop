@@ -10,7 +10,9 @@ namespace Growth.Master
     {
         private int Id, Kd_user, Kd_outlet, kd_kompetitor, kd_tipe;
         private string nama, tgl_take, tgl_upload, alamat, Keterangan, foto;
-
+        public string nm_sales { set; get; }
+        public string nm_outlet { set; get; }
+        public string nm_tipe { set; get; }
         public int id
         {
             get

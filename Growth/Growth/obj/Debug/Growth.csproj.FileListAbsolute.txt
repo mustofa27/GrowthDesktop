@@ -286,3 +286,9 @@ E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\Circul
 E:\Mustofa\Penugasan\Growth Dekstop\GrowthDesktop\Growth\Growth\obj\Debug\CircularProgressBar.g.cs
 F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\CircularProgressBar.baml
 F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\CircularProgressBar.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\PhotoActivity\CompetitorList.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\PhotoActivity\Form.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\PhotoActivity\PhotoList.g.cs
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\PhotoActivity\CompetitorList.baml
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\PhotoActivity\Form.baml
+F:\5112100100\Semester 8\Bismillah Kerja\GrowthDesktop\Growth\Growth\obj\Debug\Pages\PhotoActivity\PhotoList.baml

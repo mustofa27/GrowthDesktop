@@ -736,12 +736,19 @@ namespace Growth.Helper
             List<PhotoActivity> photoActivities = new List<PhotoActivity>();
             while (reader.Read())
             {
-                 photoActivities.Add(new PhotoActivity(int.Parse(reader[KEY_KODE_PHOTO].ToString()),
+                PhotoActivity photo = new PhotoActivity(int.Parse(reader[KEY_KODE_PHOTO].ToString()),
                     int.Parse(reader[KEY_KODE_USER].ToString()), int.Parse(reader[KEY_KODE_OUTLET].ToString()),
                      int.Parse(reader[KEY_KODE_KOMPETITOR].ToString()), int.Parse(reader[KEY_JENIS_PHOTO].ToString()),
                      reader[KEY_NAMA_PHOTO].ToString(), reader[KEY_DATE_TAKE_PHOTO].ToString(),
                      reader[KEY_ALAMAT_PHOTO].ToString(), reader[KEY_DATE_UPLOAD_PHOTO].ToString(),
-                     reader[KEY_FOTO].ToString(), reader[KEY_KETERANGAN].ToString()));
+                     reader[KEY_FOTO].ToString(), reader[KEY_KETERANGAN].ToString());
+                Outlet outlet = ReadOutlet(photo.kd_outlet);
+                User user = ReadUser(photo.kd_user);
+                TipePhoto tipe = ReadTipePhoto(photo.jenis_photo);
+                photo.nm_outlet = outlet.nm_outlet;
+                photo.nm_sales = user.nama;
+                photo.nm_tipe = tipe.nama_tipe;
+                 photoActivities.Add(photo);
             }
             reader.Close();
             return photoActivities;

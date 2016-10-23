@@ -103,7 +103,14 @@ namespace Growth
         {
             mainFrame.Navigate(new Uri("/Pages/VisitPlan/TakeOrderList.xaml", UriKind.Relative));
         }
-
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new Uri("/Pages/PhotoActivity/PhotoList.xaml", UriKind.Relative));
+        }
+        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new Uri("/Pages/PhotoActivity/CompetitorList.xaml", UriKind.Relative));
+        }
         public void Done(string res)
         {
             DataUser dataUser = JsonConvert.DeserializeObject<DataUser>(res);
