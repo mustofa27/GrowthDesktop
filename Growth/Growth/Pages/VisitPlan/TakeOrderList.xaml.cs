@@ -1,5 +1,7 @@
 ﻿using Growth.Helper;
 using Growth.Interfaces;
+using Growth.Pages.Pageclasses;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,23 +30,6 @@ namespace Growth.Pages.VisitPlan
             InitializeComponent();
             listOrder.ItemsSource = SQLiteDBHelper.ReadAllTakeOrder();
         }
-        private void Edit_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            for (var vis = sender as Visual; vis != null; vis = VisualTreeHelper.GetParent(vis) as Visual)
-                if (vis is DataGridRow)
-                {
-                    var row = (DataGridRow)vis;
-                    DataGridCellsPresenter presenter = GetVisualChild<DataGridCellsPresenter>(row);
-                    // find grid cell object for the cell with index 0
-                    DataGridCell cell = presenter.ItemContainerGenerator.ContainerFromIndex(0) as DataGridCell;
-                    if (cell != null)
-                    {
-                        //Console.WriteLine(((TextBlock)cell.Content).Text);
-                        //this.NavigationService.Navigate(new Form(int.Parse(((TextBlock)cell.Content).Text), "list"));
-                    }
-                    break;
-                }
-        }
 
         private void Delete_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -61,8 +46,8 @@ namespace Growth.Pages.VisitPlan
                         if (cell != null)
                         {
                             //Console.WriteLine(((TextBlock)cell.Content).Text);
-                            //ConnectionHandler con = new ConnectionHandler(this);
-                            //con.delVisit(int.Parse(((TextBlock)cell.Content).Text));
+                            ConnectionHandler con = new ConnectionHandler(this);
+                            con.delTakeOrder(int.Parse(((TextBlock)cell.Content).Text));
                         }
                         break;
                     }
@@ -94,7 +79,17 @@ namespace Growth.Pages.VisitPlan
 
         public void Done(string res)
         {
-            throw new NotImplementedException();
+            Respon respon = JsonConvert.DeserializeObject<Respon>(res);
+            if (respon.status == "success")
+            {
+                SQLiteDBHelper.DeleteTakeOrder(respon.id);
+                listOrder.ItemsSource = SQLiteDBHelper.ReadAllTakeOrder();
+                MessageBoxResult result = MessageBox.Show("Delete data success", "Status", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Delete data failed", "Status", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

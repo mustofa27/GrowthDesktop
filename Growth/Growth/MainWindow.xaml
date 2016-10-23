@@ -42,7 +42,7 @@
                         <MenuItem Foreground="White" FontSize="14" FontFamily="Segoe UI" VerticalAlignment="Center" Margin="10 0 0 0">
                             <MenuItem.Header>
                                 <StackPanel Orientation="Horizontal">
-                                    <fa:ImageAwesome Icon="User" Height="12" Width="12" Margin="0 0 5 0" Foreground="White"/>
+                                    <fa:ImageAwesome Icon="PowerOff" Height="12" Width="12" Margin="0 0 5 0" Foreground="White"/>
                                     <ContentPresenter x:Name="user" Content="User" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </MenuItem.Header>

@@ -87,6 +87,12 @@ namespace Growth.Helper
             ConnectionHelper.PostToPage(URL + "desktop/editOutlet", callback, json);
         }
         #endregion
+        #region takeorder
+        public void delTakeOrder(int id)
+        {
+            ConnectionHelper.DownloadPageAsync(URL + "desktop/delTakeOrder/" + id, callback);
+        }
+        #endregion
         public void getFoto(int id)
         {
             ConnectionHelper.DownloadPageAsync(URL + "desktop/getFoto/" + id, callback);
